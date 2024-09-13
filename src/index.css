@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+  background-image: linear-gradient(
+      #000000 1px,
+      transparent 1px,
+      transparent calc(100% - 1px),
+      #000000 calc(100% - 1px)
+    ),
+    linear-gradient(
+      90deg,
+      #000000 1px,
+      transparent 1px,
+      transparent calc(100% - 1px),
+      #000000 calc(100% - 1px)
+    );
+  background-size: 8.333333333333334% 16.666666666666668%;
+  border: 1px solid #000000;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar:horizontal {
+  display: none;
+}
+::-webkit-scrollbar-track {
+  background: rgba(16, 16, 16, 0);
+}
+::-webkit-scrollbar-thumb {
+  background: #ffffffa0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #252422;
+}
+::-webkit-scrollbar-corner {
+  display: none; /* Hide the bottom scrollbar */
+}
+body {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000000;
+}
+@font-face {
+  font-family: "Pally";
+  src: url("./fonts/pally/fonts/Pally-Variable.eot") format("embedded-opentype"),
+    url("./fonts/pally/fonts/Pally-Variable.ttf") format("truetype");
+}
+.Pally {
+  font-family: "Pally", sans-serif; /* Or any fallback font */
+}
+@font-face {
+  font-family: "Kola";
+  src: url("./fonts/kola/fonts/Kola-Regular.eot") format("embedded-opentype"),
+    url("./fonts/kola/fonts/Kola-Regular.ttf") format("truetype");
+}
+.Kola {
+  font-family: "kola", sans-serif; /* Or any fallback font */
+}
+@font-face {
+  font-family: "Azert";
+  src: url("./fonts/azert/AzeretMono[100].ttf") format("truetype");
+}
+.Azert {
+  font-family: "Azert", sans-serif; /* Or any fallback font */
+}
+@font-face {
+  font-family: "redhawk";
+  src: url("./fonts/redhawk/Redhawk.otf") format("truetype");
+}
+.redhawk {
+  font-family: "redhawk", sans-serif; /* Or any fallback font */
+}
+@font-face {
+  font-family: "gantians";
+  src: url("./fonts/gantians/Gantians-BLL2B.otf") format("truetype");
+}
+.gantians {
+  font-family: "gantians", sans-serif; /* Or any fallback font */
+}
+.coolfont {
+  font-family: "Homemade Apple", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.titan-one-regular {
+  font-family: "Titan One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.ibm-plex {
+  font-family: "IBM Plex Mono", monospace;
+}
+.ubuntu {
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.raleway {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.rad {
+  border-radius: 70%/100%;
+}
+
+/* a,
+button {
+  @apply cursor-none;
+} */
+.react-grid-layout {
+  @apply relative transition-all duration-[1000ms] ease-in-out;
+}
+
+/* Grid item base styles */
+.react-grid-item {
+  @apply transition-all duration-[300ms] ease-in-out z-10;
+}
+.react-grid-item.cssTransforms {
+  @apply transition-transform  duration-300 ease-in-out;
+}
+
+.react-grid-item.resizing {
+  @apply z-[1];
+  transition: none;
+  will-change: width, height;
+}
+
+/* Draggable and dropping state styles */
+.react-grid-item.react-draggable-dragging {
+  @apply z-[3];
+  transition: all;
+  will-change: transform;
+}
+
+.react-grid-item.dropping {
+  visibility: hidden;
+}
+
+/* Placeholder styles */
+.react-grid-item.react-grid-placeholder {
+  @apply dark:bg-w1/10 bg-darkGray z-[2] p-2;
+  @apply duration-[500ms] select-none;
+}
+
+/* Resizing placeholder styles */
+.react-grid-item.react-grid-placeholder.placeholder-resizing {
+  transition: none;
+}
