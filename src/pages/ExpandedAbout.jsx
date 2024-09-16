@@ -1,15 +1,17 @@
-import { useEffect } from "react";
+import PropTypes from 'prop-types';
 import { m } from "framer-motion";
 import { ArrowBendDoubleUpLeft } from "@phosphor-icons/react";
+import { twMerge } from "tailwind-merge";
 
-export default function ExpandedAbout({ handleClickAfter }) {
+export default function ExpandedAbout({ handleClickAfter, darkMode }) {
+    const bgText = darkMode ? "bg-darkGray text-w1" : "bg-white text-darkGray"
     return (
-        <div className="fixed top-0 left-0 z-[20] backdrop-blur bg-darkGray w-fit h-full overflow-y-auto ">
+        <div className={twMerge("fixed top-0 left-0 z-[20] backdrop-blur w-fit h-full overflow-y-auto", bgText)}>
             <m.section
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.75, duration: 0.50, ease: "easeInOut" }}
-                className="h-full w-screen flex justify-center bg-bg2 text-w1"
+                className="h-full w-screen flex justify-center bg-bg2 "
             >
                 <div className="w-3/5 smartphone:w-11/12 mb-2">
                     <div className="overflow-hidden">
@@ -62,4 +64,8 @@ export default function ExpandedAbout({ handleClickAfter }) {
             </m.section>
         </div>
     );
+};
+ExpandedAbout.propTypes = {
+    handleClickAfter: PropTypes.func.isRequired,
+    darkMode: PropTypes.boolean,
 };

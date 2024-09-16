@@ -78,7 +78,7 @@ function App() {
     updateLayout(navSelectedd, screenSize);
   };
   const gridItems = [
-    { key: "About", component: <About setWhatsClicked={setWhatsClicked} handleClickAfter={handleClickAfter} handleClick={handleClickBefore} /> },
+    { key: "About", component: <About setWhatsClicked={setWhatsClicked} handleClickAfter={handleClickAfter} handleClick={handleClickBefore} setCursorColor={setCursorColor} /> },
     { key: "Banner", component: <Banner /> },
     { key: "LinkedIn", component: <LinkedIn setCursorColor={setCursorColor} /> },
     { key: "GitHub", component: <GitHub setCursorColor={setCursorColor} /> },
@@ -100,10 +100,11 @@ function App() {
           setIsAnimating={setIsAnimating}
           setShowGrid={setShowGrid}
           setShowExpandedAbout={setShowExpandedAbout}
+          darkMode={darkMode}
         />
       )}
-      {showExpandedAbout && <ExpandedAbout handleClickAfter={handleClickAfter} />}
-      {showExtras && <ExpandedExtras handleClickAfter={handleClickAfter} />}
+      {showExpandedAbout && <ExpandedAbout handleClickAfter={handleClickAfter} darkMode={darkMode} />}
+      {showExtras && <ExpandedExtras handleClickAfter={handleClickAfter} darkMode={darkMode} />}
 
       <AnimatePresence>
         {showWelcomeScreen && <WelcomeScreen />}

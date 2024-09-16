@@ -105,8 +105,8 @@ export const Email = ({ setCursorColor }) => {
                         <div className="w-fit flex flex-col group-hover:-translate-y-10 transition-transform ease-out duration-200">
                             <h1 >E-Mail</h1>
                             <h1
-                                className="text-sm font-normal tracking-wide  bg-gradient-to-br from-yellow-500 to-yellow-300 text-transparent bg-clip-text">
-                                Wanna talk to me? <br />Drop a hello
+                                className="text-xs font-normal tracking-wide  bg-gradient-to-br from-yellow-500 to-yellow-300 text-transparent bg-clip-text">
+                                Have a cool project on mind? <br />Drop a hello
                             </h1>
                         </div>
 

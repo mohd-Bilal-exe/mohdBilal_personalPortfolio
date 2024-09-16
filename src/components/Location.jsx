@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 export default function Location({ darkMode }) {
     return (
         <div className="w-full h-full flex justify-center items-center group overflow-hidden">
@@ -10,3 +11,6 @@ export default function Location({ darkMode }) {
         </div>
     );
 }
+Location.propTypes = {
+    darkMode: PropTypes.boolean,
+};

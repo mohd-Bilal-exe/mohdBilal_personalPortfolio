@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { m, useScroll, useTransform } from "framer-motion";
 import { InstagramLogo } from "@phosphor-icons/react";
 import { useRef, useEffect, useMemo } from "react";
@@ -70,3 +71,6 @@ export default function ExpandedExtras({ handleClickAfter }) {
         </m.section>
     );
 }
+ExpandedExtras.propTypes = {
+    handleClickAfter: PropTypes.func,
+};

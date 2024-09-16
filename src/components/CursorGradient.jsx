@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { m, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { twMerge } from "tailwind-merge";
@@ -38,7 +39,6 @@ export default function CursorGradient({ cursorPos, darkMode, Properties }) {
                 animate={controls}
                 transition={{
                     type: "spring",
-
                 }}
             />
             <m.div
@@ -61,3 +61,15 @@ export default function CursorGradient({ cursorPos, darkMode, Properties }) {
         </>
     );
 }
+
+CursorGradient.propTypes = {
+    cursorPos: PropTypes.shape({
+        x: PropTypes.number,
+        y: PropTypes.number,
+    }),
+    darkMode: PropTypes.bool,
+    Properties: PropTypes.shape({
+        size: PropTypes.string,
+        color: PropTypes.string,
+    }),
+};

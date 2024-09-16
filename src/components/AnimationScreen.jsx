@@ -1,7 +1,9 @@
+import PropTypes from 'prop-types';
 import { m } from 'framer-motion'
 import { useEffect } from 'react'
+import { twMerge } from 'tailwind-merge';
 
-export const AnimationScreen = ({ setIsAnimating, setShowGrid, setShowExpandedAbout }) => {
+export const AnimationScreen = ({ setIsAnimating, setShowGrid, setShowExpandedAbout, darkMode }) => {
     useEffect(() => {
         setIsAnimating(true);
 
@@ -14,7 +16,7 @@ export const AnimationScreen = ({ setIsAnimating, setShowGrid, setShowExpandedAb
             clearTimeout(AnimationTimeout);
         }
     }, [setIsAnimating, setShowGrid, setShowExpandedAbout]);
-
+    const darkModeclass = !darkMode ? "bg-darkGray" : "bg-white";
     const variants = {
         initial: {
             opacity: 0,
@@ -37,7 +39,7 @@ export const AnimationScreen = ({ setIsAnimating, setShowGrid, setShowExpandedAb
                         animate={{ y: "-100%" }}
                         transition={{ duration: 2, ease: "easeInOut", type: "spring", delay: item * 0.05 }}
                         key={item}
-                        className="w-[10%]  h-full bg-white dark:bg-darkGray z-[150]">
+                        className={twMerge("w-[10%]  h-full  z-[150]", darkModeclass)}>
                     </m.div>
                 )
             })}
@@ -48,9 +50,15 @@ export const AnimationScreen = ({ setIsAnimating, setShowGrid, setShowExpandedAb
                         animate={{ y: "-100%" }}
                         transition={{ duration: 2, ease: "easeInOut", type: "spring", delay: item * 0.05 }}
                         key={item}
-                        className="w-[10%] h-full bg-white dark:bg-darkGray z-[150]">
+                        className={twMerge("w-[10%]  h-full  z-[150]", darkModeclass)}>
                     </m.div>)
             })}
         </m.section>
     )
 }
+AnimationScreen.propTypes = {
+    setIsAnimating: PropTypes.func.isRequired,
+    setShowGrid: PropTypes.func.isRequired,
+    setShowExpandedAbout: PropTypes.func.isRequired,
+    darkMode: PropTypes.boolean,
+};

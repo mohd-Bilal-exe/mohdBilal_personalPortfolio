@@ -22,16 +22,16 @@ export const DivOrigami = () => {
                     <LogoItem key={4} className="bg-react text-neutral-900">
                         <SiReact /><div className="text-xs uppercase">React js</div>
                     </LogoItem>,
-                    <LogoItem key={4} className="bg-tailwind text-neutral-900">
+                    <LogoItem key={5} className="bg-tailwind text-neutral-900">
                         <SiTailwindcss /><div className="text-xs uppercase">tailwind css</div>
                     </LogoItem>,
-                    <LogoItem key={4} className="bg-white text-neutral-900 border border-neutral-900">
+                    <LogoItem key={6} className="bg-white text-neutral-900 border border-neutral-900">
                         <SiNextdotjs /><div className="text-xs uppercase">next js</div>
                     </LogoItem>,
-                    <LogoItem key={4} className="bg-green-700 text-neutral-900">
+                    <LogoItem key={7} className="bg-green-700 text-neutral-900">
                         <LiaNode /><div className="text-xs uppercase">node js</div>
                     </LogoItem>,
-                    <LogoItem key={4} className="bg-gray-400 text-neutral-900">
+                    <LogoItem key={8} className="bg-gray-400 text-neutral-900">
                         <FaGithub /><div className="text-xs uppercase">github</div>
                     </LogoItem>,
                 ]}

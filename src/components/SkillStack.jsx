@@ -1,4 +1,3 @@
-import { ArrowBendDoubleUpLeft, ArrowBendDoubleUpRight } from "@phosphor-icons/react";
 import { DivOrigami } from "./DivOrigami";
 import { Arrow } from "./Svgs";
 
