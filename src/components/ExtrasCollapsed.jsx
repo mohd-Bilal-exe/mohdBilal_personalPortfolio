@@ -1,6 +1,8 @@
 import { FlyingSaucer } from "@phosphor-icons/react";
+import { AnimatePresence, m } from "framer-motion";
 
-export default function ExtrasCollapsed({ setWhatsClicked, handleClick, setCursorColor }) {
+import PropTypes from 'prop-types';
+export default function ExtrasCollapsed({ isFade, setWhatsClicked, handleClick, setCursorColor }) {
     const handleEnter = () => {
         setCursorColor({ color: "bg-gradient-to-br from-red-900 to-red-600 ", size: "w-4 h-4" });
     }
@@ -13,6 +15,17 @@ export default function ExtrasCollapsed({ setWhatsClicked, handleClick, setCurso
             onMouseEnter={handleEnter}
             onMouseLeave={handleExit}
             className="group w-full h-full flex items-center p-2" >
+            <AnimatePresence>
+                {isFade && <m.div
+                    initial={{ opacity: 0 }}
+                    animate={{
+                        opacity: 1,
+                    }}
+                    exit={{
+                        opacity: 0
+                    }}
+                    className="absolute z-[500] bg-black/50 backdrop:grayscale  top-0 left-0  h-full w-full"></m.div>}
+            </AnimatePresence>
             <div className="w-full h-full   flex items-center cursor-pointer" onClick={() => {
                 setWhatsClicked("Extras");
                 handleClick()
@@ -31,3 +44,11 @@ export default function ExtrasCollapsed({ setWhatsClicked, handleClick, setCurso
         </div>
     )
 }
+
+ExtrasCollapsed.propTypes = {
+    setWhatsClicked: PropTypes.func.isRequired,
+    setCursorColor: PropTypes.func.isRequired,
+    handleClick: PropTypes.func.isRequired,
+    darkMode: PropTypes.bool.isRequired,
+    isFade: PropTypes.bool.isRequired
+};

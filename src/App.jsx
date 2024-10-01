@@ -71,27 +71,105 @@ function App() {
   const handleClickBefore = () => {
     setIsAnimating(true);
   };
-
+  const [componentFaded, setComponentFaded] = useState({
+    About: false,
+    Banner: false,
+    LinkedIn: false,
+    GitHub: false,
+    Instagram: false,
+    Extras: false,
+    Email: false,
+    Resume: false,
+    DarkMode: false,
+    Location: false,
+    Navbar: false,
+    SkillStack: false,
+    Projects: false
+  });
   const handleLayoutUpdate = (navSelectedd) => {
     const screenSize = window.innerWidth;
 
-    updateLayout(navSelectedd, screenSize);
+    switch (navSelectedd) {
+      case "Everything else": {
+        setComponentFaded({
+          About: false,
+          Banner: false,
+          LinkedIn: true,
+          GitHub: true,
+          Instagram: false,
+          Extras: false,
+          Email: true,
+          Resume: true,
+          DarkMode: false,
+          Location: false,
+          Navbar: false,
+          SkillStack: true,
+          Projects: true,
+        });
+        break;
+      }
+
+      case "Technologies": {
+        setComponentFaded({
+          About: true,
+          Banner: false,
+          LinkedIn: true,
+          GitHub: true,
+          Instagram: true,
+          Extras: true,
+          Email: true,
+          Resume: false,
+          DarkMode: true,
+          Location: true,
+          Navbar: true,
+          SkillStack: false,
+          Projects: false,
+        });
+        break;
+      }
+
+      default: {
+        // Reset everything to false
+        setComponentFaded({
+          About: false,
+          Banner: false,
+          LinkedIn: false,
+          GitHub: false,
+          Instagram: false,
+          Extras: false,
+          Email: false,
+          Resume: false,
+          DarkMode: false,
+          Location: false,
+          Navbar: false,
+          SkillStack: false,
+          Projects: false,
+        });
+        break;
+      }
+    }
+
+    setTimeout(() => {
+      updateLayout(navSelectedd, screenSize);
+    }, 1000);
   };
+
   const gridItems = [
-    { key: "About", component: <About setWhatsClicked={setWhatsClicked} handleClickAfter={handleClickAfter} handleClick={handleClickBefore} setCursorColor={setCursorColor} /> },
+    { key: "About", component: <About isFade={componentFaded.About} setWhatsClicked={setWhatsClicked} handleClickAfter={handleClickAfter} handleClick={handleClickBefore} setCursorColor={setCursorColor} /> },
     { key: "Banner", component: <Banner /> },
-    { key: "LinkedIn", component: <LinkedIn setCursorColor={setCursorColor} /> },
-    { key: "GitHub", component: <GitHub setCursorColor={setCursorColor} /> },
-    { key: "Instagram", component: <Instagram setCursorColor={setCursorColor} /> },
-    { key: "Extras", component: <ExtrasCollapsed setWhatsClicked={setWhatsClicked} handleClick={handleClickBefore} setCursorColor={setCursorColor} /> },
-    { key: "Email", component: <Email setCursorColor={setCursorColor} /> },
-    { key: "Resume", component: <Resume setCursorColor={setCursorColor} /> },
+    { key: "LinkedIn", component: <LinkedIn isFade={componentFaded.LinkedIn} setCursorColor={setCursorColor} /> },
+    { key: "GitHub", component: <GitHub isFade={componentFaded.GitHub} setCursorColor={setCursorColor} /> },
+    { key: "Instagram", component: <Instagram isFade={componentFaded.Instagram} setCursorColor={setCursorColor} /> },
+    { key: "Extras", component: <ExtrasCollapsed isFade={componentFaded.Extras} setWhatsClicked={setWhatsClicked} handleClick={handleClickBefore} setCursorColor={setCursorColor} /> },
+    { key: "Email", component: <Email isFade={componentFaded.Email} setCursorColor={setCursorColor} /> },
+    { key: "Resume", component: <Resume isFade={componentFaded.Resume} setCursorColor={setCursorColor} /> },
     { key: "DarkMode", component: <DarkMode setDarkMode={setDarkMode} darkMode={darkMode} setCursorColor={setCursorColor} /> },
-    { key: "Location", component: <Location darkMode={darkMode} /> },
+    { key: "Location", component: <Location isFade={componentFaded.Location} darkMode={darkMode} /> },
     { key: "Navbar", component: <NavandButtons setDarkMode={setDarkMode} darkMode={darkMode} handleLayoutUpdate={handleLayoutUpdate} /> },
-    { key: "SkillStack", component: <SkillStack /> },
-    { key: "Projects", component: <Project setCursorColor={setCursorColor} /> },
+    { key: "SkillStack", component: <SkillStack isFade={componentFaded.SkillStack} /> },
+    { key: "Projects", component: <Project isFade={componentFaded.Projects} setCursorColor={setCursorColor} /> },
   ];
+
 
   return (
     <>

@@ -1,6 +1,7 @@
 import { DownloadSimple, Eye } from "@phosphor-icons/react";
+import { AnimatePresence, m } from "framer-motion";
 import PropTypes from 'prop-types';
-export default function Resume({ setCursorColor }) {
+export default function Resume({ isFade, setCursorColor }) {
     const handleEnter = () => {
         setCursorColor({ color: "bg-gradient-to-br  from-blue-500 to-purple-600", size: "w-2 h-2" });
     }
@@ -12,7 +13,18 @@ export default function Resume({ setCursorColor }) {
     const resHeight = element && element.offsetHeight;
     const iconSize = resHeight > 137 ? 50 : 40
     return (
-        <section id='ReSec' className="p-4 w-full h-full flex gap-2 justify-between ">
+        <section id='ReSec' className="relative p-4 w-full h-full flex gap-2 justify-between ">
+            <AnimatePresence>
+                {isFade && <m.div
+                    initial={{ opacity: 0 }}
+                    animate={{
+                        opacity: 1,
+                    }}
+                    exit={{
+                        opacity: 0
+                    }}
+                    className="absolute bg-black/50 backdrop:grayscale  top-0 left-0  h-full w-full"></m.div>}
+            </AnimatePresence>
             <div id="resumeHeading" className="flex flex-col justify-center w-1/2 h-full ">
                 <h5 className={`text-xs font-light`}>2024 </h5>
                 <h1 className={`text-4xl font-semibold Pally`}>Resume</h1>
@@ -32,4 +44,5 @@ export default function Resume({ setCursorColor }) {
 }
 Resume.propTypes = {
     setCursorColor: PropTypes.func.isRequired,
+    isFade: PropTypes.bool.isRequired,
 };

@@ -1,7 +1,7 @@
 import { m } from 'framer-motion';
 import { DiceFive } from '@phosphor-icons/react';
 import { useState } from 'react';
-
+import PropTypes from 'prop-types';
 export default function NavandButtons({ handleLayoutUpdate }) {
 
     const [navSelected, setNavSelected] = useState("Everything")
@@ -28,12 +28,12 @@ export default function NavandButtons({ handleLayoutUpdate }) {
                         list.map((item) => {
                             return (
                                 <li key={item.id} className={`z-20 w-1/3 text-md flex justify-center items-center px-2 py-1`}>
-                                    <a href="#" onClick={() => { handleLayoutUpdate(item.title); setNavSelected(item.title) }} className='w-full text-center group h-6 overflow-hidden'>
+                                    <div href="#" onClick={() => { handleLayoutUpdate(item.title); setNavSelected(item.title) }} className='w-full text-center group h-6 overflow-hidden'>
                                         <div className='group-hover:-translate-y-6 flex flex-col transition-transform duration-200 delay-100'>
                                             <span>{item.title}</span>
                                             <span className='flex items-center justify-center'>Rearrange<DiceFive size={25} weight="thin" /></span>
                                         </div>
-                                    </a>
+                                    </div>
                                 </li>
                             )
                         })
@@ -50,3 +50,6 @@ export default function NavandButtons({ handleLayoutUpdate }) {
         </section>
     );
 }
+NavandButtons.propTypes = {
+    handleLayoutUpdate: PropTypes.func.isRequired,
+};

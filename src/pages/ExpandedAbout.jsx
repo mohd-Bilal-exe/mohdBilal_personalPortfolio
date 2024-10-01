@@ -66,6 +66,6 @@ export default function ExpandedAbout({ handleClickAfter, darkMode }) {
     );
 };
 ExpandedAbout.propTypes = {
-    handleClickAfter: PropTypes.func.isRequired,
+    handleClickAfter: PropTypes.func,
     darkMode: PropTypes.boolean,
 };

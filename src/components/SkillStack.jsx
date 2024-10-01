@@ -1,9 +1,21 @@
 import { DivOrigami } from "./DivOrigami";
+import { AnimatePresence, m } from "framer-motion"
 import { Arrow } from "./Svgs";
 
-export default function SkillStack() {
+export default function SkillStack({ isFade }) {
     return (
         <section className="w-full h-full flex justify-between items-center ">
+            <AnimatePresence>
+                {isFade && <m.div
+                    initial={{ opacity: 0 }}
+                    animate={{
+                        opacity: 1,
+                    }}
+                    exit={{
+                        opacity: 0
+                    }}
+                    className="absolute bg-black/50 backdrop:grayscale  top-0 left-0  h-full w-full"></m.div>}
+            </AnimatePresence>
             <div id="Stack" className="w-1/2 h-full  flex items-center justify-center">
                 <h1 className="ml-4 text-5xl  font-bold leading-tight">
                     <span className="block Pally ">Tech stack </span>
@@ -16,7 +28,7 @@ export default function SkillStack() {
                     </span>
                 </h1>
 
-                <Arrow className="w-20 h-20  absolute top-12  rotate-[18deg]  -translate-y-10 translate-x-40" />
+                <Arrow className="w-20 h-20 z-0  absolute top-12  rotate-[18deg]  -translate-y-10 translate-x-40" />
             </div>
             {/* <DivOrigami />*/}
         </section>

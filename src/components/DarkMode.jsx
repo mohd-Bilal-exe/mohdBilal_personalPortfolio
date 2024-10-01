@@ -1,5 +1,6 @@
 import { Moon, SunDim } from "@phosphor-icons/react";
 import { m } from 'framer-motion'
+import PropTypes from 'prop-types';
 export default function DarkMode({ setDarkMode, darkMode, setCursorColor }) {
     const handleEnter = () => {
         setCursorColor({ color: "bg-gradient-to-br from-cyan-500 to-blue-600", size: "" });
@@ -23,3 +24,8 @@ export default function DarkMode({ setDarkMode, darkMode, setCursorColor }) {
         </button>
     )
 }
+DarkMode.propTypes = {
+    setCursorColor: PropTypes.func.isRequired,
+    setDarkMode: PropTypes.func.isRequired,
+    darkMode: PropTypes.bool.isRequired
+};

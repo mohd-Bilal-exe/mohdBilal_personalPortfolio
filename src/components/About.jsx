@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { ArrowUpRight } from "@phosphor-icons/react";
-
-export default function About({ handleClick, setWhatsClicked, setCursorColor }) {
+import { AnimatePresence, m } from "framer-motion";
+export default function About({ isFade, handleClick, setWhatsClicked, setCursorColor }) {
     const handleEnter = () => {
         setCursorColor({ color: "bg-gradient-to-br from-red-500 to-red-400 ", size: "w-2 h-2" });
     };
@@ -11,6 +11,17 @@ export default function About({ handleClick, setWhatsClicked, setCursorColor }) 
 
     return (
         <section className="flex flex-col w-full h-full ">
+            <AnimatePresence>
+                {isFade && <m.div
+                    initial={{ opacity: 0 }}
+                    animate={{
+                        opacity: 1,
+                    }}
+                    exit={{
+                        opacity: 0
+                    }}
+                    className="absolute bg-black/50 backdrop:grayscale  top-0 left-0  h-full w-full"></m.div>}
+            </AnimatePresence>
             <div className="h-[92%] p-4 flex flex-col max-w-md mx-auto">
                 <div id="headingnpfp" className="flex justify-between items-center px-2 h-32 ">
                     <h2 className="text-5xl font-semibold text-gray-800 dark:text-white/50 mb-3 Pally">Mohd Bilal</h2>
@@ -49,4 +60,5 @@ About.propTypes = {
     handleClick: PropTypes.func.isRequired,
     setWhatsClicked: PropTypes.func.isRequired,
     setCursorColor: PropTypes.func.isRequired,
+    isFade: PropTypes.bool.isRequired
 };

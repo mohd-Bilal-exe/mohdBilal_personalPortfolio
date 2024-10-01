@@ -1,7 +1,7 @@
 import { LinkedinLogo, GithubLogo, InstagramLogo, Envelope } from "@phosphor-icons/react";
 import PropTypes from 'prop-types';
-
-export const LinkedIn = ({ setCursorColor }) => {
+import { AnimatePresence, m } from "framer-motion";
+export const LinkedIn = ({ isFade, setCursorColor }) => {
     const handleEnter = () => {
         setCursorColor({ color: "bg-gradient-to-br from-lnkin to-cyan-300", size: "w-4 h-4" });
     };
@@ -15,6 +15,17 @@ export const LinkedIn = ({ setCursorColor }) => {
             onMouseLeave={handleExit}
             className="group w-full h-full p-2 grid place-content-center"
         >
+            <AnimatePresence>
+                {isFade && <m.div
+                    initial={{ opacity: 0 }}
+                    animate={{
+                        opacity: 1,
+                    }}
+                    exit={{
+                        opacity: 0
+                    }}
+                    className="absolute z-[500] bg-black/50 backdrop:grayscale  top-0 left-0  h-full w-full"></m.div>}
+            </AnimatePresence>
             <a
                 href="https://www.linkedin.com/in/mohd-bilal--"
                 target="_blank"
@@ -30,9 +41,10 @@ export const LinkedIn = ({ setCursorColor }) => {
 // Define prop types
 LinkedIn.propTypes = {
     setCursorColor: PropTypes.func.isRequired,
+    isFade: PropTypes.bool.isRequired,
 };
 
-export const GitHub = ({ setCursorColor }) => {
+export const GitHub = ({ isFade, setCursorColor }) => {
     const handleEnter = () => {
         setCursorColor({ color: "bg-gradient-to-br from-gray-500 to-gray-200", size: "w-4 h-4" });
     }
@@ -44,6 +56,17 @@ export const GitHub = ({ setCursorColor }) => {
             onMouseEnter={handleEnter}
             onMouseLeave={handleExit}
             className="group w-full h-full p-2 grid place-content-center">
+            <AnimatePresence>
+                {isFade && <m.div
+                    initial={{ opacity: 0 }}
+                    animate={{
+                        opacity: 1,
+                    }}
+                    exit={{
+                        opacity: 0
+                    }}
+                    className="absolute z-[500]  bg-black/50 backdrop:grayscale  top-0 left-0  h-full w-full"></m.div>}
+            </AnimatePresence>
             <a
                 href="https://github.com/mohd-bilal-exe"
                 target="_blank"
@@ -57,8 +80,9 @@ export const GitHub = ({ setCursorColor }) => {
 };
 GitHub.propTypes = {
     setCursorColor: PropTypes.func.isRequired,
+    isFade: PropTypes.bool.isRequired,
 };
-export const Instagram = ({ setCursorColor }) => {
+export const Instagram = ({ isFade, setCursorColor }) => {
     const handleEnter = () => {
         setCursorColor({ color: "bg-gradient-to-br from-insta to-red-700", size: "w-4 h-4" });
     }
@@ -69,6 +93,17 @@ export const Instagram = ({ setCursorColor }) => {
         <div onMouseEnter={handleEnter}
             onMouseLeave={handleExit}
             className="group w-full h-full p-2 grid place-content-center" >
+            <AnimatePresence>
+                {isFade && <m.div
+                    initial={{ opacity: 0 }}
+                    animate={{
+                        opacity: 1,
+                    }}
+                    exit={{
+                        opacity: 0
+                    }}
+                    className="absolute z-[500] bg-black/50 backdrop:grayscale  top-0 left-0  h-full w-full"></m.div>}
+            </AnimatePresence>
             <a
 
                 href="https://www.instagram.com/mohd.bilal__/"
@@ -82,11 +117,13 @@ export const Instagram = ({ setCursorColor }) => {
 };
 Instagram.propTypes = {
     setCursorColor: PropTypes.func.isRequired,
+    isFade: PropTypes.bool.isRequired,
 };
 GitHub.propTypes = {
     setCursorColor: PropTypes.func.isRequired,
+    isFade: PropTypes.bool.isRequired,
 };
-export const Email = ({ setCursorColor }) => {
+export const Email = ({ isFade, setCursorColor }) => {
     const handleEnter = () => {
         setCursorColor({ color: "bg-gradient-to-br from-yellow-500 to-yellow-600", size: "w-4 h-4" });
     }
@@ -99,6 +136,17 @@ export const Email = ({ setCursorColor }) => {
             onMouseLeave={handleExit}
             className="group w-full h-full flex items-center justify-center p-2 "
         >
+            <AnimatePresence>
+                {isFade && <m.div
+                    initial={{ opacity: 0 }}
+                    animate={{
+                        opacity: 1,
+                    }}
+                    exit={{
+                        opacity: 0
+                    }}
+                    className="absolute z-[500]  bg-black/50 backdrop:grayscale  top-0 left-0  h-full w-full"></m.div>}
+            </AnimatePresence>
             <div className="w-2/3 relative block overflow-hidden whitespace-nowrap">
                 <a href="mailto:mohammadbilal.mail@gmail.com" target="_blank">
                     <div className="w-full text-4xl flex justify-start  ml-2 font-thin Pally  h-10 overflow-hidden">
@@ -120,4 +168,5 @@ export const Email = ({ setCursorColor }) => {
 };
 Email.propTypes = {
     setCursorColor: PropTypes.func.isRequired,
+    isFade: PropTypes.bool.isRequired,
 };

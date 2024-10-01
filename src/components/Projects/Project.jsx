@@ -1,5 +1,5 @@
 import { Responsive, WidthProvider } from "react-grid-layout";
-import { m } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import Title from "./components/Title";
 import { NavigationArrow } from "@phosphor-icons/react";
 const ProjectGridLayout = WidthProvider(Responsive);
@@ -67,7 +67,7 @@ const Projects = [
 ]
 
 
-export default function Project({ setCursorColor }) {
+export default function Project({ isFade, setCursorColor }) {
     const handleEnter = () => {
         setCursorColor({ color: "bg-gradient-to-br  from-cyan-500 to-green-600", size: "" });
     }
@@ -75,74 +75,87 @@ export default function Project({ setCursorColor }) {
         setCursorColor({ color: "bg-white", size: "w-2 h-2" });
     }
     return (
+        <div className="layout w-full h-full mr-[1px]">
+            <AnimatePresence>
+                {isFade && <m.div
+                    initial={{ opacity: 0 }}
+                    animate={{
+                        opacity: 1,
+                    }}
+                    exit={{
+                        opacity: 0
+                    }}
+                    className="absolute bg-black/50 backdrop:grayscale  top-0 left-0  h-full w-full"></m.div>}
+            </AnimatePresence>
 
-        <ProjectGridLayout
-            className="layout w-full h-full mr-[1px]"
-            key="Projects"
-            layouts={{ lg: projectLayouts.lg, md: projectLayouts.lg, sm: projectLayouts.sm, xxs: projectLayouts.xs }}
-            breakpoints={{ lg: 1200, md: 992, sm: 768, xxs: 480 }}
-            cols={{ lg: 6, md: 6, sm: 2, xxs: 2 }}
-            margin={[1, 1]}
-            containerPadding={[0, 0]}
-            rowHeight={45}
-            isResizable={false}
-            isDraggable={false}
-            useCSSTransforms={false}
-        >
-            <div key="Heading" className="dark:bg-darkGray/90 backdrop-blur-xl dark:text-white bg-white/90">
-                <Title />
-            </div>
+            <ProjectGridLayout
 
-            {
-                Projects.map((Project) => {
-                    return (
-                        <m.div
-                            key={Project.key} className="dark:bg-darkGray/90 backdrop-blur-xl dark:text-white bg-white/90 ">
-                            <div className="group w-full h-full flex flex-col justify-center items-start   z-50">
-                                <div className="w-full h-4/5 flex">
-                                    <div id="Texts" className="w-2/5 h-full p-6 text-4xl flex flex-col justify-center text-pretty">
-                                        <h1 className="ml-1 tracking-wider Pally">{Project.title}</h1>
-                                        <h2 className="text-xs ml-3 mt-2 tracking-wider font-extralight">{Project.description}</h2>
+                key="Projects"
+                layouts={{ lg: projectLayouts.lg, md: projectLayouts.lg, sm: projectLayouts.sm, xxs: projectLayouts.xs }}
+                breakpoints={{ lg: 1200, md: 992, sm: 768, xxs: 480 }}
+                cols={{ lg: 6, md: 6, sm: 2, xxs: 2 }}
+                margin={[1, 1]}
+                containerPadding={[0, 0]}
+                rowHeight={45}
+                isResizable={false}
+                isDraggable={false}
+                useCSSTransforms={false}
+            >
+                <div key="Heading" className="dark:bg-darkGray/90 backdrop-blur-xl dark:text-white bg-white/90">
+                    <Title />
+                </div>
+
+                {
+                    Projects.map((Project) => {
+                        return (
+                            <m.div
+                                key={Project.key} className="dark:bg-darkGray/90 backdrop-blur-xl dark:text-white bg-white/90 ">
+                                <div className="group w-full h-full flex flex-col justify-center items-start   z-50">
+                                    <div className="w-full h-4/5 flex">
+                                        <div id="Texts" className="w-2/5 h-full p-6 text-4xl flex flex-col justify-center text-pretty">
+                                            <h1 className="ml-1 tracking-wider Pally">{Project.title}</h1>
+                                            <h2 className="text-xs ml-3 mt-2 tracking-wider font-extralight">{Project.description}</h2>
+                                        </div>
+                                        <div id="imageCont" className="w-3/5 h-full p-4 flex items-center justify-center">
+                                            <div
+                                                className="w-full h-full rounded-sm drop-shadow-[0px_0px_2px_rgba(255,255,255,0.35)]  border-white transition-all duration-300 group-hover:scale-[99%] bg-contain bg-center bg-no-repeat"
+                                                style={{
+                                                    backgroundImage: `url(${Project.imgScr})`,
+                                                }}
+                                            />
+                                        </div>
                                     </div>
-                                    <div id="imageCont" className="w-3/5 h-full p-4 flex items-center justify-center">
-                                        <div
-                                            className="w-full h-full rounded-sm drop-shadow-[0px_0px_2px_rgba(255,255,255,0.35)]  border-white transition-all duration-300 group-hover:scale-[99%] bg-contain bg-center bg-no-repeat"
-                                            style={{
-                                                backgroundImage: `url(${Project.imgScr})`,
-                                            }}
-                                        />
-                                    </div>
-                                </div>
 
-                                <div id="TechUsed" className="flex items-center gap-2 px-4 group">
-                                    {
-                                        Project.tech.map((item) => {
-                                            return (
-                                                <span key={item} className="dark:bg-white/5 bg-darkGray/5 px-2 text-sm rounded-sm group-hover:scale-[102%] transition-all">
-                                                    {item}
+                                    <div id="TechUsed" className="flex items-center gap-2 px-4 group">
+                                        {
+                                            Project.tech.map((item) => {
+                                                return (
+                                                    <span key={item} className="dark:bg-white/5 bg-darkGray/5 px-2 text-sm rounded-sm group-hover:scale-[102%] transition-all">
+                                                        {item}
+                                                    </span>
+
+                                                )
+                                            })
+                                        }
+                                        <a href={Project.link}
+                                            onMouseEnter={handleEnter}
+                                            onMouseLeave={handleExit}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="w-10 h-10 flex justify-center items-center  group-hover:dark:bg-white/5 group-hover:bg-darkGray/5 rounded-xl  -translate-y-1 transition-all duration-300 overflow-hidden">
+                                            <span className="flex gap-2 flex-col justify-center items-center w-full h-24  rotate-45  -translate-x-[19px] hover:translate-x-3 translate-y-5 hover:-translate-y-3 transition-all duration-500">
+                                                <NavigationArrow className="rotate-45  mb-[1px] h-1/2" size={"65%"} weight="duotone" />
+                                                <span className="h-1/2">
+                                                    Go!
                                                 </span>
-
-                                            )
-                                        })
-                                    }
-                                    <a href={Project.link}
-                                        onMouseEnter={handleEnter}
-                                        onMouseLeave={handleExit}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="w-10 h-10 flex justify-center items-center  group-hover:dark:bg-white/5 group-hover:bg-darkGray/5 rounded-xl  -translate-y-1 transition-all duration-300 overflow-hidden">
-                                        <span className="flex gap-2 flex-col justify-center items-center w-full h-24  rotate-45  -translate-x-[19px] hover:translate-x-3 translate-y-5 hover:-translate-y-3 transition-all duration-500">
-                                            <NavigationArrow className="rotate-45  mb-[1px] h-1/2" size={"65%"} weight="duotone" />
-                                            <span className="h-1/2">
-                                                Go!
-                                            </span>
-                                        </span></a>
+                                            </span></a>
+                                    </div>
                                 </div>
-                            </div>
-                        </m.div>
-                    )
-                })
-            }
-        </ProjectGridLayout>
+                            </m.div>
+                        )
+                    })
+                }
+            </ProjectGridLayout>
+        </div>
     )
 }
