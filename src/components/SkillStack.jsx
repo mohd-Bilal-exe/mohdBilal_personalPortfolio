@@ -4,7 +4,7 @@ import { Arrow } from "./Svgs";
 
 export default function SkillStack({ isFade }) {
     return (
-        <section className="w-full h-full flex justify-between items-center ">
+        <section className={`w-full h-full flex justify-between items-center ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-500`}>
             <AnimatePresence>
                 {isFade && <m.div
                     initial={{ opacity: 0 }}
@@ -14,7 +14,7 @@ export default function SkillStack({ isFade }) {
                     exit={{
                         opacity: 0
                     }}
-                    className="absolute bg-black/50 backdrop:grayscale  top-0 left-0  h-full w-full"></m.div>}
+                    className="z-[500]  fixed dark:bg-white/10  bg-black/20 backdrop:grayscale top-0 left-0  h-full w-full"></m.div>}
             </AnimatePresence>
             <div id="Stack" className="w-1/2 h-full  flex items-center justify-center">
                 <h1 className="ml-4 text-5xl  font-bold leading-tight">

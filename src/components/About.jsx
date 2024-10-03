@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { ArrowUpRight } from "@phosphor-icons/react";
 import { AnimatePresence, m } from "framer-motion";
+
 export default function About({ isFade, handleClick, setWhatsClicked, setCursorColor }) {
     const handleEnter = () => {
         setCursorColor({ color: "bg-gradient-to-br from-red-500 to-red-400 ", size: "w-2 h-2" });
@@ -10,33 +11,34 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
     };
 
     return (
-        <section className="flex flex-col w-full h-full ">
+        <div className={`flex flex-col relative  w-full h-full ${isFade && "pointer-events-none grayscale opacity-10"} transition-all`}>
             <AnimatePresence>
-                {isFade && <m.div
-                    initial={{ opacity: 0 }}
-                    animate={{
-                        opacity: 1,
-                    }}
-                    exit={{
-                        opacity: 0
-                    }}
-                    className="absolute bg-black/50 backdrop:grayscale  top-0 left-0  h-full w-full"></m.div>}
+                {isFade && (
+                    <m.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="z-[500] fixed top-0 left-0 h-full w-full dark:bg-white/10 bg-black/20 "
+                    />
+                )}
             </AnimatePresence>
-            <div className="h-[92%] p-4 flex flex-col max-w-md mx-auto">
-                <div id="headingnpfp" className="flex justify-between items-center px-2 h-32 ">
+
+            <div className="z-[0] h-[92%] p-4 flex flex-col max-w-md mx-auto">
+                <div id="headingnpfp" className="flex justify-between items-center px-2 h-32">
                     <h2 className="text-5xl font-semibold text-gray-800 dark:text-white/50 mb-3 Pally">Mohd Bilal</h2>
-                    <div className="size-[110px] overflow-hidden rounded-lg flex items-center justify-center border dark:border-white/20 bg-gradient-to-r dark:from-white/10 from-black/10 to-black/20 dark:to-white/20 ">
+                    <div className="size-[110px] overflow-hidden rounded-lg flex items-center justify-center border dark:border-white/20 bg-gradient-to-r dark:from-white/10 from-black/10 to-black/20 dark:to-white/20">
                         <img
                             src="/2821.png"
                             className="h-[85%] drop-shadow-2xl transition-all duration-300 ease-in-out group-hover:scale-105"
-                            alt="hh"
+                            alt="profile-pic"
                         />
                     </div>
                 </div>
                 <p className="w-[86%] text-sm text-gray-600 dark:text-white mb-4 ml-3 text-pretty">
-                    Full stack developer from Lucknow, India. <br /> A frontend expert with love for crafting modern UIs with React, Tailwind CSS and Framer-motion.
+                    Full stack developer from Lucknow, India. <br /> A frontend expert with love for crafting modern UIs with React, Tailwind CSS, and Framer-motion.
                 </p>
             </div>
+
             <button
                 onClick={() => {
                     setWhatsClicked("About");
@@ -52,7 +54,7 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
                 </div>
                 <ArrowUpRight size={18} className="group-hover:translate-y-[-1px] group-hover:translate-x-[1px] transition-all duration-300 ease-in-out" />
             </button>
-        </section>
+        </div>
     );
 }
 

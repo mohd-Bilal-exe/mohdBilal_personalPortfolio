@@ -17,6 +17,8 @@ import CursorGradient from "./components/CursorGradient";
 import useResponsiveLayouts from "./hooks/useResponsiveLayouts";
 import WelcomeScreen from "./components/WelcomeScreen";
 import Project from "./components/Projects/Project";
+import { ArrowUp } from "@phosphor-icons/react";
+import smoothScrollToTop from "./utils/scrollBehaviour";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -58,8 +60,8 @@ function App() {
     const { pageX, pageY } = e;
     setCursorPos({ x: pageX, y: pageY });
   };
-  const ele = document.getElementById("root")
-  ele.addEventListener('mousemove', handleMouseMove);
+  //const ele = document.getElementById("root")
+  window.addEventListener('mousemove', handleMouseMove);
 
   const handleClickAfter = () => {
     setIsAnimating(false);
@@ -71,6 +73,13 @@ function App() {
   const handleClickBefore = () => {
     setIsAnimating(true);
   };
+
+
+
+  const handleToTop = () => {
+    smoothScrollToTop();
+  };
+
   const [componentFaded, setComponentFaded] = useState({
     About: false,
     Banner: false,
@@ -191,7 +200,7 @@ function App() {
       {showGrid && (
 
         <div
-          className={`${darkMode && "dark"} ubuntu relative grid content-stretch  grid-cols-12 gap-[1px] dark:bg-white/20   text-bg1 select-none curso r-none`}
+          className={`${darkMode && "dark"} ubuntu relative grid content-stretch  grid-cols-12 gap-[1px] dark:bg-white/20   text-bg1 select-none curso r-none scroll-smooth`}
         >
           <div className="col-span-1 bg-white/90 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px]   xs:-[45px]  z-[3]"></div>
           <div className="col-span-10 bg-white/90 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px]  xs:-[45px]  z-[3]"></div>
@@ -236,9 +245,10 @@ function App() {
           <div className="col-span-10 bg-white/90 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px]  z-[3]"></div>
           <div className="col-span-1 bg-white/90 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px]  z-[3]"></div>
           <div className="col-span-1 bg-white/90 dark:bg-darkGray/90 backdrop-blur-2xl z-[3]"></div>
+
         </div>
       )}
-
+      <button onClick={handleToTop} className="fixed right-1 bottom-3 z-[500] text-white/10 hover:text-white/40 transition-all"> <ArrowUp size={32} /></button>
     </>
   );
 }

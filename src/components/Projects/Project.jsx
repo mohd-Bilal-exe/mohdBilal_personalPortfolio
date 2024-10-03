@@ -51,7 +51,7 @@ const Projects = [
     {
         key: "Poetica",
         title: "Poetica",
-        imgScr: "",
+        imgScr: "/Poetica.avif",
         link: "",
         description: "A social platform for writers with AI-generated summaries and hashtags.",
         tech: ["Next js", "Firebase", "Google-GenAI", "TailwindCSS", "Framer-motion"],
@@ -75,9 +75,9 @@ export default function Project({ isFade, setCursorColor }) {
         setCursorColor({ color: "bg-white", size: "w-2 h-2" });
     }
     return (
-        <div className="layout w-full h-full mr-[1px]">
+        <div className={`"layout w-full h-full mr-[1px] ${isFade && "gray scale"}`}>
             <AnimatePresence>
-                {isFade && <m.div
+                {!isFade && <m.div
                     initial={{ opacity: 0 }}
                     animate={{
                         opacity: 1,
@@ -85,11 +85,14 @@ export default function Project({ isFade, setCursorColor }) {
                     exit={{
                         opacity: 0
                     }}
-                    className="absolute bg-black/50 backdrop:grayscale  top-0 left-0  h-full w-full"></m.div>}
+                    style={{
+                        filter: "grayscale(100%)"
+                    }}
+                    className="z-[500]  fixed dark:bg-white/10  bg-black/20   top-0 left-0  h-full w-full"></m.div>}
             </AnimatePresence>
 
             <ProjectGridLayout
-
+                className={isFade && "backdr op-blur-xl"}
                 key="Projects"
                 layouts={{ lg: projectLayouts.lg, md: projectLayouts.lg, sm: projectLayouts.sm, xxs: projectLayouts.xs }}
                 breakpoints={{ lg: 1200, md: 992, sm: 768, xxs: 480 }}
@@ -116,9 +119,9 @@ export default function Project({ isFade, setCursorColor }) {
                                             <h1 className="ml-1 tracking-wider Pally">{Project.title}</h1>
                                             <h2 className="text-xs ml-3 mt-2 tracking-wider font-extralight">{Project.description}</h2>
                                         </div>
-                                        <div id="imageCont" className="w-3/5 h-full p-4 flex items-center justify-center">
+                                        <div id="imageCont" className="w-3/5 h-full p-4 flex items-center justify-center   ">
                                             <div
-                                                className="w-full h-full rounded-sm drop-shadow-[0px_0px_2px_rgba(255,255,255,0.35)]  border-white transition-all duration-300 group-hover:scale-[99%] bg-contain bg-center bg-no-repeat"
+                                                className="w-full h-full overflow-hidden rounded-2xl drop-shadow-[0px_0px_2px_rgba(255,255,255,0.35)] transition-all duration-300 group-hover:scale-[99%] bg-contain bg-center bg-no-repeat"
                                                 style={{
                                                     backgroundImage: `url(${Project.imgScr})`,
                                                 }}
@@ -137,10 +140,10 @@ export default function Project({ isFade, setCursorColor }) {
                                                 )
                                             })
                                         }
-                                        <a href={Project.link}
+                                        <a href={Project.link ? Project.link : "/I'm_working_on_it(yet-another-project-that-no-one-cares-about)"}
                                             onMouseEnter={handleEnter}
                                             onMouseLeave={handleExit}
-                                            target="_blank"
+                                            target={Project.key !== "Poetica" ? "_blank" : "_self"}
                                             rel="noopener noreferrer"
                                             className="w-10 h-10 flex justify-center items-center  group-hover:dark:bg-white/5 group-hover:bg-darkGray/5 rounded-xl  -translate-y-1 transition-all duration-300 overflow-hidden">
                                             <span className="flex gap-2 flex-col justify-center items-center w-full h-24  rotate-45  -translate-x-[19px] hover:translate-x-3 translate-y-5 hover:-translate-y-3 transition-all duration-500">

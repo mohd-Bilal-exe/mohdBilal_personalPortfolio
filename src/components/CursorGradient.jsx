@@ -22,10 +22,10 @@ export default function CursorGradient({ cursorPos, darkMode, Properties }) {
 
         updateCursorPosition();
         // Continuously update position
-        window.addEventListener('mousemove', updateCursorPosition);
+        // window.addEventListener('mousemove', updateCursorPosition);
 
         // Cleanup listener on component unmount
-        return () => window.removeEventListener('mousemove', updateCursorPosition);
+        //return () => window.removeEventListener('mousemove', updateCursorPosition);
     }, [cursorPos, controls, Properties.size, controls2]);
 
     return (

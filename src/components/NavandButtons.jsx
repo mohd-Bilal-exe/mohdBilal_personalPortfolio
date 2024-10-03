@@ -42,7 +42,7 @@ export default function NavandButtons({ handleLayoutUpdate }) {
                 <div className={`w-full h-full absolute top-0 z-0 py-1 pr-2 grid grid-cols-3`}>
                     <m.span
                         layout
-                        transition={{ duration: 0.5, type: "spring", ease: "easeInOut" }}
+                        transition={{ duration: 0.5, type: "spring", ease: "easeInOut", delay: 0.1 }}
                         className={`h-full w-full rounded-sm bg-gradient-to-br dark:from-white/10 from-black/10 to-black/20 dark:to-white/20 ${navSelected === "Everything" && "col-start-1"} ${navSelected === "Technologies" && "col-start-2"} ${navSelected === "Everything else" && "col-start-3"}`}
                     />
                 </div>
