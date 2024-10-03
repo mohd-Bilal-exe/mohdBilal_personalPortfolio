@@ -34,7 +34,7 @@ export default function CursorGradient({ cursorPos, darkMode, Properties }) {
                 key="Grad1"
                 className={twMerge(
                     darkMode ? Properties.color : "bg-purple-500",
-                    "absolute top-0 w-32 h-32 xsmphone:hidden rounded-full pointer-events-none z-[0] transition-colors duration-500"
+                    "absolute top-0 w-32 h-32 smartphone:hidden rounded-full pointer-events-none z-[0] transition-colors duration-500"
                 )}
                 animate={controls}
                 transition={{
@@ -44,7 +44,7 @@ export default function CursorGradient({ cursorPos, darkMode, Properties }) {
             <m.div
                 key="Grad2"
                 className={twMerge(
-                    "absolute top-0 w-2 h-2 rounded-full pointer-events-none z-[200] transition-colors duration-300",
+                    "absolute top-0 w-2 h-2 smartphone:hidden rounded-full pointer-events-none z-[200] transition-colors duration-300",
                     darkMode ? Properties.color : "bg-purple-500",
                     Properties.size
                 )}

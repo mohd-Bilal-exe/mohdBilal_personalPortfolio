@@ -23,12 +23,14 @@ const projectLayouts = {
         { i: "verbi.AI", x: 0, y: 2, w: 5, h: 6 },
         { i: "ToDo Nest", x: 0, y: 0, w: 7, h: 1 },
         { i: "Poetica", x: 0, y: 9, w: 1, h: 2 },
+        { i: "PreviousPortfolio", x: 0, y: 5, w: 3, h: 6 },
         { i: "Heading", x: 0, y: 0, w: 3, h: 1, static: true },
     ],
     xs: [
-        { i: "verbi.AI", x: 0, y: 2, w: 3, h: 6 },
-        { i: "ToDo Nest", x: 0, y: 1, w: 3, h: 1 },
-        { i: "Poetica", x: 0, y: 8, w: 3, h: 5 },
+        { i: "verbi.AI", x: 0, y: 2, w: 3, h: 8 },
+        { i: "ToDo Nest", x: 0, y: 1, w: 3, h: 8 },
+        { i: "Poetica", x: 0, y: 8, w: 3, h: 8 },
+        { i: "PreviousPortfolio", x: 0, y: 5, w: 3, h: 8 },
         { i: "Heading", x: 0, y: 0, w: 3, h: 1, static: true },
     ],
 };
@@ -126,11 +128,11 @@ export default function Project({ isFade, setCursorColor }) {
                                         </div>
                                     </div>
 
-                                    <div id="TechUsed" className="flex items-center gap-2 px-4 group">
+                                    <div id="TechUsed" className="flex flex-wrap  items-center gap-2 px-4 group">
                                         {
                                             Project.tech.map((item) => {
                                                 return (
-                                                    <span key={item} className="dark:bg-white/5 bg-darkGray/5 px-2 text-sm rounded-sm group-hover:scale-[102%] transition-all">
+                                                    <span key={item} className="dark:bg-white/5 bg-darkGray/5 px-2 text-sm smartphone:text-xs  rounded-sm group-hover:scale-[102%] transition-all">
                                                         {item}
                                                     </span>
 
