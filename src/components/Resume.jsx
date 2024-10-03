@@ -23,13 +23,14 @@ export default function Resume({ isFade, setCursorColor }) {
     }, [resumeRef.current]);
 
     return (
-        <section ref={resumeRef} className={`relative p-4 w-full h-full flex gap-2 justify-between ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-500`}>
+        <section ref={resumeRef} className={`relative p-4 w-full h-full flex gap-2 justify-between ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}>
             <AnimatePresence>
                 {isFade && (
                     <m.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
                         className="z-[500] fixed dark:bg-white/10 bg-black/20 top-0 left-0 h-full w-full"
                     />
                 )}
@@ -45,15 +46,15 @@ export default function Resume({ isFade, setCursorColor }) {
                     href="/resume.pdf"
                     download="resume.pdf"
                     className="w-full h-1/2 p-1 flex justify-center items-center text-xs font-light"
-                    onMouseEnter={handleEnter}
-                    onMouseLeave={handleExit}
+                    onMouseEnter={!isFade ? handleEnter : undefined}
+                    onMouseLeave={!isFade ? handleExit : undefined}
                 >
                     <DownloadSimple size={iconSize} weight="light" />
                 </a>
                 <button
                     className="w-full h-1/2 p-1 flex justify-center items-center text-xs font-light"
-                    onMouseEnter={handleEnter}
-                    onMouseLeave={handleExit}
+                    onMouseEnter={!isFade ? handleEnter : undefined}
+                    onMouseLeave={!isFade ? handleExit : undefined}
                 >
                     <Eye size={iconSize} weight="light" />
                 </button>

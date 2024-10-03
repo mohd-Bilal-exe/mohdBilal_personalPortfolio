@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 
 export default function Banner() {
@@ -17,12 +17,12 @@ const MarqueeItem = () => {
         "Personal Portfolio", "Mohd Bilal", "Full Stack Developer", "Frontend Expert"
     ]
     return (
-        <div className="flex items-center ">
-            <motion.div
+        <div className="flex items-center transform-gpu">
+            <m.div
                 initial={{ x: `${from}` }}
                 animate={{ x: `${to}` }}
                 transition={{
-                    duration: 12, //repeat: Infinity, ease: "linear"
+                    duration: 12,// repeat: Infinity, ease: "linear"
                 }}
                 className="flex flex-shrink-0"
             >
@@ -34,8 +34,8 @@ const MarqueeItem = () => {
                         </span>
                     );
                 })}
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
                 initial={{ x: `${from}` }}
                 animate={{ x: `${to}` }}
                 transition={{
@@ -51,7 +51,7 @@ const MarqueeItem = () => {
                         </span>
                     );
                 })}
-            </motion.div>
+            </m.div>
         </div>
     );
 };

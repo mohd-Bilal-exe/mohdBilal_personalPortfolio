@@ -178,8 +178,6 @@ function App() {
     { key: "SkillStack", component: <SkillStack isFade={componentFaded.SkillStack} /> },
     { key: "Projects", component: <Project isFade={componentFaded.Projects} setCursorColor={setCursorColor} /> },
   ];
-
-
   return (
     <>
       {isAnimating && (
@@ -197,9 +195,10 @@ function App() {
         {showWelcomeScreen && <WelcomeScreen />}
       </AnimatePresence>
       {(showGrid && !showWelcomeScreen) && <CursorGradient cursorPos={cursorPos} darkMode={darkMode} Properties={cursorColor} />}
+      <div className="w-screen h-screen backdrop-blur-2xl grayscale z-[500] hidden smartphone:fixed top-0 left-0"> </div>
       {showGrid && (
 
-        <div
+        <div id="MainCunt"
           className={`${darkMode && "dark"} ubuntu relative grid content-stretch  grid-cols-12 gap-[1px] dark:bg-white/20   text-bg1 select-none curso r-none scroll-smooth`}
         >
           <div className="col-span-1 bg-white/90 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px]   xs:-[45px]  z-[3]"></div>

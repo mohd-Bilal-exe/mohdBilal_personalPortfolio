@@ -12,9 +12,9 @@ export default function ExtrasCollapsed({ isFade, setWhatsClicked, handleClick, 
 
     return (
         <div
-            onMouseEnter={!isFade && handleEnter}
-            onMouseLeave={!isFade && handleExit}
-            className={`w-full h-full flex items-center p-2 relative ${isFade && "pointer-events-none grayscale opacity-10"}`}
+            onMouseEnter={!isFade ? handleEnter : undefined}
+            onMouseLeave={!isFade ? handleExit : undefined}
+            className={`w-full h-full flex items-center p-2 relative ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}
         >
             <AnimatePresence>
                 {isFade && (
@@ -22,6 +22,7 @@ export default function ExtrasCollapsed({ isFade, setWhatsClicked, handleClick, 
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
                         className="z-[500] fixed top-0 left-0 h-full w-full bg-black/30 dark:bg-white/10"
                     />
                 )}
@@ -44,9 +45,8 @@ export default function ExtrasCollapsed({ isFade, setWhatsClicked, handleClick, 
                 </div>
 
                 <FlyingSaucer
-                    size={"96%"}
                     weight="thin"
-                    className="group-hover:text-red-900 group-hover:scale-95 transition-all duration-700"
+                    className="mx-auto w-1/4 h-full group-hover:text-red-900 group-hover:scale-95 transition-all duration-700"
                 />
             </div>
         </div>
@@ -57,6 +57,5 @@ ExtrasCollapsed.propTypes = {
     setWhatsClicked: PropTypes.func.isRequired,
     setCursorColor: PropTypes.func.isRequired,
     handleClick: PropTypes.func.isRequired,
-    darkMode: PropTypes.bool.isRequired,
     isFade: PropTypes.bool.isRequired,
 };

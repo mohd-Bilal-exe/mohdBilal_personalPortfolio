@@ -11,13 +11,14 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
     };
 
     return (
-        <div className={`flex flex-col relative  w-full h-full ${isFade && "pointer-events-none grayscale opacity-10"} transition-all`}>
+        <div className={`flex flex-col relative  w-full h-full ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}>
             <AnimatePresence>
                 {isFade && (
                     <m.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
                         className="z-[500] fixed top-0 left-0 h-full w-full dark:bg-white/10 bg-black/20 "
                     />
                 )}
@@ -44,8 +45,8 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
                     setWhatsClicked("About");
                     handleClick();
                 }}
-                onMouseEnter={handleEnter}
-                onMouseLeave={handleExit}
+                onMouseEnter={!isFade ? handleEnter : undefined}
+                onMouseLeave={!isFade ? handleExit : undefined}
                 className="group h-6 w-fit place-self-end flex gap-1 justify-between items-center dark:bg-white/5 pl-2 pr-1 overflow-hidden"
             >
                 <div className="h-full w-fit flex flex-col gap-1 pt-1 text-xs tracking-wider group-hover:-translate-y-5 transition-transform ease-out duration-200">

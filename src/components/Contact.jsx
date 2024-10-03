@@ -11,9 +11,9 @@ export const LinkedIn = ({ isFade, setCursorColor }) => {
 
     return (
         <div
-            onMouseEnter={!isFade && handleEnter}
-            onMouseLeave={!isFade && handleExit}
-            className={`w-full h-full p-2 grid place-content-center relative ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-500`}
+            onMouseEnter={!isFade ? handleEnter : undefined}
+            onMouseLeave={!isFade ? handleExit : undefined}
+            className={`w-full h-full p-2 grid place-content-center relative ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}
         >
             <AnimatePresence>
                 {isFade && (
@@ -21,6 +21,7 @@ export const LinkedIn = ({ isFade, setCursorColor }) => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
                         className="z-[500] fixed top-0 left-0 h-full w-full bg-black/30 dark:bg-white/10"
                     />
                 )}
@@ -32,7 +33,9 @@ export const LinkedIn = ({ isFade, setCursorColor }) => {
                 rel="noreferrer"
                 className="group w-full h-full grid place-content-center group-hover:text-lnkin/90 group-hover:scale-95 transition-all duration-700"
             >
-                <LinkedinLogo size={"96%"} weight="thin" />
+                <LinkedinLogo size={"96%"}
+                    className="smartphone:w-[75%] mx-auto"
+                    weight="thin" />
             </a>
         </div>
     );
@@ -55,9 +58,9 @@ export const GitHub = ({ isFade, setCursorColor }) => {
 
     return (
         <div
-            onMouseEnter={!isFade && handleEnter}
-            onMouseLeave={!isFade && handleExit}
-            className={`w-full h-full p-2 grid place-content-center relative ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-500`}
+            onMouseEnter={!isFade ? handleEnter : undefined}
+            onMouseLeave={!isFade ? handleExit : undefined}
+            className={`w-full h-full p-2 grid place-content-center relative ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}
         >
             <AnimatePresence>
                 {isFade && (
@@ -65,6 +68,7 @@ export const GitHub = ({ isFade, setCursorColor }) => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
                         className="z-[500] fixed top-0 left-0 h-full w-full  bg-black/30 dark:bg-white/10"
                     />
                 )}
@@ -79,7 +83,7 @@ export const GitHub = ({ isFade, setCursorColor }) => {
                 <GithubLogo
                     size={"96%"}
                     weight="thin"
-                    className="group-hover:text-gray-500 group-hover:scale-95 transition-all duration-700"
+                    className=" mx-auto group-hover:text-gray-500 group-hover:scale-95 transition-all duration-700"
                 />
             </a>
         </div>
@@ -100,9 +104,9 @@ export const Instagram = ({ isFade, setCursorColor }) => {
 
     return (
         <div
-            onMouseEnter={!isFade && handleEnter}
-            onMouseLeave={!isFade && handleExit}
-            className={`w-full h-full p-2 grid place-content-center relative ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-500`}
+            onMouseEnter={!isFade ? handleEnter : undefined}
+            onMouseLeave={!isFade ? handleExit : undefined}
+            className={`w-full h-full p-2 grid place-content-center relative ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}
         >
             <AnimatePresence>
                 {isFade && (
@@ -110,6 +114,7 @@ export const Instagram = ({ isFade, setCursorColor }) => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
                         className="z-[500] fixed top-0 left-0 h-full w-full  bg-black/30 dark:bg-white/10"
                     />
                 )}
@@ -124,7 +129,7 @@ export const Instagram = ({ isFade, setCursorColor }) => {
                 <InstagramLogo
                     size={"96%"}
                     weight="thin"
-                    className="group-hover:scale-95 group-hover:text-insta transition-all duration-700"
+                    className="smartphone:w-[86%] group-hover:scale-95 group-hover:text-insta transition-all duration-700"
                 />
             </a>
         </div>
@@ -149,9 +154,9 @@ export const Email = ({ isFade, setCursorColor }) => {
 
     return (
         <div
-            onMouseEnter={!isFade && handleEnter}
-            onMouseLeave={!isFade && handleExit}
-            className={`w-full h-full p-2 relative ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-500`} // Disable interactions when isFade
+            onMouseEnter={!isFade ? handleEnter : undefined}
+            onMouseLeave={!isFade ? handleExit : undefined}
+            className={`w-full h-full p-2 relative ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`} // Disable interactions when isFade
         >
             <AnimatePresence>
                 {isFade && (
@@ -159,6 +164,7 @@ export const Email = ({ isFade, setCursorColor }) => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
                         className="z-[500] fixed top-0 left-0 h-full w-full  bg-black/30 dark:bg-white/10" // Blur and semi-transparent overlay
                     />
                 )}
@@ -166,7 +172,7 @@ export const Email = ({ isFade, setCursorColor }) => {
 
             <div className={`group w-full h-full flex items-center justify-center ${isFade ? "grayscale" : ""}`}>
                 <div className="w-2/3 relative block overflow-hidden whitespace-nowrap">
-                    <a href="mailto:mohammadbilal.mail@gmail.com" target="_blank" className={`${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-500`}>
+                    <a href="mailto:mohammadbilal.mail@gmail.com" target="_blank" className={`${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}>
                         <div className="w-full text-4xl flex justify-start ml-2 font-thin Pally h-10 overflow-hidden">
                             <div className="w-fit flex flex-col group-hover:-translate-y-10 transition-transform ease-out duration-200">
                                 <h1>E-Mail</h1>

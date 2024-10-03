@@ -7,7 +7,7 @@ import { LiaNode } from "react-icons/lia";
 
 export const DivOrigami = () => {
     return (
-        <section className="flex h-full flex-col items-center justify-center gap-12  px-4 py-24 md:flex-row">
+        <section className="flex h-full  flex-col items-center justify-center gap-12  px-4 py-24 md:flex-row">
             <LogoRolodex
                 items={[
                     <LogoItem key={1} className="bg-[#E34F26] text-neutral-900">
@@ -63,7 +63,7 @@ const LogoRolodex = ({ items }) => {
                 transform: "rotateY(-20deg)",
                 transformStyle: "preserve-3d",
             }}
-            className="relative z-0 h-2 w-56 shrink-0 rounded-full border border-neutral-700 bg-neutral-900 dark:bg-white"
+            className="relative z-0 h-2 w-56 smartphone:w-[10rem] shrink-0 rounded-full border border-neutral-700 bg-neutral-900 dark:bg-white"
         >
             <AnimatePresence mode="sync">
                 <m.div
@@ -112,7 +112,7 @@ const LogoRolodex = ({ items }) => {
                 style={{
                     transform: "translateZ(1px)",
                 }}
-                className="absolute w-[93.5%]  left-2 right-0 top-1/2 z-[999999999] -translate-y-1/2 border-t-2 border-neutral-800"
+                className="absolute w-[93%] smartphone:w-[91%] left-2  top-1/2 z-[999999999] -translate-y-1/2 border-t-2 border-neutral-800"
             />
         </div>
     );
@@ -122,7 +122,7 @@ const LogoItem = ({ children, className }) => {
     return (
         <div
             className={twMerge(
-                "flex flex-col justify-center items-center h-36 w-52 place-content-center  bg-neutral-700  text-8xl text-neutral-50",
+                "flex flex-col justify-center items-center h-36 w-52 smartphone:w-36 place-content-center  bg-neutral-700  text-8xl text-neutral-50",
                 className
             )}
         >

@@ -1,4 +1,5 @@
 import { Responsive, WidthProvider } from "react-grid-layout";
+import PropTypes from 'prop-types';
 import { AnimatePresence, m } from "framer-motion";
 import Title from "./components/Title";
 import { NavigationArrow } from "@phosphor-icons/react";
@@ -75,24 +76,20 @@ export default function Project({ isFade, setCursorColor }) {
         setCursorColor({ color: "bg-white", size: "w-2 h-2" });
     }
     return (
-        <div className={`"layout w-full h-full mr-[1px] ${isFade && "gray scale"}`}>
+        <div className={`layout w-full h-full mr-[1px] ${isFade && "pointer-events-none"}`}>
             <AnimatePresence>
-                {!isFade && <m.div
-                    initial={{ opacity: 0 }}
-                    animate={{
-                        opacity: 1,
-                    }}
-                    exit={{
-                        opacity: 0
-                    }}
-                    style={{
-                        filter: "grayscale(100%)"
-                    }}
-                    className="z-[500]  fixed dark:bg-white/10  bg-black/20   top-0 left-0  h-full w-full"></m.div>}
+                {isFade && (
+                    <m.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="z-[500] fixed top-0 left-0 h-full w-full bg-white/10 dark:bg-black/5 "
+                    />
+                )}
             </AnimatePresence>
 
+
             <ProjectGridLayout
-                className={isFade && "backdr op-blur-xl"}
                 key="Projects"
                 layouts={{ lg: projectLayouts.lg, md: projectLayouts.lg, sm: projectLayouts.sm, xxs: projectLayouts.xs }}
                 breakpoints={{ lg: 1200, md: 992, sm: 768, xxs: 480 }}
@@ -104,16 +101,16 @@ export default function Project({ isFade, setCursorColor }) {
                 isDraggable={false}
                 useCSSTransforms={false}
             >
-                <div key="Heading" className="dark:bg-darkGray/90 backdrop-blur-xl dark:text-white bg-white/90">
-                    <Title />
+                <div key="Heading" className={`dark:bg-darkGray/90 backdrop-blur-xl dark:text-white bg-white/90 `}>
+                    <Title isFade={isFade} />
                 </div>
 
                 {
                     Projects.map((Project) => {
                         return (
                             <m.div
-                                key={Project.key} className="dark:bg-darkGray/90 backdrop-blur-xl dark:text-white bg-white/90 ">
-                                <div className="group w-full h-full flex flex-col justify-center items-start   z-50">
+                                key={Project.key} className={`dark:bg-darkGray/90 backdrop-blur-xl dark:text-white bg-white/90 `}>
+                                <div className={`group w-full h-full flex flex-col justify-center items-start   z-50 ${isFade && "grayscale opacity-10"} transition-all duration-300`}>
                                     <div className="w-full h-4/5 flex">
                                         <div id="Texts" className="w-2/5 h-full p-6 text-4xl flex flex-col justify-center text-pretty">
                                             <h1 className="ml-1 tracking-wider Pally">{Project.title}</h1>
@@ -162,3 +159,7 @@ export default function Project({ isFade, setCursorColor }) {
         </div>
     )
 }
+Project.propTypes = {
+    setCursorColor: PropTypes.func.isRequired,
+    isFade: PropTypes.bool.isRequired
+};
