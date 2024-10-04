@@ -27,7 +27,7 @@ export default function SkillStack({ isFade }) {
 
                 <Arrow className="w-20 h-20 z-0  absolute top-12  rotate-[18deg]  -translate-y-10 translate-x-40" />
             </div>
-            <DivOrigami />
+            <DivOrigami isFade={isFade} />
         </section>
     );
 }

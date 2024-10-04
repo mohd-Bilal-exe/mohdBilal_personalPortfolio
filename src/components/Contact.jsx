@@ -13,7 +13,7 @@ export const LinkedIn = ({ isFade, setCursorColor }) => {
         <div
             onMouseEnter={!isFade ? handleEnter : undefined}
             onMouseLeave={!isFade ? handleExit : undefined}
-            className={`w-full h-full p-2 grid place-content-center relative ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}
+            className={`w-full h-full p-2   grid place-content-center relative ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}
         >
             <AnimatePresence>
                 {isFade && (

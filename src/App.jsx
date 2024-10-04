@@ -232,7 +232,7 @@ function App() {
                     delay: index * 0.05,  // Stagger the tiles for a cascading effect
                     ease: "easeInOut",  // Smooth easing for a more natural effect
                   }}
-                  className={`${gridItem.key === "Email" && ""} w-full h-full ${gridItem.key !== "Projects" ? " dark:bg-darkGray/90 backdrop-blur-xl dark:text-white bg-white/90" : ""}  flex justify-center items-center `}
+                  className={`${(gridItem.key === "Email" || gridItem.key === "Instagram" || gridItem.key === "LinkedIn") && "smartphone:border-r border-white/5"} w-full h-full ${gridItem.key !== "Projects" ? " dark:bg-darkGray/90 backdrop-blur-xl dark:text-white bg-white/90" : ""}  flex justify-center items-center `}
                 >
                   {gridItem.component}
                 </m.div>

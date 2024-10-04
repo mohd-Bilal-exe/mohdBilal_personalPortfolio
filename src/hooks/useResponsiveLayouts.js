@@ -62,7 +62,7 @@ const useResponsiveLayouts = () => {
       { i: "Resume", x: 0, y: 23, w: 3, h: 3 },
       { i: "DarkMode", x: 0, y: 26, w: 3, h: 2 },
       { i: "Location", x: 0, y: 28, w: 3, h: 5 },
-      { i: "Projects", x: 0, y: 33, w: 3, h: 12 },
+      { i: "Projects", x: 0, y: 33, w: 3, h: 33 },
     ],
   };
 
@@ -306,7 +306,7 @@ const useResponsiveLayouts = () => {
               { i: "SkillStack", x: 0, y: 17, w: 3, h: 7 },
               { i: "Resume", x: 0, y: 24, w: 3, h: 3 },
               { i: "DarkMode", x: 0, y: 27, w: 3, h: 2 },
-              { i: "Projects", x: 0, y: 29, w: 3, h: 12 },
+              { i: "Projects", x: 0, y: 29, w: 3, h: 33 },
             ],
           }));
           break;
@@ -319,7 +319,7 @@ const useResponsiveLayouts = () => {
               { i: "Navbar", x: 0, y: 1, w: 3, h: 1, static: true },
 
               { i: "SkillStack", x: 0, y: 2, w: 3, h: 5 }, // SkillStack first
-              { i: "Projects", x: 0, y: 7, w: 3, h: 10 }, // Projects below SkillStack
+              { i: "Projects", x: 0, y: 7, w: 3, h: 33 }, // Projects below SkillStack
               { i: "Resume", x: 0, y: 17, w: 3, h: 4 }, // Resume below Projects
               { i: "DarkMode", x: 0, y: 21, w: 3, h: 2 }, // DarkMode below Resume
 
@@ -353,7 +353,7 @@ const useResponsiveLayouts = () => {
               { i: "Resume", x: 0, y: 23, w: 3, h: 3 },
               { i: "DarkMode", x: 0, y: 26, w: 3, h: 2 },
               { i: "Location", x: 0, y: 28, w: 3, h: 5 },
-              { i: "Projects", x: 0, y: 33, w: 3, h: 12 },
+              { i: "Projects", x: 0, y: 33, w: 3, h: 33 },
             ],
           }));
         }

@@ -22,9 +22,9 @@ const MarqueeItem = () => {
                 initial={{ x: `${from}` }}
                 animate={{ x: `${to}` }}
                 transition={{
-                    duration: 12,// repeat: Infinity, ease: "linear"
+                    duration: 12, repeat: Infinity, ease: "linear"
                 }}
-                className="flex flex-shrink-0"
+                className="flex flex-shrink-0 transform-cpu"
             >
                 {texts.map((text, index) => {
                     return (
@@ -39,9 +39,9 @@ const MarqueeItem = () => {
                 initial={{ x: `${from}` }}
                 animate={{ x: `${to}` }}
                 transition={{
-                    duration: 12, //repeat: Infinity, ease: "linear"
+                    duration: 12, repeat: Infinity, ease: "linear"
                 }}
-                className="flex flex-shrink-0"
+                className="flex flex-shrink-0 transform-cpu"
             >
                 {texts.map((text, index) => {
                     return (

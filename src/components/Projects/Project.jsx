@@ -114,11 +114,11 @@ export default function Project({ isFade, setCursorColor }) {
                                 key={Project.key} className={`dark:bg-darkGray/90 backdrop-blur-xl dark:text-white bg-white/90 `}>
                                 <div className={`group w-full h-full flex flex-col justify-center items-start   z-50 ${isFade && "grayscale opacity-10"} transition-all duration-300`}>
                                     <div className="w-full h-4/5 flex">
-                                        <div id="Texts" className="w-2/5 h-full p-6 text-4xl flex flex-col justify-center text-pretty">
+                                        <div id="Texts" className="w-2/5 smartphone:w-1/2  h-full p-6 text-4xl flex flex-col justify-center text-pretty">
                                             <h1 className="ml-1 tracking-wider Pally">{Project.title}</h1>
                                             <h2 className="text-xs ml-3 mt-2 tracking-wider font-extralight">{Project.description}</h2>
                                         </div>
-                                        <div id="imageCont" className="w-3/5 h-full p-4 flex items-center justify-center   ">
+                                        <div id="imageCont" className="w-3/5 smartphone:w-1/2  h-full p-4 flex items-center justify-center   ">
                                             <div
                                                 className="w-full h-full overflow-hidden rounded-2xl drop-shadow-[0px_0px_2px_rgba(255,255,255,0.35)] transition-all duration-300 group-hover:scale-[99%] bg-contain bg-center bg-no-repeat"
                                                 style={{
