@@ -28,10 +28,10 @@ const MarqueeItem = () => {
             >
                 {texts.map((text, index) => {
                     return (
-                        <span key={index} className="mx-1 flex justify-center items-center">
+                        <div key={index} className="mx-1 flex justify-center items-center">
                             <img src="/star1.svg" className={`h-4 mr-2`}></img>
                             <span className={`${index === 0 && "font-medium text-purple-500 Pally"}`}>{text}</span>
-                        </span>
+                        </div>
                     );
                 })}
             </m.div>
@@ -45,10 +45,10 @@ const MarqueeItem = () => {
             >
                 {texts.map((text, index) => {
                     return (
-                        <span key={index} className="mx-1 flex justify-center items-center">
+                        <div key={index} className="mx-1 flex justify-center items-center">
                             <img src="/star1.svg" className={`h-4 mr-2`}></img>
                             <span className={twMerge(index === 0 ? "font-medium text-purple-500 Pally" : "ubuntu")}>{text}</span>
-                        </span>
+                        </div>
                     );
                 })}
             </m.div>

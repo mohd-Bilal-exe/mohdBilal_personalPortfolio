@@ -132,7 +132,7 @@ export default function Project({ isFade, setCursorColor }) {
                                         {
                                             Project.tech.map((item) => {
                                                 return (
-                                                    <span key={item} className="dark:bg-white/5 bg-darkGray/5 px-2 text-sm smartphone:text-xs  rounded-sm group-hover:scale-[102%] transition-all">
+                                                    <span key={item} className="dark:bg-white/5 bg-darkGray/5 px-2 py-1  text-sm smartphone:text-xs  rounded-sm group-hover:scale-[102%] transition-all">
                                                         {item}
                                                     </span>
 
