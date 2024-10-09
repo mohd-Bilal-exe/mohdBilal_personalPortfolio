@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 
 export default function ExtrasCollapsed({ isFade, setWhatsClicked, handleClick, setCursorColor }) {
     const handleEnter = () => {
-        setCursorColor({ color: "bg-gradient-to-br from-red-900 to-red-600 ", size: "w-4 h-4" });
+        setCursorColor({ color: "bg-gradient-to-br from-red-900 to-red-600 shadow-red-600", size: "w-4 h-4" });
     };
     const handleExit = () => {
-        setCursorColor({ color: "bg-white", size: "w-2 h-2" });
+        setCursorColor({ color: "bg-white shadow-white", size: "w-2 h-2" });
     };
 
     return (

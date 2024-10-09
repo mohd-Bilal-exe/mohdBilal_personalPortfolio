@@ -72,10 +72,10 @@ const Projects = [
 
 export default function Project({ isFade, setCursorColor }) {
     const handleEnter = () => {
-        setCursorColor({ color: "bg-gradient-to-br  from-cyan-500 to-green-600", size: "" });
+        setCursorColor({ color: "bg-gradient-to-br  from-cyan-500 to-green-600 shadow-green-600", size: "" });
     }
     const handleExit = () => {
-        setCursorColor({ color: "bg-white", size: "w-2 h-2" });
+        setCursorColor({ color: "bg-white shadow-white", size: "w-2 h-2" });
     }
     return (
         <div className={`layout w-full h-full mr-[1px] ${isFade && "pointer-events-none"}`}>

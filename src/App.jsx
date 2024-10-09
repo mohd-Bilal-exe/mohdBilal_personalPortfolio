@@ -199,7 +199,7 @@ function App() {
       {showGrid && (
 
         <div id="MainCunt"
-          className={` ${darkMode && "dark"} ubuntu relative grid content-stretch  grid-cols-12 gap-[1px] dark:bg-white/20   text-bg1 select-none curso r-none scroll-smooth`}
+          className={` ${darkMode && "dark"} ubuntu relative grid content-stretch  grid-cols-12 gap-[2px] dark:bg-white/20   text-bg1 select-none curso r-none scroll-smooth`}
         >
           <div className="col-span-1 bg-white/90 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px]   xs:-[45px]  z-[3]"></div>
           <div className="col-span-10 bg-white/90 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px]  xs:-[45px]  z-[3]"></div>
@@ -211,7 +211,7 @@ function App() {
               layouts={{ lg: layouts.lg, md: layouts.lg, sm: layouts.sm, xxs: layouts.xs }}
               breakpoints={{ lg: 1200, md: 992, sm: 768, xxs: 480 }}
               cols={{ lg: 12, md: 12, sm: 6, xxs: 3 }}
-              margin={[1, 1]}
+              margin={[2, 2]}
               containerPadding={[0, 0]}
               rowHeight={45}
               isResizable={false}
@@ -232,7 +232,7 @@ function App() {
                     delay: index * 0.05,  // Stagger the tiles for a cascading effect
                     ease: "easeInOut",  // Smooth easing for a more natural effect
                   }}
-                  className={`${(gridItem.key === "Email" || gridItem.key === "Instagram" || gridItem.key === "LinkedIn") && "smartphone:border-r border-white/5"} w-full h-full ${gridItem.key !== "Projects" ? " dark:bg-darkGray/90 backdrop-blur-xl dark:text-white bg-white/90" : ""}  flex justify-center items-center `}
+                  className={` ${(gridItem.key === "Email" || gridItem.key === "Instagram" || gridItem.key === "LinkedIn") && "smartphone:border-r border-white/5"} w-full h-full ${gridItem.key !== "Projects" ? " dark:bg-darkGray/90 backdrop-blur-xl dark:text-white bg-white/90" : ""}  flex justify-center items-center `}
                 >
                   {gridItem.component}
                 </m.div>

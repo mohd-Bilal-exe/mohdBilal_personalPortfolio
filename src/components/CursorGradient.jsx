@@ -10,8 +10,8 @@ export default function CursorGradient({ cursorPos, darkMode, Properties }) {
     useEffect(() => {
         const updateCursorPosition = () => {
             controls.set({
-                x: cursorPos.x - 64,
-                y: cursorPos.y - 64,
+                x: cursorPos.x - 48,
+                y: cursorPos.y - 48,
             });
             const relativePos = Properties.size === "w-4 h-4" ? 9 : 5;
             controls2.set({
@@ -21,11 +21,6 @@ export default function CursorGradient({ cursorPos, darkMode, Properties }) {
         };
 
         updateCursorPosition();
-        // Continuously update position
-        // window.addEventListener('mousemove', updateCursorPosition);
-
-        // Cleanup listener on component unmount
-        //return () => window.removeEventListener('mousemove', updateCursorPosition);
     }, [cursorPos, controls, Properties.size, controls2]);
 
     return (
@@ -33,8 +28,9 @@ export default function CursorGradient({ cursorPos, darkMode, Properties }) {
             <m.div
                 key="Grad1"
                 className={twMerge(
-                    darkMode ? Properties.color : "bg-purple-500",
-                    "absolute top-0 w-32 h-32 smartphone:hidden rounded-full pointer-events-none z-[0] transition-colors duration-500"
+                    "absolute top-0 w-24 h-24 smartphone:hidden rounded-full pointer-events-none z-[0] transition-colors duration-500",
+                    darkMode ? Properties.color : "bg-gradient-to-br from-purple-500 to-cyan-300",
+                    "shadow-[0_0_20px_30px] " // Optional shadow for gradient effect
                 )}
                 animate={controls}
                 transition={{
@@ -44,7 +40,7 @@ export default function CursorGradient({ cursorPos, darkMode, Properties }) {
             <m.div
                 key="Grad2"
                 className={twMerge(
-                    "absolute top-0 w-2 h-2 smartphone:hidden rounded-full pointer-events-none z-[200] transition-colors duration-300",
+                    "absolute top-0 rounded-full pointer-events-none z-[200] transition-colors duration-300",
                     darkMode ? Properties.color : "bg-purple-500",
                     Properties.size
                 )}

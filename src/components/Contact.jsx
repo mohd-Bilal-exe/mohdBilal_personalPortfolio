@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { AnimatePresence, m } from "framer-motion";
 export const LinkedIn = ({ isFade, setCursorColor }) => {
     const handleEnter = () => {
-        setCursorColor({ color: "bg-gradient-to-br from-lnkin to-cyan-300", size: "w-4 h-4" });
+        setCursorColor({ color: "bg-gradient-to-br from-lnkin to-cyan-300 shadow-cyan-300", size: "w-4 h-4" });
     };
     const handleExit = () => {
-        setCursorColor({ color: "bg-white", size: "w-2 h-2" });
+        setCursorColor({ color: "bg-white shadow-white", size: "w-2 h-2" });
     };
 
     return (
@@ -50,10 +50,10 @@ LinkedIn.propTypes = {
 
 export const GitHub = ({ isFade, setCursorColor }) => {
     const handleEnter = () => {
-        setCursorColor({ color: "bg-gradient-to-br from-gray-500 to-gray-200", size: "w-4 h-4" });
+        setCursorColor({ color: "bg-gradient-to-br from-gray-500 to-gray-200 shadow-gray-200", size: "w-4 h-4" });
     };
     const handleExit = () => {
-        setCursorColor({ color: "bg-white", size: "w-2 h-2" });
+        setCursorColor({ color: "bg-white shadow-white", size: "w-2 h-2" });
     };
 
     return (
@@ -96,10 +96,10 @@ GitHub.propTypes = {
 };
 export const Instagram = ({ isFade, setCursorColor }) => {
     const handleEnter = () => {
-        setCursorColor({ color: "bg-gradient-to-br from-insta to-red-700", size: "w-4 h-4" });
+        setCursorColor({ color: "bg-gradient-to-br from-insta to-red-700 shadow-red-700", size: "w-4 h-4" });
     }
     const handleExit = () => {
-        setCursorColor({ color: "bg-white", size: "w-2 h-2" });
+        setCursorColor({ color: "bg-white shadow-white", size: "w-2 h-2" });
     }
 
     return (
@@ -146,10 +146,10 @@ GitHub.propTypes = {
 };
 export const Email = ({ isFade, setCursorColor }) => {
     const handleEnter = () => {
-        setCursorColor({ color: "bg-gradient-to-br from-yellow-500 to-yellow-600", size: "w-4 h-4" });
+        setCursorColor({ color: "bg-gradient-to-br from-yellow-500 to-yellow-600 shadow-yellow-600", size: "w-4 h-4" });
     }
     const handleExit = () => {
-        setCursorColor({ color: "bg-white", size: "w-2 h-2" });
+        setCursorColor({ color: "bg-white shadow-white shadow-white", size: "w-2 h-2" });
     }
 
     return (
@@ -177,14 +177,14 @@ export const Email = ({ isFade, setCursorColor }) => {
                             <div className="w-fit flex flex-col group-hover:-translate-y-10 transition-transform ease-out duration-200">
                                 <h1>E-Mail</h1>
                                 <h1
-                                    className="text-xs font-normal tracking-wide bg-gradient-to-br from-yellow-500 to-yellow-300 text-transparent bg-clip-text">
+                                    className="text-xs font-normal tracking-wide bg-gradient-to-br dark:from-yellow-500 from-yellow-900 dark:to-yellow-300 to-yellow-700 text-transparent bg-clip-text">
                                     Have a cool project on mind? <br />Drop a hello
                                 </h1>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div className="h-full w-1/3 grid place-content-center group-hover:text-yellow-500 group-hover:scale-95 transition-all duration-700">
+                <div className="h-full w-1/3 grid place-content-center group-hover:dark:text-yellow-500 group-hover:text-yellow-900 group-hover:scale-95 transition-all duration-700">
                     <Envelope size={"96%"} weight="thin" />
                 </div>
             </div>

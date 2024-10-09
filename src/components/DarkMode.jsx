@@ -3,10 +3,10 @@ import { m } from 'framer-motion'
 import PropTypes from 'prop-types';
 export default function DarkMode({ setDarkMode, darkMode, setCursorColor }) {
     const handleEnter = () => {
-        setCursorColor({ color: "bg-gradient-to-br from-cyan-500 to-blue-600", size: "" });
+        setCursorColor({ color: "bg-gradient-to-br from-cyan-500 to-blue-600 shadow-blue-600", size: "" });
     }
     const handleExit = () => {
-        setCursorColor({ color: "bg-white", size: "w-2 h-2" });
+        setCursorColor({ color: "bg-white shadow-white", size: "w-2 h-2" });
     }
     return (
         <button className={`w-full h-full z-[100] flex`} >

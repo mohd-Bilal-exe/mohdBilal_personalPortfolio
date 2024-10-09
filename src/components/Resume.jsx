@@ -8,11 +8,11 @@ export default function Resume({ isFade, setCursorColor }) {
     const [iconSize, setIconSize] = useState(40);
 
     const handleEnter = () => {
-        setCursorColor({ color: "bg-gradient-to-br from-blue-500 to-purple-600", size: "w-2 h-2" });
+        setCursorColor({ color: "bg-gradient-to-br from-blue-500 to-purple-600 shadow-purple-600", size: "w-2 h-2" });
     };
 
     const handleExit = () => {
-        setCursorColor({ color: "bg-white", size: "w-2 h-2" });
+        setCursorColor({ color: "bg-white shadow-white", size: "w-2 h-2" });
     };
 
     useEffect(() => {
