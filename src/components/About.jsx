@@ -4,10 +4,10 @@ import { AnimatePresence, m } from "framer-motion";
 
 export default function About({ isFade, handleClick, setWhatsClicked, setCursorColor }) {
     const handleEnter = () => {
-        setCursorColor({ color: "bg-gradient-to-br from-red-500 to-red-400 ", size: "w-2 h-2" });
+        setCursorColor({ color: "bg-gradient-to-br from-red-500 to-red-400 shadow-red-400", size: "w-2 h-2" });
     };
     const handleExit = () => {
-        setCursorColor({ color: "bg-white", size: "w-2 h-2" });
+        setCursorColor({ color: "bg-white shadow-white", size: "w-2 h-2" });
     };
 
     return (

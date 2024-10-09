@@ -96,7 +96,7 @@ export default function Project({ isFade, setCursorColor }) {
                 layouts={{ lg: projectLayouts.lg, md: projectLayouts.lg, sm: projectLayouts.sm, xxs: projectLayouts.xs }}
                 breakpoints={{ lg: 1200, md: 992, sm: 768, xxs: 480 }}
                 cols={{ lg: 6, md: 6, sm: 2, xxs: 2 }}
-                margin={[1, 1]}
+                margin={[2, 2]}
                 containerPadding={[0, 0]}
                 rowHeight={45}
                 isResizable={false}
