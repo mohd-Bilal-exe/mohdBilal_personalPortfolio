@@ -36,7 +36,7 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
                     </div>
                 </div>
                 <p className="w-[86%] text-base smartphone:text-xs  text-gray-600 dark:text-white mb-4 ml-3 text-pretty">
-                    Full stack developer from Lucknow, India. <br /> A frontend expert with love for crafting modern UIs with React, Tailwind CSS, and Framer-motion.
+                    Full Stack Wizard from Lucknow, India ⚡|  Frontend Fanatic & Web Dev Junkie Who Builds Sites for Fun (and occasionally just to impress my cat)
                 </p>
             </div>
 
