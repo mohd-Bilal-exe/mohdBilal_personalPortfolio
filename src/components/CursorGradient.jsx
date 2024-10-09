@@ -40,7 +40,7 @@ export default function CursorGradient({ cursorPos, darkMode, Properties }) {
             <m.div
                 key="Grad2"
                 className={twMerge(
-                    "absolute top-0 rounded-full pointer-events-none z-[200] transition-colors duration-300",
+                    "absolute top-0 smartphone:hidden  rounded-full pointer-events-none z-[200] transition-colors duration-300",
                     darkMode ? Properties.color : "bg-purple-500",
                     Properties.size
                 )}
