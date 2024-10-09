@@ -1,23 +1,32 @@
 import PropTypes from 'prop-types';
 import { m } from "framer-motion";
-import { ArrowBendDoubleUpLeft } from "@phosphor-icons/react";
+import { ArrowBendDoubleUpLeft, ArrowLeft } from "@phosphor-icons/react";
 import { twMerge } from "tailwind-merge";
 
 export default function ExpandedAbout({ handleClickAfter, darkMode }) {
-    const bgText = darkMode ? "bg-darkGray text-w1" : "bg-white text-darkGray"
+    const bgText = darkMode ? "dark" : "Some_other_thing_but_not_dark"
     return (
         <div className={twMerge("fixed top-0 left-0 z-[20] backdrop-blur w-fit h-full overflow-y-auto", bgText)}>
+            <button
+                onClick={handleClickAfter} className="absolute z-[500]  dark:text-w1 top-3 left-3 group flex h-8 w-8 overflow-hidden"
+            >
+                <div className="flex h-full w-16 group-hover:-translate-x-8 transition-transform duration-500 ease-in-out ">
+                    <ArrowLeft size={32} weight='thin' />
+                    <ArrowLeft size={32} weight='regular' />
+                </div>
+
+            </button>
             <m.section
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.75, duration: 0.50, ease: "easeInOut" }}
-                className="h-full w-screen flex justify-center bg-bg2 "
+                className="h-full w-screen flex justify-center dark:bg-darkGray dark:text-w1 bg-white "
             >
                 <div className="w-3/5 smartphone:w-11/12 mb-2">
                     <div className="overflow-hidden">
                         <m.h1 initial={{ y: 200 }}
                             animate={{ y: 0 }}
-                            onClick={handleClickAfter}
+
                             transition={{ delay: 1, duration: 0.5, ease: "easeInOut", type: "spring" }} className="text-7xl smartphone:text-4xl coolfont ml-6 mt-48 laptop:mt-36 smartphone:mt-16  flex items-end tracking-widest drop-shadow-text-lg">
                             Hello There <span className="text-red-500  ml-4 h-full">!</span>
                         </m.h1></div><div className="overflow-hidden">

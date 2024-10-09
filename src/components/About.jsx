@@ -26,16 +26,16 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
 
             <div className="z-[0] h-[92%] p-4 flex flex-col max-w-md mx-auto">
                 <div id="headingnpfp" className="flex justify-between items-center px-2 h-32">
-                    <h2 className="text-5xl font-semibold text-gray-800 dark:text-white/50 mb-3 Pally">Mohd Bilal</h2>
-                    <div className="size-[110px] overflow-hidden rounded-lg flex items-center justify-center border dark:border-white/20 bg-gradient-to-r dark:from-white/10 from-black/10 to-black/20 dark:to-white/20">
+                    <h2 className="text-5xl smartphone:text-3xl  font-semibold text-gray-800 dark:text-white/50 mb-3 Pally">Mohd Bilal</h2>
+                    <div className="size-[110px] smartphone:size-[80px] overflow-hidden rounded-xl flex items-center justify-center border dark:border-white/20 bg-gradient-to-r dark:from-white/10 from-black/10 to-black/20 dark:to-white/20">
                         <img
                             src="/2821.png"
-                            className="h-[85%] drop-shadow-2xl transition-all duration-300 ease-in-out group-hover:scale-105"
+                            className="h-[85%]   drop-shadow-2xl transition-all duration-300 ease-in-out group-hover:scale-105"
                             alt="profile-pic"
                         />
                     </div>
                 </div>
-                <p className="w-[86%] text-base text-gray-600 dark:text-white mb-4 ml-3 text-pretty">
+                <p className="w-[86%] text-base smartphone:text-xs  text-gray-600 dark:text-white mb-4 ml-3 text-pretty">
                     Full stack developer from Lucknow, India. <br /> A frontend expert with love for crafting modern UIs with React, Tailwind CSS, and Framer-motion.
                 </p>
             </div>

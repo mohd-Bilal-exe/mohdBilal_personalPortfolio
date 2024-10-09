@@ -35,11 +35,11 @@ export default function ExtrasCollapsed({ isFade, setWhatsClicked, handleClick, 
                     handleClick();
                 }}
             >
-                <div className="w-1/2 text-4xl flex justify-start ml-4 font-thin Pally h-10 overflow-hidden">
+                <div className="w-1/2 text-4xl smartphone:text-3xl flex justify-start ml-4 font-thin Pally h-10 overflow-hidden">
                     <div className="w-fit flex flex-col group-hover:-translate-y-10 transition-transform ease-out duration-200">
                         <h1>Extras</h1>
                         <h1 className="text-sm font-normal tracking-wide bg-gradient-to-br from-red-500 to-red-300 text-transparent bg-clip-text">
-                            Take you there? Just click!
+                            Take you there? <br />  Just click!
                         </h1>
                     </div>
                 </div>

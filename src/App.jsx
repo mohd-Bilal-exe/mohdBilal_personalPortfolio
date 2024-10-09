@@ -199,7 +199,7 @@ function App() {
       {showGrid && (
 
         <div id="MainCunt"
-          className={`${darkMode && "dark"} ubuntu relative grid content-stretch  grid-cols-12 gap-[1px] dark:bg-white/20   text-bg1 select-none curso r-none scroll-smooth`}
+          className={` ${darkMode && "dark"} ubuntu relative grid content-stretch  grid-cols-12 gap-[1px] dark:bg-white/20   text-bg1 select-none curso r-none scroll-smooth`}
         >
           <div className="col-span-1 bg-white/90 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px]   xs:-[45px]  z-[3]"></div>
           <div className="col-span-10 bg-white/90 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px]  xs:-[45px]  z-[3]"></div>

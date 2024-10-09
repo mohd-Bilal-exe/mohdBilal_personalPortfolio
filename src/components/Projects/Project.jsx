@@ -115,8 +115,8 @@ export default function Project({ isFade, setCursorColor }) {
                                 <div className={`group w-full h-full flex flex-col justify-center items-start   z-50 ${isFade && "grayscale opacity-10"} transition-all duration-300`}>
                                     <div className="w-full h-4/5 flex">
                                         <div id="Texts" className="w-2/5 smartphone:w-1/2  h-full p-6 text-4xl flex flex-col justify-center text-pretty">
-                                            <h1 className="ml-1 tracking-wider Pally">{Project.title}</h1>
-                                            <h2 className="text-xs ml-3 mt-2 tracking-wider font-extralight">{Project.description}</h2>
+                                            <h1 className="ml-1 smartphone:ml-0 tracking-wider Pally">{Project.title}</h1>
+                                            <h2 className="text-xs ml-3 smartphone:ml-0  mt-2 tracking-wider font-extralight">{Project.description}</h2>
                                         </div>
                                         <div id="imageCont" className="w-3/5 smartphone:w-1/2  h-full p-4 flex items-center justify-center   ">
                                             <div
