@@ -84,14 +84,6 @@ export default function ExpandedExtras({ handleClickAfter }) {
             </section>
 
             <m.section
-                initial={{ y: 400 }}
-                animate={{ y: 100 }}
-                transition={{
-                    duration: .5,
-                    type: "spring",
-                    delay: 2,
-                    ease: "easeInOut"
-                }}
                 id="photography" className="w-11/12">
                 <div className="grid grid-cols-2 gap-4 mx-auto my-8"> {/* Two columns layout */}
                     <m.div
