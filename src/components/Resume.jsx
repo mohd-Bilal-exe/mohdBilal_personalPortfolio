@@ -18,9 +18,9 @@ export default function Resume({ isFade, setCursorColor }) {
     useEffect(() => {
         if (resumeRef.current) {
             const height = resumeRef.current.offsetHeight;
-            setIconSize(height > 137 ? 50 : 40);
+            setIconSize(height > 137 ? 45 : 32);
         }
-    }, []);
+    }, [resumeRef.current.offsetHeight]);
 
     return (
         <section ref={resumeRef} className={`relative p-4 w-full h-full flex gap-2 justify-between ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}>

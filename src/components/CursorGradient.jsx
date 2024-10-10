@@ -28,9 +28,8 @@ export default function CursorGradient({ cursorPos, darkMode, Properties }) {
             <m.div
                 key="Grad1"
                 className={twMerge(
-                    "absolute top-0 w-24 h-24 smartphone:hidden rounded-full pointer-events-none z-[0] transition-colors duration-500",
                     darkMode ? Properties.color : "bg-gradient-to-br from-purple-500 to-cyan-300",
-                    "shadow-[0_0_20px_30px] " // Optional shadow for gradient effect
+                    "shadow-[0_0_20px_30px] absolute top-0 w-24 h-24 smartphone:hidden rounded-full pointer-events-none z-[0] transition-colors transition-shadows duration-500 ",
                 )}
                 animate={controls}
                 transition={{
@@ -40,7 +39,7 @@ export default function CursorGradient({ cursorPos, darkMode, Properties }) {
             <m.div
                 key="Grad2"
                 className={twMerge(
-                    "absolute top-0 smartphone:hidden  rounded-full pointer-events-none z-[200] transition-colors duration-300",
+                    "absolute top-0 smartphone:hidden  rounded-full pointer-events-none z-[200] transition-colors transition-shadows duration-300",
                     darkMode ? Properties.color : "bg-purple-500",
                     Properties.size
                 )}
