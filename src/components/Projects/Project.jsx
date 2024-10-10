@@ -55,7 +55,7 @@ const Projects = [
         key: "Poetica",
         title: "Poetica",
         imgScr: "/Poetica.avif",
-        link: "",
+        link: "#'m_working_on_it_(yet-another-project-that-no-one-cares-about)",
         description: "A social platform for writers with AI-generated summaries and hashtags.",
         tech: ["Next js", "Firebase", "Google-GenAI", "TailwindCSS", "Framer-motion"],
     },
@@ -72,7 +72,7 @@ const Projects = [
 
 export default function Project({ isFade, setCursorColor }) {
     const handleEnter = () => {
-        setCursorColor({ color: "bg-gradient-to-br  from-cyan-500 to-green-600 shadow-green-600", size: "" });
+        setCursorColor({ color: "bg-gradient-to-br  from-cyan-500 to-green-600 shadow-green-600", size: "w-4 h-4" });
     }
     const handleExit = () => {
         setCursorColor({ color: "bg-white shadow-white", size: "w-2 h-2" });
@@ -139,10 +139,9 @@ export default function Project({ isFade, setCursorColor }) {
                                                 )
                                             })
                                         }
-                                        <a href={Project.link ? Project.link : "/I'm_working_on_it(yet-another-project-that-no-one-cares-about)"}
+                                        <a href={Project.link}
                                             onMouseEnter={handleEnter}
                                             onMouseLeave={handleExit}
-                                            target={Project.key !== "Poetica" ? "_blank" : "_self"}
                                             rel="noopener noreferrer"
                                             className="w-10 h-10 flex justify-center items-center  group-hover:dark:bg-white/5 group-hover:bg-darkGray/5 rounded-xl  -translate-y-1 transition-all duration-300 overflow-hidden">
                                             <span className="flex gap-2 flex-col justify-center items-center w-full h-24  rotate-45  -translate-x-[19px] hover:translate-x-3 translate-y-5 hover:-translate-y-3 transition-all duration-500">
