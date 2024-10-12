@@ -1,4 +1,4 @@
-import { m } from 'framer-motion';
+
 import { DiceFive } from '@phosphor-icons/react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
@@ -29,7 +29,7 @@ export default function NavandButtons({ handleLayoutUpdate }) {
                             return (
                                 <li key={item.id} className={`z-20 w-1/3 text-md smartphone:text-sm  flex justify-center items-center px-2 py-1`}>
                                     <div href="#" onClick={() => { handleLayoutUpdate(item.title); setNavSelected(item.title) }} className='w-full text-center group h-6 overflow-hidden'>
-                                        <div className='group-hover:-translate-y-6 flex flex-col transition-transform duration-200 delay-100'>
+                                        <div className='lg:group-hover:-translate-y-6 flex flex-col transition-transform duration-200 delay-100'>
                                             <span className='smartphone:mb-[2px]'>{item.title}</span>
                                             <span className='flex items-center justify-center'>Rearrange<DiceFive size={25} weight="thin" /></span>
                                         </div>
@@ -39,13 +39,13 @@ export default function NavandButtons({ handleLayoutUpdate }) {
                         })
                     }
                 </ul>
-                <div className={`w-full h-full absolute top-0 z-0 py-1 pr-2 grid grid-cols-3`}>
-                    <m.span
-                        layout
-                        transition={{ duration: 0.5, type: "spring", ease: "easeInOut", delay: 0.1 }}
-                        className={`h-full w-full rounded-sm bg-gradient-to-br dark:from-white/10 from-black/10 to-black/20 dark:to-white/20 ${navSelected === "Everything" && "col-start-1"} ${navSelected === "Technologies" && "col-start-2"} ${navSelected === "Everything else" && "col-start-3"}`}
+                <div className={`w-full h-full absolute top-0 z-0 py-1 pr-2 flex`}>
+                    <span
+
+                        className={`h-full w-1/3 transition-transform ease-in-out  duration-300 rounded-sm bg-gradient-to-br dark:from-white/20 from-black/20 to-black/30 dark:to-white/30 ${navSelected === "Everything" && "translate-x-0"} ${navSelected === "Technologies" && "translate-x-full"} ${navSelected === "Everything else" && "translate-x-[200%]"}`}
                     />
                 </div>
+
             </div>
         </section>
     );

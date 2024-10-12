@@ -56,6 +56,11 @@ function App() {
 
     return () => clearTimeout(animationTimeout);
   }, [isAnimating, whatsClicked]);
+
+  useEffect(() => {
+    window.history.pushState(null, '', '/');
+  }, []);
+
   const handleMouseMove = (e) => {
     const { pageX, pageY } = e;
     setCursorPos({ x: pageX, y: pageY });

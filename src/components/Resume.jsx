@@ -43,8 +43,8 @@ export default function Resume({ isFade, setCursorColor }) {
 
             <div className={`w-1/2 h-full flex ${iconSize <= 40 ? "flex-row" : "flex-col"} gap-4 justify-center items-center`}>
                 <a
-                    href="/resume.pdf"
-                    download="resume.pdf"
+                    href="/MohdBilalresume.pdf"
+                    download="MohdBilalresume"
                     className="w-full h-1/2 p-1 flex justify-center items-center text-xs font-light"
                     onMouseEnter={!isFade ? handleEnter : undefined}
                     onMouseLeave={!isFade ? handleExit : undefined}
