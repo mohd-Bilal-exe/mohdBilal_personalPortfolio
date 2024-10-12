@@ -28,7 +28,7 @@ export const LinkedIn = ({ isFade, setCursorColor }) => {
             </AnimatePresence>
 
             <a
-                href="https://www.linkedin.com/in/mohd-bilal--"
+                href="https://www.linkedin.com/in/mohd--bilal--"
                 target="_blank"
                 rel="noreferrer"
                 className="group w-full h-full grid place-content-center "
