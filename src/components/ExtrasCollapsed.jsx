@@ -46,8 +46,9 @@ export default function ExtrasCollapsed({ isFade, setWhatsClicked, handleClick, 
                 </div>
 
                 <FlyingSaucer
+                    size="96%"
                     weight="thin"
-                    className="mx-auto w-1/4 h-full group-hover:text-red-900 group-hover:scale-95 transition-all duration-700"
+                    className="mx-auto py-2 2xl:py-0  w-1/4 h-full group-hover:text-red-900 group-hover:scale-95 transition-all duration-700"
                 />
             </a>
         </div>

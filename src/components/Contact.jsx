@@ -184,8 +184,8 @@ export const Email = ({ isFade, setCursorColor }) => {
                         </div>
                     </a>
                 </div>
-                <div className="h-full w-1/3 grid place-content-center group-hover:dark:text-yellow-500 group-hover:text-yellow-900 group-hover:scale-95 transition-all duration-700">
-                    <Envelope size={"98%"} weight="thin" />
+                <div className="h-full py-2 2xl:py-0  w-1/3 grid place-content-center group-hover:dark:text-yellow-500 group-hover:text-yellow-900 group-hover:scale-95 transition-all duration-700">
+                    <Envelope size={"100%"} weight="thin" />
                 </div>
             </div>
         </div>
