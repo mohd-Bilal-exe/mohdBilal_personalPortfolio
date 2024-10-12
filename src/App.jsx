@@ -19,6 +19,7 @@ import WelcomeScreen from "./components/WelcomeScreen";
 import Project from "./components/Projects/Project";
 import { ArrowUp } from "@phosphor-icons/react";
 import smoothScrollToTop from "./utils/scrollBehaviour";
+import useStore from "./stores/useStores";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -26,7 +27,7 @@ function App() {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0, });
   const [cursorColor, setCursorColor] = useState({ color: "bg-white", size: "w-2 h-2" });
   const [darkMode, setDarkMode] = useState(true);
-  const [whatsClicked, setWhatsClicked] = useState("Nothing");
+  const { whatsClicked, setWhatsClicked } = useStore();
   const [showExtras, setShowExtras] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [showGrid, setShowGrid] = useState(true);
