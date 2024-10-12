@@ -31,10 +31,10 @@ export const LinkedIn = ({ isFade, setCursorColor }) => {
                 href="https://www.linkedin.com/in/mohd-bilal--"
                 target="_blank"
                 rel="noreferrer"
-                className="group w-full h-full grid place-content-center group-hover:text-lnkin/90 group-hover:scale-95 transition-all duration-700"
+                className="group w-full h-full grid place-content-center "
             >
                 <LinkedinLogo size={"96%"}
-                    className="smartphone:w-[75%] mx-auto"
+                    className="smartphone:w-[75%]  py-8 mx-auto group-hover:text-lnkin group-hover:scale-95 transition-all duration-700"
                     weight="thin" />
             </a>
         </div>
@@ -83,7 +83,7 @@ export const GitHub = ({ isFade, setCursorColor }) => {
                 <GithubLogo
                     size={"96%"}
                     weight="thin"
-                    className=" mx-auto group-hover:text-gray-500 group-hover:scale-95 transition-all duration-700"
+                    className="py-8 mx-auto group-hover:text-gray-500 group-hover:scale-95 transition-all duration-700"
                 />
             </a>
         </div>
@@ -129,7 +129,7 @@ export const Instagram = ({ isFade, setCursorColor }) => {
                 <InstagramLogo
                     size={"96%"}
                     weight="thin"
-                    className="smartphone:w-[86%] group-hover:scale-95 group-hover:text-insta transition-all duration-700"
+                    className="py-8 mx-auto group-hover:text-insta group-hover:scale-95 transition-all duration-700"
                 />
             </a>
         </div>
@@ -185,7 +185,7 @@ export const Email = ({ isFade, setCursorColor }) => {
                     </a>
                 </div>
                 <div className="h-full w-1/3 grid place-content-center group-hover:dark:text-yellow-500 group-hover:text-yellow-900 group-hover:scale-95 transition-all duration-700">
-                    <Envelope size={"96%"} weight="thin" />
+                    <Envelope size={"98%"} weight="thin" />
                 </div>
             </div>
         </div>

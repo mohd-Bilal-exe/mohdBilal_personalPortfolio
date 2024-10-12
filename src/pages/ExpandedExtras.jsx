@@ -4,7 +4,7 @@ import { ArrowLeft, InstagramLogo } from "@phosphor-icons/react";
 import { useRef, useEffect, useMemo } from "react";
 
 export default function ExpandedExtras({ handleClickAfter }) {
-
+    window.scrollTo({ top: 0 })
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: targetRef,

@@ -47,12 +47,12 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
                 }}
                 onMouseEnter={!isFade ? handleEnter : undefined}
                 onMouseLeave={!isFade ? handleExit : undefined}
-                className="group h-6 w-fit place-self-end flex gap-1 justify-between items-center dark:bg-white/5 pl-2 pr-1 overflow-hidden"
+                className="group h-[8%] w-fit place-self-end flex gap-1 justify-between items-center dark:bg-white/5 pl-2 pr-1 overflow-hidden"
             >
-                <div className="h-full w-fit flex flex-col gap-1 pt-1 text-xs tracking-wider group-hover:-translate-y-5 transition-transform ease-out duration-200">
+                <a href="#Let's_get_personal" className="h-full w-fit flex flex-col gap-1 pt-1 text-xs tracking-wider group-hover:-translate-y-5 transition-transform ease-out duration-200">
                     <h1>Unveil More</h1>
                     <h1>Know me better</h1>
-                </div>
+                </a>
                 <ArrowUpRight size={18} className="group-hover:translate-y-[-1px] group-hover:translate-x-[1px] transition-all duration-300 ease-in-out" />
             </button>
         </div>

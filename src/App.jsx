@@ -68,6 +68,7 @@ function App() {
     setShowGrid(true);
     setShowExpandedAbout(false);
     setShowExtras(false);
+    window.history.pushState(null, '', '/');
   };
 
   const handleClickBefore = () => {

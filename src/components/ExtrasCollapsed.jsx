@@ -28,7 +28,8 @@ export default function ExtrasCollapsed({ isFade, setWhatsClicked, handleClick, 
                 )}
             </AnimatePresence>
 
-            <div
+            <a
+                href="#Extra_stuff_I_love_to_do"
                 className="z-10 group w-full h-full flex items-center cursor-pointer"
                 onClick={() => {
                     setWhatsClicked("Extras");
@@ -48,7 +49,7 @@ export default function ExtrasCollapsed({ isFade, setWhatsClicked, handleClick, 
                     weight="thin"
                     className="mx-auto w-1/4 h-full group-hover:text-red-900 group-hover:scale-95 transition-all duration-700"
                 />
-            </div>
+            </a>
         </div>
     );
 }

@@ -8,7 +8,7 @@ import { LiaNode } from "react-icons/lia";
 
 export const DivOrigami = ({ isFade }) => {
     return (
-        <section className="flex h-full flex-col items-center justify-center gap-12 px-4 py-24 md:flex-row">
+        <section className="w-1/2 flex h-full flex-col items-center justify-start gap-12 px-4 py-24 md:flex-row">
             <LogoRolodex
                 items={[
                     <LogoItem key={1} className="bg-[#E34F26] text-neutral-900">
