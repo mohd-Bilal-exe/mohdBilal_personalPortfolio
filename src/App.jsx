@@ -196,11 +196,11 @@ function App() {
           darkMode={darkMode}
         />
       )}
-      {showExpandedAbout && <ExpandedAbout handleClickAfter={handleClickAfter} darkMode={darkMode} />}
-      {showExtras && <ExpandedExtras handleClickAfter={handleClickAfter} darkMode={darkMode} />}
 
 
       <AnimatePresence>
+        {showExpandedAbout && <ExpandedAbout handleClickAfter={handleClickAfter} darkMode={darkMode} />}
+        {showExtras && <ExpandedExtras handleClickAfter={handleClickAfter} darkMode={darkMode} />}
         {resumeModalOpen && <SpringModal />}
         {showWelcomeScreen && <WelcomeScreen />}
       </AnimatePresence>

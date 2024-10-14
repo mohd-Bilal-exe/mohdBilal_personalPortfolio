@@ -6,7 +6,12 @@ import { twMerge } from "tailwind-merge";
 export default function ExpandedAbout({ handleClickAfter, darkMode }) {
     const bgText = darkMode ? "dark" : "Some_other_thing_but_not_dark";
     return (
-        <div className={twMerge("fixed top-0 left-0 z-[20] backdrop-blur w-fit h-full overflow-y-auto dark:bg-darkGray dark:text-w1", bgText)}>
+        <m.div
+
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }} transition={{ delay: 0.75, duration: 0.50, ease: "easeInOut" }}
+            className={twMerge("fixed top-0 left-0 z-[20] backdrop-blur w-fit h-full overflow-y-auto dark:bg-darkGray dark:text-w1", bgText)}>
             <button
                 onClick={handleClickAfter} className="absolute z-[500] dark:text-w1 top-3 left-3 group flex h-8 w-8 overflow-hidden"
             >
@@ -15,15 +20,15 @@ export default function ExpandedAbout({ handleClickAfter, darkMode }) {
                     <ArrowLeft size={32} weight='regular' />
                 </div>
             </button>
-            <m.section
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.75, duration: 0.50, ease: "easeInOut" }}
+            <section
+
                 className="h-full w-screen flex justify-center dark:bg-darkGray dark:text-w1 bg-white"
             >
                 <div className="w-3/5 smartphone:w-11/12 mb-2">
                     <div className="overflow-hidden">
-                        <m.h1 initial={{ y: 200 }}
+                        <m.h1
+                            key="1stWords"
+                            initial={{ y: 200 }}
                             animate={{ y: 0 }}
                             transition={{ delay: 1, duration: 0.5, ease: "easeInOut", type: "spring" }}
                             className="text-7xl smartphone:text-3xl coolfont ml-6 mt-48 laptop:mt-36 smartphone:mt-24 flex items-end tracking-widest drop-shadow-text-lg">
@@ -32,6 +37,7 @@ export default function ExpandedAbout({ handleClickAfter, darkMode }) {
                     </div>
                     <div className="overflow-hidden">
                         <m.h2
+                            key="2ndWords"
                             initial={{ y: 200 }}
                             animate={{ y: 0 }}
                             transition={{ delay: 1.2, duration: 0.5, ease: "easeInOut", type: "spring" }}
@@ -66,12 +72,12 @@ export default function ExpandedAbout({ handleClickAfter, darkMode }) {
                         </div>
                     </m.div>
                 </div>
-            </m.section>
-        </div>
+            </section>
+        </m.div>
     );
 };
 
 ExpandedAbout.propTypes = {
     handleClickAfter: PropTypes.func,
-    darkMode: PropTypes.bool, // Corrected 'boolean' to 'bool'
+    darkMode: PropTypes.bool,
 };

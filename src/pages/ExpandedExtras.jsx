@@ -2,8 +2,10 @@ import PropTypes from 'prop-types';
 import { m, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, InstagramLogo } from "@phosphor-icons/react";
 import { useRef, useEffect, useMemo } from "react";
+import { twMerge } from 'tailwind-merge';
 
-export default function ExpandedExtras({ handleClickAfter }) {
+export default function ExpandedExtras({ handleClickAfter, darkMode }) {
+    const bgText = darkMode ? "dark" : "Some_other_thing_but_not_dark";
 
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -11,8 +13,8 @@ export default function ExpandedExtras({ handleClickAfter }) {
     });
 
     // Different scroll speeds for two columns
-    const leftColumnScroll = useTransform(scrollYProgress, [0, 1], ["0%", "-85%"]); // Adjust as needed
-    const rightColumnScroll = useTransform(scrollYProgress, [0, 1], ["0%", "-55%"]); // Adjust as needed
+    const leftColumnScroll = useTransform(scrollYProgress, [0, 1], ["1%", "-85%"]); // Adjust as needed
+    const rightColumnScroll = useTransform(scrollYProgress, [0, 1], ["1%", "-55%"]); // Adjust as needed
 
     const cards = useMemo(() => [
         { url: "/picc1.jpeg", title: "Sunshine Bloom", subtitle: "kuch bhi", id: 1 },
@@ -47,13 +49,14 @@ export default function ExpandedExtras({ handleClickAfter }) {
         <m.section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ delay: 0.75, duration: 0.50, ease: "easeInOut" }}
             id="xtramain"
-            className="w-screen h-full flex flex-col items-center justify-center bg-bg2 text-w1"
+            className={twMerge("w-screen h-full flex flex-col items-center justify-start bg-white dark:bg-darkGray text-darkGray dark:text-w1", bgText)}
             ref={targetRef} // Set ref here
         >
             <button
-                onClick={handleClickAfter} className="absolute z-[500]  dark:text-w1 top-3 left-3 group flex h-8 w-8 overflow-hidden"
+                onClick={handleClickAfter} className="absolute z-[500]  text-darkGray dark:text-white top-3 left-3 group flex h-8 w-8 overflow-hidden"
             >
                 <div className="flex h-full w-16 group-hover:-translate-x-8 transition-transform duration-500 ease-in-out ">
                     <ArrowLeft size={32} weight='thin' />
@@ -61,7 +64,7 @@ export default function ExpandedExtras({ handleClickAfter }) {
                 </div>
 
             </button>
-            <section id="text" className="overflow-hidden w-full mt-32 smartphone:mt-14">
+            <section id="text" className="overflow-hidden w-full mt-32 smartphone:mt-14 text-darkGray dark:text-w1 ">
                 <m.h1
                     initial={{ y: 300 }}
                     animate={{ y: 0 }}
@@ -79,7 +82,7 @@ export default function ExpandedExtras({ handleClickAfter }) {
                         ease: "easeInOut"
                     }}
                     className="gantians w-full text-xl smartphone:text-base  ml-24 smartphone:ml-8 smartphone:mt-10 ubuntu tracking-wide smartphone:tracking-normal">
-                    <span className="text-accent2lt">:)</span> Some clicks that Igantiansm proud of
+                    <span className="text-accent2lt">:)</span> Some clicks that I&apos;m proud of
                 </m.h2>
             </section>
 
@@ -129,7 +132,7 @@ export default function ExpandedExtras({ handleClickAfter }) {
                     </m.div>
                 </div>
 
-                <section className="mx-auto w-11/12 h-[500px] flex justify-center items-center text-white">
+                <section className="mx-auto w-11/12 h-[500px] flex justify-center items-center text-darkGray dark:text-w1">
                     <h1 className="flex flex-col justify-center items-center text-5xl smartphone:text-lg gantians  tracking-tight">
                         I post cool stuff here
                         <a href="https://www.instagram.com/mohd.bilal__?igsh=MW9ydDcwcTR4dmVjaQ==" className="coolfont group flex items-center justify-center transition-all duration-700 ease-in-out my-4 hover:text-insta tracking-tighter">
@@ -145,4 +148,5 @@ export default function ExpandedExtras({ handleClickAfter }) {
 
 ExpandedExtras.propTypes = {
     handleClickAfter: PropTypes.func,
+    darkMode: PropTypes.bool,
 };
