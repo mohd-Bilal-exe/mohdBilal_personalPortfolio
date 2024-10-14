@@ -11,7 +11,7 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
     };
 
     return (
-        <div className={`flex flex-col relative  w-full h-full ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}>
+        <div className={`flex flex-col justify-between smartphone:pb-1  relative  w-full h-full ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}>
             <AnimatePresence>
                 {isFade && (
                     <m.div
@@ -24,7 +24,7 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
                 )}
             </AnimatePresence>
 
-            <div className="z-[0] h-[92%] p-4 flex flex-col max-w-md mx-auto">
+            <div className=" h-[90%] p-4 flex flex-col max-w-md mx-auto">
                 <div id="headingnpfp" className="flex justify-between items-center px-2 h-32">
                     <h2 className="text-5xl smartphone:text-3xl  font-semibold text-gray-800 dark:text-white/50 mb-3 Pally">Mohd Bilal</h2>
                     <div className="size-[110px] smartphone:size-[80px] overflow-hidden rounded-xl flex items-center justify-center border dark:border-white/20 bg-gradient-to-r dark:from-white/10 from-black/10 to-black/20 dark:to-white/20">
@@ -47,7 +47,7 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
                 }}
                 onMouseEnter={!isFade ? handleEnter : undefined}
                 onMouseLeave={!isFade ? handleExit : undefined}
-                className="group h-[8%] w-fit place-self-end flex gap-1 justify-between items-center dark:bg-white/5 pl-2 pr-1 overflow-hidden"
+                className="group h-[8%] smartphone:h-8  w-fit place-self-end flex gap-1 justify-between items-center dark:bg-white/5 pl-2 pr-1 overflow-hidden"
             >
                 <a href="#Let's_get_personal" className="h-full w-fit flex flex-col gap-1 pt-1 text-xs tracking-wider group-hover:-translate-y-5 transition-transform ease-out duration-200">
                     <h1>Unveil More</h1>

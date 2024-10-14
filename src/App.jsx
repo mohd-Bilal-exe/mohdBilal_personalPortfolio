@@ -39,7 +39,7 @@ function App() {
   useEffect(() => {
     const Welcome = setTimeout(() => {
       setShowWelcomeScreen(false);
-    }, 1200); // Adjust timing according to your animation duration
+    }, 1500); // Adjust timing according to your animation duration
     return () => clearTimeout(Welcome);
   })
 
@@ -228,7 +228,7 @@ function App() {
               isDraggable={false}
               useCSSTransforms={true}
             >
-              {gridItems.map((gridItem, index) => (
+              {gridItems.map((gridItem) => (
                 <m.div
                   key={gridItem.key}
                   initial={{
@@ -239,7 +239,6 @@ function App() {
                   }}
                   transition={{
                     duration: 0.3,  // Adjust duration to match the speed you want
-                    delay: index * 0.05,  // Stagger the tiles for a cascading effect
                     ease: "easeInOut",  // Smooth easing for a more natural effect
                   }}
                   className={` ${(gridItem.key === "Email" || gridItem.key === "Instagram" || gridItem.key === "LinkedIn") && "smartphone:border-r border-white/5"} w-full h-full ${gridItem.key !== "Projects" ? " dark:bg-darkGray/90 backdrop-blur-xl dark:text-white bg-white/85" : ""}  flex justify-center items-center `}
