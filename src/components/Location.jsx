@@ -26,6 +26,6 @@ export default function Location({ isFade, darkMode }) {
     );
 }
 Location.propTypes = {
-    darkMode: PropTypes.boolean,
-    isFade: PropTypes.boolean,
+    darkMode: PropTypes.bool,
+    isFade: PropTypes.bool,
 };

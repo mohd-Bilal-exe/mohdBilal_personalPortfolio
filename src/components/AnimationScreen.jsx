@@ -60,5 +60,5 @@ AnimationScreen.propTypes = {
     setIsAnimating: PropTypes.func.isRequired,
     setShowGrid: PropTypes.func.isRequired,
     setShowExpandedAbout: PropTypes.func.isRequired,
-    darkMode: PropTypes.boolean,
+    darkMode: PropTypes.bool,
 };
