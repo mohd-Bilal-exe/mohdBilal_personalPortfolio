@@ -20,6 +20,7 @@ import Project from "./components/Projects/Project";
 import { ArrowUp } from "@phosphor-icons/react";
 import smoothScrollToTop from "./utils/scrollBehaviour";
 import useStore from "./stores/useStores";
+import { SpringModal } from "./components/Modals";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -27,7 +28,7 @@ function App() {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0, });
   const [cursorColor, setCursorColor] = useState({ color: "bg-white", size: "w-2 h-2" });
   const [darkMode, setDarkMode] = useState(true);
-  const { whatsClicked, setWhatsClicked } = useStore();
+  const { whatsClicked, setWhatsClicked, resumeModalOpen } = useStore();
   const [showExtras, setShowExtras] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [showGrid, setShowGrid] = useState(true);
@@ -198,7 +199,9 @@ function App() {
       {showExpandedAbout && <ExpandedAbout handleClickAfter={handleClickAfter} darkMode={darkMode} />}
       {showExtras && <ExpandedExtras handleClickAfter={handleClickAfter} darkMode={darkMode} />}
 
+
       <AnimatePresence>
+        {resumeModalOpen && <SpringModal />}
         {showWelcomeScreen && <WelcomeScreen />}
       </AnimatePresence>
       {(showGrid && !showWelcomeScreen) && <CursorGradient cursorPos={cursorPos} darkMode={darkMode} Properties={cursorColor} />}

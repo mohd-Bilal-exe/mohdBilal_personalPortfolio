@@ -2,11 +2,13 @@ import { DownloadSimple, Eye } from "@phosphor-icons/react";
 import { AnimatePresence, m } from "framer-motion";
 import PropTypes from 'prop-types';
 import { useEffect, useRef, useState } from 'react';
+import useStore from "../stores/useStores";
 
 export default function Resume({ isFade, setCursorColor }) {
+
+    const { setResumeModalOpen } = useStore();
     const resumeRef = useRef(null);
     const [iconSize, setIconSize] = useState(40);
-
     const handleEnter = () => {
         setCursorColor({ color: "bg-gradient-to-br from-blue-500 to-purple-600 shadow-purple-600", size: "w-2 h-2" });
     };
@@ -22,8 +24,8 @@ export default function Resume({ isFade, setCursorColor }) {
         }
     }, []);
 
-    return (
-        <section ref={resumeRef} className={`relative p-4 w-full h-full flex gap-2 justify-between ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}>
+    return (<>
+        <section ref={resumeRef} className={`relat ive p-4 w-full h-full flex gap-2 justify-between ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}>
             <AnimatePresence>
                 {isFade && (
                     <m.div
@@ -55,11 +57,14 @@ export default function Resume({ isFade, setCursorColor }) {
                     className="w-full h-1/2 p-1 flex justify-center items-center text-xs font-light"
                     onMouseEnter={!isFade ? handleEnter : undefined}
                     onMouseLeave={!isFade ? handleExit : undefined}
+                    onClick={() => setResumeModalOpen(true)}
                 >
                     <Eye size={iconSize} weight="light" />
                 </button>
             </div>
         </section>
+
+    </>
     );
 }
 
