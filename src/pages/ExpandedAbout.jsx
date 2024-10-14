@@ -62,7 +62,7 @@ export default function ExpandedAbout({ handleClickAfter, darkMode }) {
                         <div className="smartphone:mt-4 smartphone:flex smartphone:flex-col  gap-1 justify-center items-center">
                             <img
                                 className="h-fit w-fit smartphone:w-[200px] translate-x-6 -translate-y-1 laptop:translate-x-10 laptop:-translate-y-14 smartphone:translate-x-0 smartphone:translate-y-0 rounded-sm transition-all duration-700 overflow-hidden"
-                                src="/billu.jpg"
+                                src="/billu.webp"
                                 alt=""
                             />
                             <div className={" flex smartphone:flex-col  justify-center items-center smartphone:items-start mt-10"}>
