@@ -38,7 +38,7 @@ const Projects = [
     {
         key: "verbi.AI",
         title: "verbi.AI",
-        imgScr: "/Verbi.png",
+        imgScr: "/Verbi.webp",
         link: "https://verbi-ai.vercel.app/",
         description: "AI-powered app for grammar correction and language translation with custom instructions.",
         tech: ["React js", "Redux js", "Google-GenAI", "TailwindCSS", "Framer-motion"],
@@ -46,7 +46,7 @@ const Projects = [
     {
         key: "ToDo Nest",
         title: "ToDo Nest",
-        imgScr: "/Todo.png",
+        imgScr: "/Todo.webp",
         link: "https://todo-nest.netlify.app/",
         description: "A task manager with custom colors, powered by Redux for persistent tasks.",
         tech: ["React js", "Redux js", "TailwindCSS", "Framer-motion"],
@@ -62,7 +62,7 @@ const Projects = [
     {
         key: "PreviousPortfolio",
         title: "Oldfolio",
-        imgScr: "/portfolio.png",
+        imgScr: "/portfolio.webp",
         link: "https://webweaver-personalportfolio.netlify.app/",
         description: "My first React project featuring Framer Motion animations.",
         tech: ["React js", "TailwindCSS", "Framer-motion"],

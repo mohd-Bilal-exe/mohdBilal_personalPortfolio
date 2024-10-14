@@ -29,7 +29,7 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
                     <h2 className="text-5xl smartphone:text-3xl  font-semibold text-gray-800 dark:text-white/50 mb-3 Pally">Mohd Bilal</h2>
                     <div className="size-[110px] smartphone:size-[80px] overflow-hidden rounded-xl flex items-center justify-center border dark:border-white/20 bg-gradient-to-r dark:from-white/10 from-black/10 to-black/20 dark:to-white/20">
                         <img
-                            src="/2821.png"
+                            src="/2821.webp"
                             className="h-[85%]   drop-shadow-2xl transition-all duration-300 ease-in-out group-hover:scale-105"
                             alt="profile-pic"
                         />

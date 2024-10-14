@@ -17,20 +17,20 @@ export default function ExpandedExtras({ handleClickAfter, darkMode }) {
     const rightColumnScroll = useTransform(scrollYProgress, [0, 1], ["1%", "-55%"]); // Adjust as needed
 
     const cards = useMemo(() => [
-        { url: "/picc1.jpeg", title: "Sunshine Bloom", subtitle: "kuch bhi", id: 1 },
-        { url: "/picc2.jpg", title: "Puppy Joy", subtitle: "kuch bhi", id: 2 },
-        { url: "/picc4.jpg", title: "Fragrant Blossom", subtitle: "", id: 3 },
-        { url: "/picc5.jpg", title: "Golden Farewell", subtitle: "kuch bhi", id: 4 },
-        { url: "/picc6.jpg", title: "Crimson Arch", subtitle: "kuch bhi", id: 5 },
-        { url: "/picc7.jpg", title: "Market Moments", subtitle: "kuch bhi", id: 6 },
-        { url: "/picc8.jpg", title: "Eerie Clock", subtitle: "kuch bhi", id: 7 },
-        { url: "/picc9.jpg", title: "Puppy Gathering", subtitle: "kuch bhi", id: 8 },
-        { url: "/picc10.jpg", title: "Red Beauty", subtitle: "kuch bhi", id: 9 },
-        { url: "/picc11.jpg", title: "Night Bloom", subtitle: "kuch bhi", id: 10 },
-        { url: "/picc12.jpg", title: "Moonlit Blossom", subtitle: "kuch bhi", id: 11 },
-        { url: "/picc13.jpg", title: "Sky Petal", subtitle: "kuch bhi", id: 12 },
-        { url: "/picc15.jpg", title: "Dewy Bud", subtitle: "kuch bhi", id: 13 },
-        { url: "/picc16.jpg", title: "Empty Street", subtitle: "kuch bhi", id: 14 },
+        { url: "/picc1.webp", title: "Sunshine Bloom", subtitle: "kuch bhi", id: 1 },
+        { url: "/picc2.webp", title: "Puppy Joy", subtitle: "kuch bhi", id: 2 },
+        { url: "/picc4.webp", title: "Fragrant Blossom", subtitle: "", id: 3 },
+        { url: "/picc5.webp", title: "Golden Farewell", subtitle: "kuch bhi", id: 4 },
+        { url: "/picc6.webp", title: "Crimson Arch", subtitle: "kuch bhi", id: 5 },
+        { url: "/picc7.webp", title: "Market Moments", subtitle: "kuch bhi", id: 6 },
+        { url: "/picc8.webp", title: "Eerie Clock", subtitle: "kuch bhi", id: 7 },
+        { url: "/picc9.webp", title: "Puppy Gathering", subtitle: "kuch bhi", id: 8 },
+        { url: "/picc10.webp", title: "Red Beauty", subtitle: "kuch bhi", id: 9 },
+        { url: "/picc11.webp", title: "Night Bloom", subtitle: "kuch bhi", id: 10 },
+        { url: "/picc12.webp", title: "Moonlit Blossom", subtitle: "kuch bhi", id: 11 },
+        { url: "/picc13.webp", title: "Sky Petal", subtitle: "kuch bhi", id: 12 },
+        { url: "/picc15.webp", title: "Dewy Bud", subtitle: "kuch bhi", id: 13 },
+        { url: "/picc16.webp", title: "Empty Street", subtitle: "kuch bhi", id: 14 },
     ], []);
 
     useEffect(() => {
