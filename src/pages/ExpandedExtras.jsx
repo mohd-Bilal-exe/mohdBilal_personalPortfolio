@@ -66,7 +66,7 @@ export default function ExpandedExtras({ handleClickAfter }) {
                     initial={{ y: 300 }}
                     animate={{ y: 0 }}
                     transition={{ duration: 0.5, delay: 1.5, ease: "easeInOut" }}
-                    className="text-6xl m-16 smartphone:m-8  smartphone:text-4xl coolfont tracking-widest smartphone:tracking-wider">
+                    className="text-7xl m-16 smartphone:m-8  smartphone:text-4xl coolfont tracking-widest smartphone:tracking-wider">
                     Photography
                 </m.h1>
                 <m.h2
@@ -78,14 +78,14 @@ export default function ExpandedExtras({ handleClickAfter }) {
                         delay: 1.75,
                         ease: "easeInOut"
                     }}
-                    className=" w-full text-xl smartphone:text-base  ml-24 smartphone:ml-8 smartphone:mt-10 ubuntu tracking-wide smartphone:tracking-normal">
-                    <span className="text-accent2lt">:)</span> Some clicks that {"I'm"} proud of
+                    className="gantians w-full text-xl smartphone:text-base  ml-24 smartphone:ml-8 smartphone:mt-10 ubuntu tracking-wide smartphone:tracking-normal">
+                    <span className="text-accent2lt">:)</span> Some clicks that Igantiansm proud of
                 </m.h2>
             </section>
 
-            <m.section
+            <section
                 id="photography" className="w-11/12">
-                <div className="grid grid-cols-2 gap-4 mx-auto my-8"> {/* Two columns layout */}
+                <div className="grid grid-cols-2 gap-4 mx-auto my-8 scroll-smooth"> {/* Two columns layout */}
                     <m.div
                         style={{ y: leftColumnScroll }}
                         transition={{ ease: "easeInOut", type: "spring", stiffness: 200, damping: 30 }} // Added spring transition
@@ -130,15 +130,15 @@ export default function ExpandedExtras({ handleClickAfter }) {
                 </div>
 
                 <section className="mx-auto w-11/12 h-[500px] flex justify-center items-center text-white">
-                    <h1 className="flex flex-col justify-center items-center text-5xl smartphone:text-lg ibm-plexregular tracking-tight">
+                    <h1 className="flex flex-col justify-center items-center text-5xl smartphone:text-lg gantians  tracking-tight">
                         I post cool stuff here
-                        <a href="https://www.instagram.com/mohd.bilal__?igsh=MW9ydDcwcTR4dmVjaQ==" className="group flex items-center justify-center transition-all duration-700 ease-in-out my-4 hover:text-insta tracking-tighter">
-                            <InstagramLogo size={"13%"} weight="duotone" className="mx-2 transition-transform ease-in-out group-hover:scale-105" />
+                        <a href="https://www.instagram.com/mohd.bilal__?igsh=MW9ydDcwcTR4dmVjaQ==" className="coolfont group flex items-center justify-center transition-all duration-700 ease-in-out my-4 hover:text-insta tracking-tighter">
+                            <InstagramLogo size={"13%"} weight="duotone" className=" mx-2 transition-transform ease-in-out group-hover:scale-105" />
                             @mohd.bilal__
                         </a>
                     </h1>
                 </section>
-            </m.section>
+            </section>
         </m.section>
     );
 }
