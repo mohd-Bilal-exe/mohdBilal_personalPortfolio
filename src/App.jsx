@@ -21,7 +21,7 @@ import { ArrowUp } from "@phosphor-icons/react";
 import smoothScrollToTop from "./utils/scrollBehaviour";
 import useStore from "./stores/useStores";
 import { SpringModal } from "./components/Modals";
-
+import SEO from "./seo/SEO"
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 function App() {
@@ -188,6 +188,12 @@ function App() {
   ];
   return (
     <>
+      <SEO
+        title="Mohd Bilal | Full Stack Developer & Frontend expert"
+        description="Explore the portfolio of Mohd Bilal, a creative frontend developer and UI/UX designer from Lucknow. Specializing in modern web development and interactive designs."
+        keywords="Mohd Bilal, Lucknow, frontend developer, UI/UX designer, web design, portfolio, JavaScript, React, creative websites, interactive design, Lucknow developer"
+      />
+
       {isAnimating && (
         <AnimationScreen
           setIsAnimating={setIsAnimating}
