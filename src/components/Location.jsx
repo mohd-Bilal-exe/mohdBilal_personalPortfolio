@@ -18,7 +18,7 @@ export default function Location({ isFade, darkMode }) {
                 <div
                     className="w-full h-full bg-center bg-cover group-hover:scale-110 transition-all duration-500"
                     style={{
-                        backgroundImage: `url(${darkMode ? "/LocationDark.png" : "/LocationLight.png"})`
+                        backgroundImage: `url(${darkMode ? "/LocationDark.webp" : "/LocationLight.webp"})`
                     }}
                 />
             </div>
