@@ -193,7 +193,13 @@ function App() {
         description="Explore the portfolio of Mohd Bilal, a creative frontend developer and UI/UX designer from Lucknow. Specializing in modern web development and interactive designs."
         keywords="Mohd Bilal, Lucknow, frontend developer, UI/UX designer, web design, portfolio, JavaScript, React, creative websites, interactive design, Lucknow developer"
       />
-
+<div
+        className="opacity-[0.06] fixed w-screen h-screen  top-0 left-0  z-[1000] pointer-events-none"
+        style={{
+          backgroundImage: "url('/Static.png')",
+          backgroundRepeat: "repeat",
+        }}
+      ></div>
       {isAnimating && (
         <AnimationScreen
           setIsAnimating={setIsAnimating}
