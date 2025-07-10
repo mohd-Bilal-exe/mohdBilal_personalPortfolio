@@ -61,15 +61,15 @@ export default function Resume({ isFade, setCursorColor }) {
                 <a
                     href="/MohdBilalresume.pdf"
                     download="MohdBilalresume"
-                    className="flex justify-center items-center p-1 w-full h-1/2 font-light text-xs"
+                    className="flex justify-center items-center p-1 w-full h-1/2 font-light text-xs hover:scale-[0.90] transition-all duration-700"
                     onMouseEnter={() => handleEnter("download", isFade)}
                     onMouseLeave={() => handleExit("download", isFade)}
                 >
-                    {isHoveredDownload ? <DownloadAnimated size={iconSize} styles={"dark:text-purple-300 text-purple-700"}  /> : <DownloadNormal size={iconSize}  />
+                    {isHoveredDownload ? <DownloadAnimated size={iconSize} styles={"dark:text-purple-300 text-purple-700 transition-all "}  /> : <DownloadNormal size={iconSize} styles=""  />
 }
                 </a>
                 <button
-                    className="flex justify-center items-center p-1 w-full h-1/2 font-light text-xs"
+                    className="flex justify-center items-center p-1 w-full h-1/2 font-light text-xs hover:scale-[0.90] transition-all duration-700"
                     onMouseEnter={() => handleEnter("eye", isFade)}
                     onMouseLeave={() => handleExit("eye", isFade)}
                     onClick={() => setResumeModalOpen(true)}

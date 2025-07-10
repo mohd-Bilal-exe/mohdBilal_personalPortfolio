@@ -181,7 +181,7 @@ function App() {
     { key: "Email", component: <Email isFade={componentFaded.Email} setCursorColor={setCursorColor} /> },
     { key: "Resume", component: <Resume isFade={componentFaded.Resume} setCursorColor={setCursorColor} /> },
     { key: "DarkMode", component: <DarkMode setDarkMode={setDarkMode} darkMode={darkMode} setCursorColor={setCursorColor} /> },
-    { key: "Location", component: <Location isFade={componentFaded.Location} darkMode={darkMode} /> },
+    { key: "Location", component: <Location isFade={componentFaded.Location} darkMode={darkMode}  setCursorColor={setCursorColor}/> },
     { key: "Navbar", component: <NavandButtons setDarkMode={setDarkMode} darkMode={darkMode} handleLayoutUpdate={handleLayoutUpdate} /> },
     { key: "SkillStack", component: <SkillStack isFade={componentFaded.SkillStack} /> },
     { key: "Projects", component: <Project isFade={componentFaded.Projects} setCursorColor={setCursorColor} /> },
@@ -194,7 +194,7 @@ function App() {
         keywords="Mohd Bilal, Lucknow, frontend developer, UI/UX designer, web design, portfolio, JavaScript, React, creative websites, interactive design, Lucknow developer"
       />
 <div
-        className="opacity-[0.04] fixed w-screen h-screen  top-0 left-0  z-[1000] pointer-events-none"
+        className="top-0 left-0 z-[1000] fixed opacity-[0.04] w-screen h-screen pointer-events-none"
         style={{
           backgroundImage: "url('/Static.png')",
           backgroundRepeat: "repeat",
@@ -217,16 +217,16 @@ function App() {
         {showWelcomeScreen && <WelcomeScreen />}
       </AnimatePresence>
       {(showGrid && !showWelcomeScreen) && <CursorGradient cursorPos={cursorPos} darkMode={darkMode} Properties={cursorColor} />}
-      <div className="w-screen h-screen backdrop-blur-2xl grayscale z-[500] hidden smartphone:fixed top-0 left-0"> </div>
+      <div className="hidden top-0 left-0 z-[500] smartphone:fixed backdrop-blur-2xl grayscale w-screen h-screen"> </div>
       {showGrid && (
 
         <div id="MainCunt"
           className={` ${darkMode && "dark"} ubuntu relative grid content-stretch  grid-cols-12 gap-[2px] dark:bg-white/20   text-bg1 select-none curso r-none scroll-smooth`}
         >
-          <div className="col-span-1 bg-white/85 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px]   xs:-[45px]  z-[3]"></div>
-          <div className="col-span-10 bg-white/85 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px]  xs:-[45px]  z-[3]"></div>
-          <div className="col-span-1 bg-white/85 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px]   xs:-[45px]  z-[3]"></div>
-          <div className="col-span-1 bg-white/85 dark:bg-darkGray/90 backdrop-blur-2xl  z-[3]"></div>
+          <div className="z-[3] col-span-1 bg-white/85 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px] xs:-[45px]"></div>
+          <div className="z-[3] col-span-10 bg-white/85 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px] xs:-[45px]"></div>
+          <div className="z-[3] col-span-1 bg-white/85 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px] xs:-[45px]"></div>
+          <div className="z-[3] col-span-1 bg-white/85 dark:bg-darkGray/90 backdrop-blur-2xl"></div>
           <div className={`col-span-10 bg-bg1 `}>
             <ResponsiveGridLayout
               className="layout"
@@ -260,15 +260,15 @@ function App() {
               ))}
             </ResponsiveGridLayout>
           </div>
-          <div className="col-span-1 bg-white/85 dark:bg-darkGray/90 backdrop-blur-2xl z-[3]"></div>
-          <div className="col-span-1 bg-white/85 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px]  z-[3]"></div>
-          <div className="col-span-10 bg-white/85 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px]  z-[3]"></div>
-          <div className="col-span-1 bg-white/85 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px]  z-[3]"></div>
-          <div className="col-span-1 bg-white/85 dark:bg-darkGray/90 backdrop-blur-2xl z-[3]"></div>
+          <div className="z-[3] col-span-1 bg-white/85 dark:bg-darkGray/90 backdrop-blur-2xl"></div>
+          <div className="z-[3] col-span-1 bg-white/85 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px]"></div>
+          <div className="z-[3] col-span-10 bg-white/85 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px]"></div>
+          <div className="z-[3] col-span-1 bg-white/85 dark:bg-darkGray/90 backdrop-blur-2xl h-[90px]"></div>
+          <div className="z-[3] col-span-1 bg-white/85 dark:bg-darkGray/90 backdrop-blur-2xl"></div>
 
         </div>
       )}
-      <button onClick={handleToTop} className="fixed right-1 bottom-3 z-[500] text-white/10 hover:text-white/40 transition-all"> <ArrowUp size={32} /></button>
+      <button onClick={handleToTop} className="right-1 bottom-3 z-[500] fixed text-white/10 hover:text-white/40 transition-all"> <ArrowUp size={32} /></button>
     </>
   );
 }
