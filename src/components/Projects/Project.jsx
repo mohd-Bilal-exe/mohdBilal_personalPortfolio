@@ -129,7 +129,7 @@ export default function Project({ isFade, setCursorColor }) {
                                                 onMouseLeave={handleExit}
                                                 rel="noopener noreferrer"
                                                 className="flex justify-center items-center group-hover:bg-darkGray/5 group-hover:dark:bg-white/5 rounded-xl w-10 h-10 overflow-hidden transition-all -translate-y-1 duration-300">
-                                                <span className="flex flex-col justify-center items-center gap-2 w-full h-24 rotate-45 transition-all -translate-x-[19px] translate-y-5 hover:-translate-y-3 hover:translate-x-3 duration-500">
+                                                <span className="flex flex-col justify-center items-center gap-2 w-full h-24 rotate-45 transition-all -translate-x-[19px] translate-y-5 hover:-translate-y-3 hover:translate-x-3 duration-300">
                                                     <NavigationArrow className="mb-[1px] h-1/2 rotate-45" size={"65%"} weight="duotone" />
                                                     <span className="h-1/2">
                                                         Go!
@@ -144,7 +144,7 @@ export default function Project({ isFade, setCursorColor }) {
                                             {
                                                 Project.tech.map((item) => {
                                                     return (
-                                                        <span key={item} className="bg-darkGray/5 dark:bg-white/5 px-1.5 py-0.5 rounded text-[13px] smartphone:text-[8px] group-hover:scale-[102%] transition-all">
+                                                        <span key={item} className="bg-darkGray/5 dark:bg-white/5 px-1.5 py-0.5 rounded text-[13px] smartphone:text-[8px] group-hover:scale-[102%] transition-all duration-300">
                                                             {item}
                                                         </span>
                                                     )

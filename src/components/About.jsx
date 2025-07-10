@@ -49,7 +49,7 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
                 onMouseLeave={!isFade ? handleExit : undefined}
                 className="group flex justify-between items-center place-self-end gap-1 dark:bg-white/5 pr-1 pl-2 w-fit h-[8%] smartphone:h-8 overflow-hidden"
             >
-                <a href="#Let's_get_personal" className="flex flex-col gap-1 pt-1 w-fit h-full text-xs tracking-wider transition-transform group-hover:-translate-y-5 duration-200 ease-out">
+                <a href="#Let's_get_personal" className="flex flex-col gap-1 pt-1 w-fit h-full text-xs tracking-wider transition-transform group-hover:-translate-y-5 duration-300 ease-out">
                     <h1>Unveil More</h1>
                     <h1>Know me better</h1>
                 </a>

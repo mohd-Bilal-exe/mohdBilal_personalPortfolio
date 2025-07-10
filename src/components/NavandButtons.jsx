@@ -29,7 +29,7 @@ export default function NavandButtons({ handleLayoutUpdate }) {
                             return (
                                 <li key={item.id} className={`z-20 w-1/3 text-md smartphone:text-sm  flex justify-center items-center px-2 py-1`}>
                                     <div href="#" onClick={() => { handleLayoutUpdate(item.title); setNavSelected(item.title); }} className='w-full text-center group h-6 overflow-hidden'>
-                                        <div className='lg:group-hover:-translate-y-6 flex flex-col transition-transform duration-200 delay-100'>
+                                        <div className='lg:group-hover:-translate-y-6 flex flex-col transition-transform duration-300 delay-100'>
                                             <span className='smartphone:mb-[2px]'>{item.title}</span>
                                             <span className='flex items-center justify-center'>Rearrange<DiceFive size={25} weight="thin" /></span>
                                         </div>

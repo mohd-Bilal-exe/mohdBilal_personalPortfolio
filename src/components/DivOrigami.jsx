@@ -48,7 +48,7 @@ DivOrigami.propTypes = {
 };
 
 const DELAY_IN_MS = 1800;
-const TRANSITION_DURATION_IN_SECS = 1.2;
+const TRANSITION_DURATION_IN_SECS = 0.3;
 
 const LogoRolodex = ({ items, isFade }) => {
     const intervalRef = useRef(null);

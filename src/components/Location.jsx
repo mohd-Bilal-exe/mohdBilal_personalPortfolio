@@ -27,7 +27,7 @@ export default function Location({ isFade, darkMode, setCursorColor }) {
 
 
                 <div
-                    className="bg-cover bg-center w-full h-full group-hover:scale-110 transition-all duration-500"
+                    className="bg-cover bg-center w-full h-full group-hover:scale-110 transition-all duration-300"
                     onMouseEnter={handleEnter}
                     onMouseLeave={handleExit}
                     style={{

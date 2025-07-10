@@ -25,8 +25,8 @@ export const AnimationScreen = ({ setIsAnimating, setShowGrid, setShowExpandedAb
             opacity: 1,
         },
         transition: {
-            duration: 1,
-            staggerChildren: 0.5
+            duration: 0.3,
+            staggerChildren: 0.3
         }
     };
 
@@ -37,7 +37,7 @@ export const AnimationScreen = ({ setIsAnimating, setShowGrid, setShowExpandedAb
                     <m.div
                         initial={{ y: "100%" }}
                         animate={{ y: "-100%" }}
-                        transition={{ duration: 2, ease: "easeInOut", type: "spring", delay: item * 0.05 }}
+                        transition={{ duration: 0.3, ease: "easeInOut", type: "spring", delay: item * 0.05 }}
                         key={item}
                         className={twMerge("w-[10%]  h-full  z-[150]", darkModeclass)}>
                     </m.div>
@@ -48,7 +48,7 @@ export const AnimationScreen = ({ setIsAnimating, setShowGrid, setShowExpandedAb
                     <m.div
                         initial={{ y: "100%" }}
                         animate={{ y: "-100%" }}
-                        transition={{ duration: 2, ease: "easeInOut", type: "spring", delay: item * 0.05 }}
+                        transition={{ duration: 0.3, ease: "easeInOut", type: "spring", delay: item * 0.05 }}
                         key={item}
                         className={twMerge("w-[10%]  h-full  z-[150]", darkModeclass)}>
                     </m.div>)

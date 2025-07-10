@@ -1,7 +1,7 @@
 
 import { ArrowFatLineRight } from "@phosphor-icons/react";
 import { m } from "framer-motion";
-const DURATION = 0.25;
+const DURATION = 0.3;
 const STAGGER = 0.025;
 export const FlipLink = ({ children, href }) => {
     return (

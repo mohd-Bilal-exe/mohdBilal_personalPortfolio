@@ -13,6 +13,7 @@ export default function Resume({ isFade, setCursorColor }) {
     const [iconSize, setIconSize] = useState(40);
     const [isHoveredDownload, setIsHoveredDownload] = useState(false);
     const [isHoveredEye, setIsHoveredEye] = useState(false);
+
     const handleEnter = (type, isFade) => {
         if (isFade) return; // Prevent cursor change when isFade is true
         setCursorColor({ color: "bg-gradient-to-br from-blue-500 to-purple-600 shadow-purple-600", size: "w-2 h-2" });
@@ -61,7 +62,7 @@ export default function Resume({ isFade, setCursorColor }) {
                 <a
                     href="/MohdBilalresume.pdf"
                     download="MohdBilalresume"
-                    className="flex justify-center items-center p-1 w-full h-1/2 font-light text-xs hover:scale-[0.90] transition-all duration-700"
+                    className="flex justify-center items-center p-1 w-full h-1/2 font-light text-xs hover:scale-[0.90] active:scale-75 transition-all duration-300"
                     onMouseEnter={() => handleEnter("download", isFade)}
                     onMouseLeave={() => handleExit("download", isFade)}
                 >
@@ -69,7 +70,7 @@ export default function Resume({ isFade, setCursorColor }) {
 }
                 </a>
                 <button
-                    className="flex justify-center items-center p-1 w-full h-1/2 font-light text-xs hover:scale-[0.90] transition-all duration-700"
+                    className="flex justify-center items-center p-1 w-full h-1/2 font-light text-xs hover:scale-[0.90] active:scale-75 transition-all duration-300"
                     onMouseEnter={() => handleEnter("eye", isFade)}
                     onMouseLeave={() => handleExit("eye", isFade)}
                     onClick={() => setResumeModalOpen(true)}
