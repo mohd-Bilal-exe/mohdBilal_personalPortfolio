@@ -65,7 +65,7 @@ export default function Resume({ isFade, setCursorColor }) {
                     onMouseEnter={() => handleEnter("download", isFade)}
                     onMouseLeave={() => handleExit("download", isFade)}
                 >
-                    {isHoveredDownload ? <DownloadAnimated size={iconSize}  /> : <DownloadNormal size={iconSize}  />
+                    {isHoveredDownload ? <DownloadAnimated size={iconSize} styles={"dark:text-purple-300 text-purple-700"}  /> : <DownloadNormal size={iconSize}  />
 }
                 </a>
                 <button
@@ -73,7 +73,7 @@ export default function Resume({ isFade, setCursorColor }) {
                     onMouseEnter={() => handleEnter("eye", isFade)}
                     onMouseLeave={() => handleExit("eye", isFade)}
                     onClick={() => setResumeModalOpen(true)}
-                ><Eye size={iconSize} weight="light" />
+                ><Eye size={iconSize} weight="light" className={`${isHoveredEye ? "dark:text-purple-300 text-purple-700" : ""}`} />
                 </button>
             </div>
         </section>
