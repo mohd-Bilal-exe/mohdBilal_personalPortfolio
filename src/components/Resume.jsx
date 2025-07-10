@@ -37,8 +37,7 @@ export default function Resume({ isFade, setCursorColor }) {
             const height = resumeRef.current.offsetHeight;
             setIconSize(height > 137 ? 45 : 32);
         }
-    }, [resumeRef]);
-
+    });
     return (<>
         <section ref={resumeRef} className={`relat ive p-4 w-full h-full flex gap-2 justify-between ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}>
             <AnimatePresence>
