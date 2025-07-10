@@ -1,28 +1,43 @@
-import { DownloadSimple, Eye } from "@phosphor-icons/react";
 import { AnimatePresence, m } from "framer-motion";
 import PropTypes from 'prop-types';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import useStore from "../stores/useStores";
+import { DownloadSimple, Eye } from "@phosphor-icons/react";
+import DownloadNormal from "../icons/DownloadNormal";
+import DownloadAnimated from "../icons/DownloadAnimated";
 
 export default function Resume({ isFade, setCursorColor }) {
 
     const { setResumeModalOpen } = useStore();
     const resumeRef = useRef(null);
     const [iconSize, setIconSize] = useState(40);
-    const handleEnter = () => {
+    const [isHoveredDownload, setIsHoveredDownload] = useState(false);
+    const [isHoveredEye, setIsHoveredEye] = useState(false);
+    const handleEnter = (type, isFade) => {
+        if (isFade) return; // Prevent cursor change when isFade is true
         setCursorColor({ color: "bg-gradient-to-br from-blue-500 to-purple-600 shadow-purple-600", size: "w-2 h-2" });
+        if (type === "download") {
+            setIsHoveredDownload(true);
+        } else if (type === "eye") {
+            setIsHoveredEye(true);
+        }
     };
 
-    const handleExit = () => {
+    const handleExit = (type, isFade) => {
+        if (isFade) return; // Prevent cursor change when isFade is true
         setCursorColor({ color: "bg-white shadow-white", size: "w-2 h-2" });
+        if (type === "download") {
+            setIsHoveredDownload(false);
+        } else if (type === "eye") {
+            setIsHoveredEye(false);
+        }
     };
-
     useEffect(() => {
         if (resumeRef.current) {
             const height = resumeRef.current.offsetHeight;
             setIconSize(height > 137 ? 45 : 32);
         }
-    }, []);
+    }, [resumeRef]);
 
     return (<>
         <section ref={resumeRef} className={`relat ive p-4 w-full h-full flex gap-2 justify-between ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}>
@@ -33,33 +48,33 @@ export default function Resume({ isFade, setCursorColor }) {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="z-[500] fixed dark:bg-white/10 bg-black/20 top-0 left-0 h-full w-full"
+                        className="top-0 left-0 z-[500] fixed bg-black/20 dark:bg-white/10 w-full h-full"
                     />
                 )}
             </AnimatePresence>
 
             <div className="flex flex-col justify-center w-1/2 h-full">
-                <h5 className="text-xs font-light">2024</h5>
-                <h1 className="text-4xl font-semibold Pally">Resume</h1>
+                <h5 className="font-light text-xs">2024</h5>
+                <h1 className="font-semibold text-4xl Pally">Resume</h1>
             </div>
 
             <div className={`w-1/2 h-full flex ${iconSize <= 40 ? "flex-row" : "flex-col"} gap-4 justify-center items-center`}>
                 <a
                     href="/MohdBilalresume.pdf"
                     download="MohdBilalresume"
-                    className="w-full h-1/2 p-1 flex justify-center items-center text-xs font-light"
-                    onMouseEnter={!isFade ? handleEnter : undefined}
-                    onMouseLeave={!isFade ? handleExit : undefined}
+                    className="flex justify-center items-center p-1 w-full h-1/2 font-light text-xs"
+                    onMouseEnter={() => handleEnter("download", isFade)}
+                    onMouseLeave={() => handleExit("download", isFade)}
                 >
-                    <DownloadSimple size={iconSize} weight="light" />
+                    {isHoveredDownload ? <DownloadAnimated size={iconSize}  /> : <DownloadNormal size={iconSize}  />
+}
                 </a>
                 <button
-                    className="w-full h-1/2 p-1 flex justify-center items-center text-xs font-light"
-                    onMouseEnter={!isFade ? handleEnter : undefined}
-                    onMouseLeave={!isFade ? handleExit : undefined}
+                    className="flex justify-center items-center p-1 w-full h-1/2 font-light text-xs"
+                    onMouseEnter={() => handleEnter("eye", isFade)}
+                    onMouseLeave={() => handleExit("eye", isFade)}
                     onClick={() => setResumeModalOpen(true)}
-                >
-                    <Eye size={iconSize} weight="light" />
+                ><Eye size={iconSize} weight="light" />
                 </button>
             </div>
         </section>

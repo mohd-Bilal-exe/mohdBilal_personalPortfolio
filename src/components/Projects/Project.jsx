@@ -6,40 +6,48 @@ import { NavigationArrow } from "@phosphor-icons/react";
 const ProjectGridLayout = WidthProvider(Responsive);
 const projectLayouts = {
     lg: [
-        { i: "verbi.AI", x: 0, y: 1, w: 3, h: 9 },
-        { i: "ToDo Nest", x: 3, y: 8, w: 3, h: 9 },
-        { i: "Poetica", x: 3, y: 0, w: 3, h: 9 },
-        { i: "PreviousPortfolio", x: 0, y: 5, w: 3, h: 8 },
+        { i: "ResumeIQ", x: 0, y: 1, w: 3, h: 9 },
+        { i: "verbi.AI", x: 3, y: 1, w: 3, h: 9 },
+        { i: "ToDo Nest", x: 0, y: 10, w: 3, h: 8 },
+        { i: "PreviousPortfolio", x: 3, y: 10, w: 3, h: 9 },
         { i: "Heading", x: 0, y: 0, w: 3, h: 1, static: true },
-    ], //My laptop
+    ],
     md: [
-        { i: "verbi.AI", x: 0, y: 1, w: 3, h: 7 },
-        { i: "ToDo Nest", x: 3, y: 7, w: 3, h: 7 },
-        { i: "Poetica", x: 3, y: 0, w: 3, h: 7 },
-        { i: "PreviousPortfolio", x: 0, y: 5, w: 3, h: 6 },
+        { i: "ResumeIQ", x: 0, y: 1, w: 3, h: 8 },
+        { i: "verbi.AI", x: 3, y: 1, w: 3, h: 8 },
+        { i: "ToDo Nest", x: 0, y: 9, w: 3, h: 8 },
+        { i: "PreviousPortfolio", x: 3, y: 9, w: 3, h: 8 },
         { i: "Heading", x: 0, y: 0, w: 3, h: 1, static: true },
     ],
     sm: [
-        { i: "verbi.AI", x: 0, y: 2, w: 5, h: 6 },
-        { i: "ToDo Nest", x: 0, y: 0, w: 7, h: 1 },
-        { i: "Poetica", x: 0, y: 9, w: 1, h: 2 },
-        { i: "PreviousPortfolio", x: 0, y: 5, w: 3, h: 6 },
-        { i: "Heading", x: 0, y: 0, w: 3, h: 1, static: true },
+        { i: "ResumeIQ", x: 0, y: 1, w: 2, h: 9 },
+        { i: "verbi.AI", x: 0, y: 10, w: 2, h: 9 },
+        { i: "ToDo Nest", x: 0, y: 19, w: 2, h: 9 },
+        { i: "PreviousPortfolio", x: 0, y: 28, w: 2, h: 9 },
+        { i: "Heading", x: 0, y: 0, w: 2, h: 1, static: true },
     ],
     xs: [
-        { i: "verbi.AI", x: 0, y: 2, w: 3, h: 8 },
-        { i: "ToDo Nest", x: 0, y: 1, w: 3, h: 8 },
-        { i: "Poetica", x: 0, y: 8, w: 3, h: 8 },
-        { i: "PreviousPortfolio", x: 0, y: 5, w: 3, h: 8 },
-        { i: "Heading", x: 0, y: 0, w: 3, h: 1, static: true },
+        { i: "ResumeIQ", x: 0, y: 1, w: 2, h: 9 },
+        { i: "verbi.AI", x: 0, y: 10, w: 2, h: 9 },
+        { i: "ToDo Nest", x: 0, y: 19, w: 2, h: 9 },
+        { i: "PreviousPortfolio", x: 0, y: 28, w: 2, h: 9 },
+        { i: "Heading", x: 0, y: 0, w: 2, h: 1, static: true },
     ],
 };
 const Projects = [
     {
+        key: "ResumeIQ",
+        title: "ResumeIQ",
+        imgScr: "/resumeIQ.png",
+        link: "https://resumeiq-mohdb.vercel.app/",
+        description: "AI resume reviewer with real-time LaTeX preview and PDF export.",
+        tech: ["Next js", "Firebase", "Express", "Framer Motion", "Node", "Gemini API"],
+    },
+    {
         key: "verbi.AI",
         title: "verbi.AI",
         imgScr: "/Verbi.webp",
-        link: "https://verbi-ai.vercel.app/",
+        link: "#",
         description: "AI-powered app for grammar correction and language translation with custom instructions.",
         tech: ["React js", "Redux js", "Google-GenAI", "TailwindCSS", "Framer-motion"],
     },
@@ -50,14 +58,6 @@ const Projects = [
         link: "https://todo-nest.netlify.app/",
         description: "A task manager with custom colors, powered by Redux for persistent tasks.",
         tech: ["React js", "Redux js", "TailwindCSS", "Framer-motion"],
-    },
-    {
-        key: "Poetica",
-        title: "Poetica",
-        imgScr: "/Poetica.avif",
-        link: "#'m_working_on_it_(yet-another-project-that-no-one-cares-about)",
-        description: "A social platform for writers with AI-generated summaries and hashtags.",
-        tech: ["Next js", "Firebase", "Google-GenAI", "TailwindCSS", "Framer-motion"],
     },
     {
         key: "PreviousPortfolio",
@@ -85,7 +85,7 @@ export default function Project({ isFade, setCursorColor }) {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="z-[500] fixed top-0 left-0 h-full w-full bg-white/10 dark:bg-black/5 "
+                        className="top-0 left-0 z-[500] fixed bg-white/10 dark:bg-black/5 w-full h-full"
                     />
                 )}
             </AnimatePresence>
@@ -93,7 +93,7 @@ export default function Project({ isFade, setCursorColor }) {
 
             <ProjectGridLayout
                 key="Projects"
-                layouts={{ lg: projectLayouts.lg, md: projectLayouts.lg, sm: projectLayouts.sm, xxs: projectLayouts.xs }}
+                layouts={{ lg: projectLayouts.lg, md: projectLayouts.md, sm: projectLayouts.sm, xxs: projectLayouts.xs }}
                 breakpoints={{ lg: 1200, md: 992, sm: 768, xxs: 480 }}
                 cols={{ lg: 6, md: 6, sm: 2, xxs: 2 }}
                 margin={[2, 2]}
@@ -112,44 +112,46 @@ export default function Project({ isFade, setCursorColor }) {
                         return (
                             <m.div
                                 key={Project.key} className={`dark:bg-darkGray/90 backdrop-blur-xl dark:text-white bg-white/90 `}>
-                                <div className={`group w-full h-full flex flex-col justify-center items-start   z-50 ${isFade && "grayscale opacity-10"} transition-all duration-300`}>
-                                    <div className="w-full h-4/5 flex">
-                                        <div id="Texts" className="w-2/5 smartphone:w-1/2  h-full p-6 text-4xl flex flex-col justify-center text-pretty">
-                                            <h1 className="ml-1 smartphone:ml-0 tracking-wider Pally">{Project.title}</h1>
-                                            <h2 className="text-xs ml-3 smartphone:ml-0  mt-2 tracking-wider font-extralight">{Project.description}</h2>
-                                        </div>
-                                        <div id="imageCont" className="w-3/5 smartphone:w-1/2  h-full p-4 flex items-center justify-center   ">
-                                            <div
-                                                className="w-full h-full overflow-hidden rounded-2xl drop-shadow-[0px_0px_2px_rgba(255,255,255,0.35)] transition-all duration-300 group-hover:scale-[99%] bg-contain bg-center bg-no-repeat"
-                                                style={{
-                                                    backgroundImage: `url(${Project.imgScr})`,
-                                                }}
-                                            />
-                                        </div>
+                                <div className={`group w-full h-full flex flex-col z-50 ${isFade && "grayscale opacity-10"} transition-all duration-300`}>
+                                    <div id="imageCont" className="flex-1 p-3">
+                                        <div
+                                            className="bg-cover bg-center drop-shadow-[0px_0px_2px_rgba(255,255,255,0.35)] rounded-sm w-full h-full overflow-hidden group-hover:scale-[99%] transition-all duration-300"
+                                            style={{
+                                                backgroundImage: `url(${Project.imgScr})`,
+                                            }}
+                                        />
                                     </div>
-
-                                    <div id="TechUsed" className="flex flex-wrap  items-center gap-2 px-4 group">
-                                        {
-                                            Project.tech.map((item) => {
-                                                return (
-                                                    <span key={item} className="dark:bg-white/5 bg-darkGray/5 px-2 py-1  text-sm smartphone:text-xs  rounded-sm group-hover:scale-[102%] transition-all">
-                                                        {item}
-                                                    </span>
-
-                                                )
-                                            })
-                                        }
+                                    
+                                    <div className="space-y-2 p-4">
+                                        <div className="flex items-center gap-3"><h1 className="font-semibold smartphone:text-lg text-xl tracking-wider Pally">{Project.title}</h1>
                                         <a href={Project.link}
-                                            onMouseEnter={handleEnter}
-                                            onMouseLeave={handleExit}
-                                            rel="noopener noreferrer"
-                                            className="w-10 h-10 flex justify-center items-center  group-hover:dark:bg-white/5 group-hover:bg-darkGray/5 rounded-xl  -translate-y-1 transition-all duration-300 overflow-hidden">
-                                            <span className="flex gap-2 flex-col justify-center items-center w-full h-24  rotate-45  -translate-x-[19px] hover:translate-x-3 translate-y-5 hover:-translate-y-3 transition-all duration-500">
-                                                <NavigationArrow className="rotate-45  mb-[1px] h-1/2" size={"65%"} weight="duotone" />
-                                                <span className="h-1/2">
-                                                    Go!
+                                                onMouseEnter={handleEnter}
+                                                onMouseLeave={handleExit}
+                                                rel="noopener noreferrer"
+                                                className="flex justify-center items-center group-hover:bg-darkGray/5 group-hover:dark:bg-white/5 rounded-xl w-10 h-10 overflow-hidden transition-all -translate-y-1 duration-300">
+                                                <span className="flex flex-col justify-center items-center gap-2 w-full h-24 rotate-45 transition-all -translate-x-[19px] translate-y-5 hover:-translate-y-3 hover:translate-x-3 duration-500">
+                                                    <NavigationArrow className="mb-[1px] h-1/2 rotate-45" size={"65%"} weight="duotone" />
+                                                    <span className="h-1/2">
+                                                        Go!
+                                                    </span>
                                                 </span>
-                                            </span></a>
+                                            </a></div>
+                                        
+                                        
+                                        <p className="font-light text-gray-600 smartphone:text-[10px] dark:text-white/70 text-xs leading-relaxed">{Project.description}</p>
+                                        
+                                        <div className="flex flex-wrap items-center gap-1">
+                                            {
+                                                Project.tech.map((item) => {
+                                                    return (
+                                                        <span key={item} className="bg-darkGray/5 dark:bg-white/5 px-1.5 py-0.5 rounded text-[13px] smartphone:text-[8px] group-hover:scale-[102%] transition-all">
+                                                            {item}
+                                                        </span>
+                                                    )
+                                                })
+                                            }
+                                            
+                                        </div>
                                     </div>
                                 </div>
                             </m.div>
