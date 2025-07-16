@@ -31,15 +31,15 @@ export const AnimationScreen = ({ setIsAnimating, setShowGrid, setShowExpandedAb
     };
 
     return (
-        <m.section variants={variants} initial="initial" animate="animate" className="w-screen h-screen fixed flex z-[150]">
+        <m.section variants={variants} initial="initial" animate="animate" className="z-[150] fixed flex w-screen h-screen">
             {[4, 3, 2, 1, 0].map((item) => {
                 return (
                     <m.div
                         initial={{ y: "100%" }}
                         animate={{ y: "-100%" }}
-                        transition={{ duration: 0.3, ease: "easeInOut", type: "spring", delay: item * 0.05 }}
+                        transition={{ duration: 2.5, ease: "easeInOut", type: "spring", delay: item * 0.05 }}
                         key={item}
-                        className={twMerge("w-[10%]  h-full  z-[150]", darkModeclass)}>
+                        className={twMerge("z-[150] w-[10%] h-full", darkModeclass)}>
                     </m.div>
                 )
             })}
@@ -48,9 +48,9 @@ export const AnimationScreen = ({ setIsAnimating, setShowGrid, setShowExpandedAb
                     <m.div
                         initial={{ y: "100%" }}
                         animate={{ y: "-100%" }}
-                        transition={{ duration: 0.3, ease: "easeInOut", type: "spring", delay: item * 0.05 }}
+                        transition={{ duration: 2.5, ease: "easeInOut", type: "spring", delay: item * 0.05 }}
                         key={item}
-                        className={twMerge("w-[10%]  h-full  z-[150]", darkModeclass)}>
+                        className={twMerge("z-[150] w-[10%] h-full", darkModeclass)}>
                     </m.div>)
             })}
         </m.section>
