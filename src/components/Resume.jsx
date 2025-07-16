@@ -16,7 +16,7 @@ export default function Resume({ isFade, setCursorColor }) {
 
     const handleEnter = (type, isFade) => {
         if (isFade) return; // Prevent cursor change when isFade is true
-        setCursorColor({ color: "bg-gradient-to-br from-blue-500 to-purple-600 shadow-purple-600", size: "w-2 h-2" });
+        setCursorColor({ color: "bg-purple-600 shadow-purple-600", size: "w-4 h-4" });
         if (type === "download") {
             setIsHoveredDownload(true);
         } else if (type === "eye") {
@@ -26,7 +26,7 @@ export default function Resume({ isFade, setCursorColor }) {
 
     const handleExit = (type, isFade) => {
         if (isFade) return; // Prevent cursor change when isFade is true
-        setCursorColor({ color: "bg-white shadow-white", size: "w-2 h-2" });
+        setCursorColor({ color: "bg-white shadow-white", size: "w-4 h-4" });
         if (type === "download") {
             setIsHoveredDownload(false);
         } else if (type === "eye") {

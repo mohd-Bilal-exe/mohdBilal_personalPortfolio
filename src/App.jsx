@@ -183,7 +183,7 @@ function App() {
     { key: "DarkMode", component: <DarkMode setDarkMode={setDarkMode} darkMode={darkMode} setCursorColor={setCursorColor} /> },
     { key: "Location", component: <Location isFade={componentFaded.Location} darkMode={darkMode}  setCursorColor={setCursorColor}/> },
     { key: "Navbar", component: <NavandButtons setDarkMode={setDarkMode} darkMode={darkMode} handleLayoutUpdate={handleLayoutUpdate} /> },
-    { key: "SkillStack", component: <SkillStack isFade={componentFaded.SkillStack} /> },
+    { key: "SkillStack", component: <SkillStack isFade={componentFaded.SkillStack}  setCursorColor={setCursorColor} /> },
     { key: "Projects", component: <Project isFade={componentFaded.Projects} setCursorColor={setCursorColor} /> },
   ];
   return (
