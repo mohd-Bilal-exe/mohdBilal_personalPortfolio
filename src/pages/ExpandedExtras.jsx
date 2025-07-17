@@ -52,24 +52,24 @@ export default function ExpandedExtras({ handleClickAfter, darkMode }) {
             exit={{ opacity: 0 }}
             transition={{ delay: 0.75, duration: 0.50, ease: "easeInOut" }}
             id="xtramain"
-            className={twMerge("w-screen h-full flex flex-col items-center justify-start bg-white dark:bg-darkGray text-darkGray dark:text-w1", bgText)}
+            className={twMerge("flex flex-col justify-start items-center bg-white dark:bg-darkGray w-screen h-full text-darkGray dark:text-w1", bgText)}
             ref={targetRef} // Set ref here
         >
             <button
-                onClick={handleClickAfter} className="absolute z-[500]  text-darkGray dark:text-white top-3 left-3 group flex h-8 w-8 overflow-hidden"
+                onClick={handleClickAfter} className="group top-3 left-3 z-[500] absolute flex w-8 h-8 overflow-hidden text-darkGray dark:text-white"
             >
-                <div className="flex h-full w-16 group-hover:-translate-x-8 transition-transform duration-500 ease-in-out ">
+                <div className="flex w-16 h-full transition-transform group-hover:-translate-x-8 duration-500 ease-in-out">
                     <ArrowLeft size={32} weight='thin' />
                     <ArrowLeft size={32} weight='regular' />
                 </div>
 
             </button>
-            <section id="text" className="overflow-hidden w-full mt-32 smartphone:mt-14 text-darkGray dark:text-w1 ">
+            <section id="text" className="mt-32 smartphone:mt-14 w-full overflow-hidden text-darkGray dark:text-w1">
                 <m.h1
                     initial={{ y: 300 }}
                     animate={{ y: 0 }}
                     transition={{ duration: 0.5, delay: 1.5, ease: "easeInOut" }}
-                    className="text-7xl m-16 smartphone:m-8  smartphone:text-4xl coolfont tracking-widest smartphone:tracking-wider">
+                    className="m-16 smartphone:m-8 smartphone:text-4xl text-7xl smartphone:tracking-wider tracking-widest coolfont">
                     Photography
                 </m.h1>
                 <m.h2
@@ -81,28 +81,28 @@ export default function ExpandedExtras({ handleClickAfter, darkMode }) {
                         delay: 1.75,
                         ease: "easeInOut"
                     }}
-                    className="gantians w-full text-xl smartphone:text-base  ml-24 smartphone:ml-8 smartphone:mt-10 ubuntu tracking-wide smartphone:tracking-normal">
+                    className="smartphone:mt-10 ml-24 smartphone:ml-8 w-full smartphone:text-base text-xl smartphone:tracking-normal tracking-wide gantians ubuntu">
                     <span className="text-accent2lt">:)</span> Some clicks that I&apos;m proud of
                 </m.h2>
             </section>
 
             <section
                 id="photography" className="w-11/12">
-                <div className="grid grid-cols-2 gap-4 mx-auto my-8 scroll-smooth"> {/* Two columns layout */}
+                <div className="gap-4 grid grid-cols-2 mx-auto my-8 scroll-smooth"> {/* Two columns layout */}
                     <m.div
                         style={{ y: leftColumnScroll }}
                         transition={{ ease: "easeInOut", type: "spring", stiffness: 200, damping: 30 }} // Added spring transition
                         className="flex flex-col gap-4"> {/* Left column */}
                         {leftColumnCards.map((card) => (
-                            <div key={card.id} className="relative group overflow-hidden rounded-lg">
+                            <div key={card.id} className="group relative rounded-lg overflow-hidden">
                                 <img
                                     src={card.url}
                                     loading="lazy"
                                     alt={card.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
                                 />
-                                <div className="absolute bottom-2 left-2 z-10 translate-y-24 group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
-                                    <p className="bg-gradient-to-bl from-black/60 to-white/10 p-3 text-lg font-bold text-white backdrop-blur-md ubuntu drop-shadow-lg">
+                                <div className="bottom-2 left-2 z-10 absolute transition-transform translate-y-24 group-hover:translate-y-0 duration-500 ease-in-out">
+                                    <p className="bg-gradient-to-bl from-black/60 to-white/10 drop-shadow-lg backdrop-blur-md p-3 font-bold text-white text-lg ubuntu">
                                         {card.title}
                                     </p>
                                 </div>
@@ -115,15 +115,15 @@ export default function ExpandedExtras({ handleClickAfter, darkMode }) {
                         transition={{ ease: "easeInOut", type: "spring", stiffness: 200, damping: 30 }} // Added spring transition
                         className="flex flex-col gap-4"> {/* Right column */}
                         {rightColumnCards.map((card) => (
-                            <div key={card.id} className="relative group overflow-hidden rounded-lg">
+                            <div key={card.id} className="group relative rounded-lg overflow-hidden">
                                 <img
                                     src={card.url}
                                     loading="lazy"
                                     alt={card.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
                                 />
-                                <div className="absolute bottom-2 left-2 z-10 translate-y-24 group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
-                                    <p className="bg-gradient-to-bl from-black/60 to-white/10 p-3 text-lg font-bold text-white backdrop-blur-md ubuntu drop-shadow-lg">
+                                <div className="bottom-2 left-2 z-10 absolute transition-transform translate-y-24 group-hover:translate-y-0 duration-500 ease-in-out">
+                                    <p className="bg-gradient-to-bl from-black/60 to-white/10 drop-shadow-lg backdrop-blur-md p-3 font-bold text-white text-lg ubuntu">
                                         {card.title}
                                     </p>
                                 </div>
@@ -132,11 +132,11 @@ export default function ExpandedExtras({ handleClickAfter, darkMode }) {
                     </m.div>
                 </div>
 
-                <section className="mx-auto w-11/12 h-[500px] flex justify-center items-center text-darkGray dark:text-w1">
-                    <h1 className="flex flex-col justify-center items-center text-5xl smartphone:text-lg gantians  tracking-tight">
+                <section className="flex justify-center items-center mx-auto w-11/12 h-[500px] text-darkGray dark:text-w1">
+                    <h1 className="flex flex-col justify-center items-center smartphone:text-lg text-5xl tracking-tight gantians">
                         I post cool stuff here
-                        <a href="https://www.instagram.com/mohd.bilal__?igsh=MW9ydDcwcTR4dmVjaQ==" className="coolfont group flex items-center justify-center transition-all duration-700 ease-in-out my-4 hover:text-insta tracking-tighter">
-                            <InstagramLogo size={"13%"} weight="duotone" className=" mx-2 transition-transform ease-in-out group-hover:scale-105" />
+                        <a href="https://www.instagram.com/mohd.bilal__?igsh=MW9ydDcwcTR4dmVjaQ==" className="group flex justify-center items-center my-4 hover:text-insta tracking-tighter transition-all duration-700 ease-in-out coolfont">
+                            <InstagramLogo size={"13%"} weight="duotone" className="mx-2 group-hover:scale-105 transition-transform ease-in-out" />
                             @mohd.bilal__
                         </a>
                     </h1>

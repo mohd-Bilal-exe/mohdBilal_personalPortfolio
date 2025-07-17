@@ -114,6 +114,7 @@ const TechGrid = ({ items, isFade, setCursorColor }) => {
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.5 }}
                             onMouseEnter={() => {
+                                if (isSwapped) return; // Prevent further swaps until mouse leaves
                                 if (hoverTimeout) clearTimeout(hoverTimeout);
                                 setHoveredIndex(originalIndex);
                                 setCursorColor({ color: item.cursorColor, size: "w-4 h-4" });

@@ -172,7 +172,13 @@ export const Email = ({ isFade, setCursorColor }) => {
 
             <div className={`group w-full h-full flex items-center justify-center ${isFade ? "grayscale" : ""}`}>
                 <div className="block relative w-2/3 overflow-hidden whitespace-nowrap">
-                    <a href="mailto:mohammadbilal.mail@gmail.com" target="_blank" className={`${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}>
+                    <a 
+                        href={
+                            `mailto:mohammadbilal.mail@gmail.com?subject=Loved your work—let’s chat!&body=Hey Bilal,%0D%0A%0D%0AJust checked out your portfolio and had to reach out. Super impressed(assumption). %0D%0A%0D%0AI had something in mind and would love to run it by you:%0D%0A%0D%0A[drop your message here]%0D%0A%0D%0ALooking forward to hearing from you!%0D%0A%0D%0ACheers,%0D%0A[Your Name]`
+                        }
+                        target="_blank" 
+                        className={`${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}
+                    >
                         <div className="flex justify-start ml-2 w-full h-10 overflow-hidden font-thin text-4xl Pally">
                             <div className="flex flex-col w-fit transition-transform group-hover:-translate-y-10 duration-300 ease-out">
                                 <h1>E-Mail</h1>
