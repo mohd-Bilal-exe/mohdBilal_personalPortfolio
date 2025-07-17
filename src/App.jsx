@@ -22,6 +22,7 @@ import smoothScrollToTop from "./utils/scrollBehaviour";
 import useStore from "./stores/useStores";
 import { SpringModal } from "./components/Modals";
 import SEO from "./seo/SEO"
+import Lenis from "@studio-freight/lenis";
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 function App() {
@@ -83,6 +84,24 @@ function App() {
   };
 
 
+
+useEffect(() => {
+  const lenis = new Lenis({
+    lerp: 0.09, // Adjust for smoothness
+    smooth: true,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+
+  return () => {
+    lenis.destroy();
+  };
+}, []);
 
   const handleToTop = () => {
     smoothScrollToTop();
