@@ -54,8 +54,8 @@ const TechGrid = ({ items, isFade, setCursorColor }) => {
     const [mainIndex, setMainIndex] = useState(0);
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const [hoverTimeout, setHoverTimeout] = useState(null);
-    const [leaveTimeout, setLeaveTimeout] = useState(null);
     const [isHovering, setIsHovering] = useState(false);
+    const [isSwapped, setIsSwapped] = useState(false);
 
     useEffect(() => {
         if (isFade || isHovering) return;
@@ -65,7 +65,8 @@ const TechGrid = ({ items, isFade, setCursorColor }) => {
         return () => clearInterval(interval);
     }, [items.length, isFade, isHovering]);
 
-    const currentMain = hoveredIndex !== null ? hoveredIndex : mainIndex;
+    // Only swap to hoveredIndex if isSwapped is true
+    const currentMain = (hoveredIndex !== null && isSwapped) ? hoveredIndex : mainIndex;
     const sideItems = items.filter((_, index) => index !== currentMain);
 
     return (
@@ -73,14 +74,13 @@ const TechGrid = ({ items, isFade, setCursorColor }) => {
             className="flex items-center gap-4 smartphone:gap-2"
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => {
-                if (leaveTimeout) clearTimeout(leaveTimeout);
-                const timeout = setTimeout(() => {
-                    setIsHovering(false);
-                    if (hoverTimeout) clearTimeout(hoverTimeout);
+                setIsHovering(false);
+                if (hoverTimeout) {
+                    clearTimeout(hoverTimeout);
                     setHoverTimeout(null);
-                    setHoveredIndex(null);
-                }, 200);
-                setLeaveTimeout(timeout);
+                }
+                setHoveredIndex(null);
+                setIsSwapped(false);
             }}
         >
             {/* Main large icon */}
@@ -114,26 +114,22 @@ const TechGrid = ({ items, isFade, setCursorColor }) => {
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.5 }}
                             onMouseEnter={() => {
-                                if (hoveredIndex === originalIndex) return;
-                                if (leaveTimeout) clearTimeout(leaveTimeout);
                                 if (hoverTimeout) clearTimeout(hoverTimeout);
-                                const timeout = setTimeout(() => {
-                                    setHoveredIndex(originalIndex);
-                                }, 400);
-                                setHoverTimeout(timeout);
+                                setHoveredIndex(originalIndex);
                                 setCursorColor({ color: item.cursorColor, size: "w-4 h-4" });
+                                // Only swap if hovered for 1.5s
+                                const timeout = setTimeout(() => {
+                                    setIsSwapped(true);
+                                }, 1500);
+                                setHoverTimeout(timeout);
                             }}
                             onMouseLeave={() => {
-                                if (hoverTimeout) clearTimeout(hoverTimeout);
-                                if (leaveTimeout) clearTimeout(leaveTimeout);
-                                setHoverTimeout(null);
-                                const timeout = setTimeout(() => {
-                                    if (hoveredIndex === originalIndex) {
-                                        setHoveredIndex(null);
-                                    }
-                                }, 200);
-                                setLeaveTimeout(timeout);
+                                if (hoverTimeout) {
+                                    clearTimeout(hoverTimeout);
+                                    setHoverTimeout(null);
+                                }
                                 setCursorColor({ color: "bg-white", size: "w-2 h-2" });
+                                setIsSwapped(false);
                             }}
                             className={twMerge(
                                 "flex justify-center items-center hover:rounded-lg w-12 smartphone:w-10 h-12 smartphone:h-10 hover:scale-105 transition-transform duration-150 cursor-pointer",

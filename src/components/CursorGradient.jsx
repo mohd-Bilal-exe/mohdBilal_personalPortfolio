@@ -19,7 +19,6 @@ export default function CursorGradient({ cursorPos, darkMode, Properties }) {
                 y: cursorPos.y - relativePos,
             });
         };
-        console.log(Properties)
         updateCursorPosition();
     }, [cursorPos, controls, Properties.size, controls2]);
 
@@ -29,7 +28,7 @@ export default function CursorGradient({ cursorPos, darkMode, Properties }) {
                 key="Grad1"
                 className={twMerge(
                     darkMode ? Properties.color : "bg-gradient-to-br from-purple-500 to-cyan-300",
-                    "shadow-[0_0_20px_30px] absolute top-0 w-24 h-24 smartphone:hidden rounded-full pointer-events-none z-[0] transition-colors transition-shadows  ",
+                    "shadow-[0_0_20px_30px]  absolute top-0 w-24 h-24 smartphone:hidden rounded-full pointer-events-none z-[0] transition-colors transition-shadows  ",
                 )}
                 animate={controls}
                 transition={{

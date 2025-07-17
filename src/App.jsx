@@ -27,7 +27,7 @@ const ResponsiveGridLayout = WidthProvider(Responsive);
 
 function App() {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0, });
-  const [cursorColor, setCursorColor] = useState({ color: "bg-white", size: "w-2 h-2" });
+  const [cursorColor, setCursorColor] = useState({ color: "bg-white shadow-white", size: "w-2 h-2" });
   const [darkMode, setDarkMode] = useState(true);
   const { whatsClicked, setWhatsClicked, resumeModalOpen } = useStore();
   const [showExtras, setShowExtras] = useState(false);
@@ -87,7 +87,7 @@ function App() {
 
 useEffect(() => {
   const lenis = new Lenis({
-    lerp: 0.09, // Adjust for smoothness
+    lerp: 0.06, // Adjust for smoothness
     smooth: true,
   });
 
