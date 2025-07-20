@@ -98,7 +98,7 @@ export default function Project({ isFade, setCursorColor }) {
                 cols={{ lg: 6, md: 6, sm: 2, xxs: 2 }}
                 margin={[2, 2]}
                 containerPadding={[0, 0]}
-                rowHeight={45}
+                rowHeight={window.innerWidth <= 768 ? 39.9 : 45}
                 isResizable={false}
                 isDraggable={false}
                 useCSSTransforms={false}
