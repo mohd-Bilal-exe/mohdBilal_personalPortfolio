@@ -34,7 +34,7 @@ export const LinkedIn = ({ isFade, setCursorColor }) => {
                 className="group place-content-center grid w-full h-full"
             >
                 <LinkedinLogo size={"96%"}
-                    className="mx-auto py-8 smartphone:w-[75%] group-hover:text-lnkin group-hover:scale-95 transition-all duration-300"
+                    className="mx-auto py-8 smartphone:w-[75%] group-hover:text-lnkin group-hover:scale-95 transition-all duration-[700ms] ease-in-out"
                     weight="thin" />
             </a>
         </div>
@@ -83,7 +83,7 @@ export const GitHub = ({ isFade, setCursorColor }) => {
                 <GithubLogo
                     size={"96%"}
                     weight="thin"
-                    className="mx-auto py-8 group-hover:text-gray-500 group-hover:scale-95 transition-all duration-300"
+                    className="mx-auto py-8 group-hover:text-gray-500 group-hover:scale-95 transition-all duration-[700ms] ease-in-out"
                 />
             </a>
         </div>
@@ -106,7 +106,7 @@ export const Instagram = ({ isFade, setCursorColor }) => {
         <div
             onMouseEnter={!isFade ? handleEnter : undefined}
             onMouseLeave={!isFade ? handleExit : undefined}
-            className={`w-full h-full p-2 grid place-content-center relative ${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}
+            className={`w-full h-full p-2 grid place-content-center relative ${isFade && "pointer-events-none grayscale opacity-10"} transition-all ease-in-out duration-300`}
         >
             <AnimatePresence>
                 {isFade && (
@@ -129,7 +129,7 @@ export const Instagram = ({ isFade, setCursorColor }) => {
                 <InstagramLogo
                     size={"96%"}
                     weight="thin"
-                    className="mx-auto py-8 group-hover:text-insta group-hover:scale-95 transition-all duration-300"
+                    className="mx-auto py-8 group-hover:text-insta group-hover:scale-95 transition-all duration-[700ms] ease-in-out"
                 />
             </a>
         </div>
@@ -180,7 +180,7 @@ export const Email = ({ isFade, setCursorColor }) => {
                         className={`${isFade && "pointer-events-none grayscale opacity-10"} transition-all duration-300`}
                     >
                         <div className="flex justify-start ml-2 w-full h-10 overflow-hidden font-thin text-4xl Pally">
-                            <div className="flex flex-col w-fit transition-transform group-hover:-translate-y-10 duration-300 ease-out">
+                            <div className="flex flex-col w-fit transition-transform group-hover:-translate-y-10 duration-[700ms] ease-out">
                                 <h1>E-Mail</h1>
                                 <h1
                                     className="bg-clip-text bg-gradient-to-br from-yellow-900 dark:from-yellow-500 to-yellow-700 dark:to-yellow-300 font-normal text-transparent text-xs tracking-wide">
@@ -190,7 +190,7 @@ export const Email = ({ isFade, setCursorColor }) => {
                         </div>
                     </a>
                 </div>
-                <div className="place-content-center grid py-2 2xl:py-0 w-1/3 h-full group-hover:dark:text-yellow-500 group-hover:text-yellow-900 group-hover:scale-95 transition-all duration-300">
+                <div className="place-content-center grid py-2 2xl:py-0 w-1/3 h-full group-hover:dark:text-yellow-500 group-hover:text-yellow-900 group-hover:scale-95 transition-all duration-[900ms] ease-in-out">
                     <Envelope size={"100%"} weight="thin" />
                 </div>
             </div>
