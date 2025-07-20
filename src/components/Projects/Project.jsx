@@ -41,7 +41,7 @@ const Projects = [
         imgScr: "/resumeIQ.png",
         link: "https://resumeiq-mohdb.vercel.app/",
         description: "AI resume reviewer with real-time LaTeX preview and PDF export.",
-        tech: ["Next js", "Firebase", "Express", "Framer Motion", "Node", "Gemini API"],
+        tech: ["Next js", "Firebase", "Express", "Framer Motion", "Node","Zustand", "Gemini API"],
     },
     {
         key: "verbi.AI",
@@ -54,7 +54,7 @@ const Projects = [
     {
         key: "ToDo Nest",
         title: "ToDo Nest",
-        imgScr: "/Todo.webp",
+        imgScr: "/TODOnest.png",
         link: "https://todo-nest.netlify.app/",
         description: "A task manager with custom colors, powered by Redux for persistent tasks.",
         tech: ["React js", "Redux js", "TailwindCSS", "Framer-motion"],
@@ -112,10 +112,10 @@ export default function Project({ isFade, setCursorColor }) {
                         return (
                             <m.div
                                 key={Project.key} className={`dark:bg-darkGray/90 backdrop-blur-xl dark:text-white bg-white/90 `}>
-                                <div className={`group w-full h-full flex flex-col z-50 ${isFade && "grayscale opacity-10"} transition-all duration-300`}>
+                                <div className={`group w-full h-full flex flex-col z-50 ${isFade && "grayscale opacity-10"} transition-all ease-in-out duration-700`}>
                                     <div id="imageCont" className="flex-1 p-3">
                                         <div
-                                            className="bg-cover bg-center drop-shadow-[0px_0px_2px_rgba(255,255,255,0.35)] rounded-sm w-full h-full overflow-hidden group-hover:scale-[99%] transition-all duration-300"
+                                            className="bg-cover bg-no-repeat bg-top rounded-sm group-hover:rounded-xl w-full h-full overflow-hidden group-hover:scale-[99%] transition-all duration-300"
                                             style={{
                                                 backgroundImage: `url(${Project.imgScr})`,
                                             }}
@@ -123,12 +123,12 @@ export default function Project({ isFade, setCursorColor }) {
                                     </div>
                                     
                                     <div className="space-y-2 p-4">
-                                        <div className="flex items-center gap-3"><h1 className="font-semibold smartphone:text-lg text-xl tracking-wider Pally">{Project.title}</h1>
+                                        <div className="flex items-center gap-3"><h1 className="font-semibold smartphone:text-lg text-xl tracking-wider transition-all group-hover:translate-x-4 duration-700 ease-in-out Pally">{Project.title}</h1>
                                         <a href={Project.link}
                                                 onMouseEnter={handleEnter}
                                                 onMouseLeave={handleExit}
                                                 rel="noopener noreferrer"
-                                                className="flex justify-center items-center group-hover:bg-darkGray/5 group-hover:dark:bg-white/5 rounded-xl w-10 h-10 overflow-hidden transition-all -translate-y-1 duration-300">
+                                                className="flex justify-center items-center group-hover:bg-darkGray/5 group-hover:dark:bg-white/5 rounded-xl w-10 h-10 overflow-hidden transition-all -translate-y-1 group-hover:translate-x-4 duration-[800ms]">
                                                 <span className="flex flex-col justify-center items-center gap-2 w-full h-24 rotate-45 transition-all -translate-x-[19px] translate-y-5 hover:-translate-y-3 hover:translate-x-3 duration-300">
                                                     <NavigationArrow className="mb-[1px] h-1/2 rotate-45" size={"65%"} weight="duotone" />
                                                     <span className="h-1/2">
@@ -138,13 +138,13 @@ export default function Project({ isFade, setCursorColor }) {
                                             </a></div>
                                         
                                         
-                                        <p className="font-light text-gray-600 smartphone:text-[10px] dark:text-white/70 text-xs leading-relaxed">{Project.description}</p>
+                                        <p className="font-light text-gray-600 smartphone:text-[10px] dark:text-white/70 text-xs leading-relaxed group-hover:translate-x-6 duration-[800ms] delay-75">{Project.description}</p>
                                         
                                         <div className="flex flex-wrap items-center gap-1">
                                             {
                                                 Project.tech.map((item) => {
                                                     return (
-                                                        <span key={item} className="bg-darkGray/5 dark:bg-white/5 px-1.5 py-0.5 rounded text-[13px] smartphone:text-[8px] group-hover:scale-[102%] transition-all duration-300">
+                                                        <span key={item} className="bg-darkGray/5 dark:bg-white/5 px-1.5 py-0.5 rounded text-[13px] smartphone:text-[8px] group-hover:scale-[102%] transition-all group-hover:translate-x-3 duration-[800ms] delay-75">
                                                             {item}
                                                         </span>
                                                     )

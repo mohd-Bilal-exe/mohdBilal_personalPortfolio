@@ -135,7 +135,7 @@ export default function ExpandedExtras({ handleClickAfter, darkMode }) {
                 <section className="flex justify-center items-center mx-auto w-11/12 h-[500px] text-darkGray dark:text-w1">
                     <h1 className="flex flex-col justify-center items-center smartphone:text-lg text-5xl tracking-tight gantians">
                         I post cool stuff here
-                        <a href="https://www.instagram.com/mohd.bilal__?igsh=MW9ydDcwcTR4dmVjaQ==" className="group flex justify-center items-center my-4 hover:text-insta tracking-tighter transition-all duration-700 ease-in-out coolfont">
+                        <a href="https://www.instagram.com/mohd.bilal__" className="group flex justify-center items-center my-4 hover:text-insta tracking-tighter transition-all duration-700 ease-in-out coolfont">
                             <InstagramLogo size={"13%"} weight="duotone" className="mx-2 group-hover:scale-105 transition-transform ease-in-out" />
                             @mohd.bilal__
                         </a>

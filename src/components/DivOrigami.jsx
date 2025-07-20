@@ -10,32 +10,32 @@ import { MdDesignServices, MdPsychology, MdArchitecture, MdStorage } from "react
 export const DivOrigami = ({ isFade, setCursorColor }) => {
     const techItems = [
         // Core Languages
-        { id: 1, icon: FaJs, name: "JavaScript", className: "bg-[#F7DF1E] text-black", cursorColor: "bg-[#F7DF1E]" },
-        { id: 2, icon: SiTypescript, name: "TypeScript", className: "bg-[#3178C6] text-white", cursorColor: "bg-[#3178C6]" },
-        { id: 3, icon: FaJava, name: "Java", className: "bg-[#ED8B00] text-black", cursorColor: "bg-[#ED8B00]" },
-        { id: 4, icon: SiHtml5, name: "HTML", className: "bg-[#E34F26] text-white", cursorColor: "bg-[#E34F26]" },
-        { id: 5, icon: SiCss3, name: "CSS", className: "bg-[#1572B6] text-white", cursorColor: "bg-[#1572B6]" },
+        { id: 1, icon: FaJs, name: "JavaScript", className: "bg-[#F7DF1E] text-black ", cursorColor: "bg-[#F7DF1E] shadow-[#F7DF1E]" },
+        { id: 2, icon: SiTypescript, name: "TypeScript", className: "bg-[#3178C6] text-white", cursorColor: "bg-[#3178C6] shadow-[#3178C6]" },
+        { id: 3, icon: FaJava, name: "Java", className: "bg-[#ED8B00] text-black", cursorColor: "bg-[#ED8B00] shadow-[#ED8B00]" },
+        { id: 4, icon: SiHtml5, name: "HTML", className: "bg-[#E34F26] text-white", cursorColor: "bg-[#E34F26] shadow-[#E34F26]" },
+        { id: 5, icon: SiCss3, name: "CSS", className: "bg-[#1572B6] text-white", cursorColor: "bg-[#1572B6] shadow-[#1572B6]" },
         // Frontend Frameworks
-        { id: 6, icon: SiReact, name: "React.js", className: "bg-[#61DAFB] text-black", cursorColor: "#61DAFB" },
-        { id: 7, icon: SiNextdotjs, name: "Next.js", className: "bg-black text-white", cursorColor: "#000000" },
-        { id: 8, icon: SiTailwindcss, name: "Tailwind", className: "bg-[#06B6D4] text-white", cursorColor: "bg-[#06B6D4]" },
+        { id: 6, icon: SiReact, name: "React.js", className: "bg-[#61DAFB] text-black", cursorColor: "bg-[#61DAFB] shadow-[#61DAFB]" },
+        { id: 7, icon: SiNextdotjs, name: "Next.js", className: "bg-black text-white", cursorColor: "bg-black shadow-black" },
+        { id: 8, icon: SiTailwindcss, name: "Tailwind", className: "bg-[#06B6D4] text-white", cursorColor: "bg-[#06B6D4] shadow-[#06B6D4]" },
         // Backend
-        { id: 9, icon: LiaNode, name: "Node.js", className: "bg-[#339933] text-white", cursorColor: "bg-[#339933]" },
-        { id: 10, icon: SiExpress, name: "Express.js", className: "bg-gray-800 text-white", cursorColor: "bg-[#374151]" },
+        { id: 9, icon: LiaNode, name: "Node.js", className: "bg-[#339933] text-white", cursorColor: "bg-[#339933] shadow-[#339933]" },
+        { id: 10, icon: SiExpress, name: "Express.js", className: "bg-gray-800 text-white", cursorColor: "bg-[#374151] shadow-[#374151]" },
         // Databases
-        { id: 11, icon: SiMongodb, name: "MongoDB", className: "bg-[#47A248] text-white", cursorColor: "bg-[#47A248]" },
-        { id: 12, icon: SiMysql, name: "SQL", className: "bg-[#4479A1] text-white", cursorColor: "bg-[#4479A1]" },
-        { id: 13, icon: SiFirebase, name: "Firebase", className: "bg-[#FFCA28] text-black", cursorColor: "bg-[#FFCA28]" },
+        { id: 11, icon: SiMongodb, name: "MongoDB", className: "bg-[#47A248] text-white", cursorColor: "bg-[#47A248] shadow-[#47A248]" },
+        { id: 12, icon: SiMysql, name: "SQL", className: "bg-[#4479A1] text-white", cursorColor: "bg-[#4479A1] shadow-[#4479A1]" },
+        { id: 13, icon: SiFirebase, name: "Firebase", className: "bg-[#FFCA28] text-black", cursorColor: "bg-[#FFCA28] shadow-[#FFCA28]" },
         // Development Tools
-        { id: 14, icon: SiGit, name: "Git", className: "bg-[#F05032] text-white", cursorColor: "bg-[#F05032]" },
-        { id: 15, icon: SiVisualstudiocode, name: "VSCode", className: "bg-[#007ACC] text-white", cursorColor: "bg-[#007ACC]" },
-        { id: 16, icon: FaDocker, name: "Docker", className: "bg-[#2496ED] text-white", cursorColor: "bg-[#2496ED]" },
-        { id: 17, icon: SiPostman, name: "Postman", className: "bg-[#FF6C37] text-white", cursorColor: "bg-[#FF6C37]" },
+        { id: 14, icon: SiGit, name: "Git", className: "bg-[#F05032] text-white", cursorColor: "bg-[#F05032] shadow-[#F05032]" },
+        { id: 15, icon: SiVisualstudiocode, name: "VSCode", className: "bg-[#007ACC] text-white", cursorColor: "bg-[#007ACC] shadow-[#007ACC]" },
+        { id: 16, icon: FaDocker, name: "Docker", className: "bg-[#2496ED] text-white", cursorColor: "bg-[#2496ED] shadow-[#2496ED]" },
+        { id: 17, icon: SiPostman, name: "Postman", className: "bg-[#FF6C37] text-white", cursorColor: "bg-[#FF6C37] shadow-[#FF6C37]" },
         // CS Concepts & Interests
-        { id: 18, icon: MdStorage, name: "Data Structures", className: "bg-purple-600 text-white", cursorColor: "bg-[#9333ea]" },
-        { id: 19, icon: MdArchitecture, name: "System Design", className: "bg-teal-600 text-white", cursorColor: "bg-[#0d9488]" },
-        { id: 20, icon: MdDesignServices, name: "UI/UX Design", className: "bg-pink-500 text-white", cursorColor: "bg-[#ec4899]" },
-        { id: 21, icon: MdPsychology, name: "AI/ML", className: "bg-indigo-600 text-white", cursorColor: "bg-[#4f46e5]" },
+        { id: 18, icon: MdStorage, name: "Data Structures", className: "bg-purple-600 text-white", cursorColor: "bg-[#9333ea] shadow-[#9333ea]" },
+        { id: 19, icon: MdArchitecture, name: "System Design", className: "bg-teal-600 text-white", cursorColor: "bg-[#0d9488] shadow-[#0d9488]" },
+        { id: 20, icon: MdDesignServices, name: "UI/UX Design", className: "bg-pink-500 text-white", cursorColor: "bg-[#ec4899] shadow-[#ec4899]" },
+        { id: 21, icon: MdPsychology, name: "AI/ML", className: "bg-indigo-600 text-white", cursorColor: "bg-[#4f46e5] shadow-[#4f46e5]" },
     ];
 
     return (
@@ -71,7 +71,7 @@ const TechGrid = ({ items, isFade, setCursorColor }) => {
 
     return (
         <div 
-            className="flex items-center gap-4 smartphone:gap-2"
+            className="flex items-center gap-4 smartphone:gap-0"
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => {
                 setIsHovering(false);
@@ -91,7 +91,7 @@ const TechGrid = ({ items, isFade, setCursorColor }) => {
                 exit={{ x:12,opacity: 0 }}
                 transition={{ duration: 0.5 }}
                 className={twMerge(
-                    "flex flex-col justify-center items-center shadow-lg rounded-lg w-24 smartphone:w-20 h-24 smartphone:h-20",
+                    "smartphone:hidden flex flex-col justify-center items-center shadow-lg rounded-lg w-24 smartphone:w-20 h-24",
                     items[currentMain].className
                 )}
             >
@@ -103,7 +103,7 @@ const TechGrid = ({ items, isFade, setCursorColor }) => {
             </m.div>
 
             {/* Grid of smaller icons */}
-            <div className="gap-2 smartphone:gap-1 grid grid-cols-5 smartphone:max-w-40">
+            <div className="gap-2 smartphone:gap-0 grid grid-cols-5 smartphone:max-w-40">
                 {sideItems.map((item, index) => {
                     const originalIndex = items.findIndex(i => i.id === item.id);
                     return (
@@ -129,11 +129,11 @@ const TechGrid = ({ items, isFade, setCursorColor }) => {
                                     clearTimeout(hoverTimeout);
                                     setHoverTimeout(null);
                                 }
-                                setCursorColor({ color: "bg-white", size: "w-2 h-2" });
+                                setCursorColor({ color: "bg-white shadow-white", size: "w-2 h-2" });
                                 setIsSwapped(false);
                             }}
                             className={twMerge(
-                                "flex justify-center items-center hover:rounded-lg w-12 smartphone:w-10 h-12 smartphone:h-10 hover:scale-105 transition-transform duration-150 cursor-pointer",
+                                "flex justify-center items-center hover:rounded-lg w-12 smartphone:w-8 h-12 smartphone:h-10 hover:scale-105 transition-transform duration-150 cursor-pointer",
                                 item.className
                             )}
                         >
