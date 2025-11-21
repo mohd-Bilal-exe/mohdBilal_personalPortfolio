@@ -43,17 +43,6 @@ export default function Resume({ isFade, setCursorColor }) {
         }}
       />
 
-      {/* SCANNER LINE ANIMATION (The Cool Factor) */}
-      <div className="top-0 left-0 z-0 absolute opacity-0 group-hover/resume:opacity-100 w-full h-full overflow-hidden transition-opacity duration-500 pointer-events-none">
-        <m.div
-          className="bg-gradient-to-r from-transparent via-purple-500 to-transparent shadow-[0_0_15px_rgba(168,85,247,0.8)] w-full h-[2px]"
-          initial={{ top: 0 }}
-          animate={{ top: '100%' }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-          style={{ position: 'absolute' }}
-        />
-      </div>
-
       {/* BACKGROUND DECORATION (Abstract Text Lines) */}
       <div className="top-4 right-4 absolute flex flex-col items-end gap-2 opacity-10 pointer-events-none">
         <div className="bg-white rounded-full w-12 h-1"></div>
@@ -84,7 +73,9 @@ export default function Resume({ isFade, setCursorColor }) {
             Updated 2025
           </h5>
         </div>
-        <h1 className="mt-2 font-bold text-black dark:text-white text-3xl tracking-tight">Resume</h1>
+        <h1 className="mt-2 font-bold text-black dark:text-white text-3xl tracking-tight">
+          Resume
+        </h1>
       </div>
 
       {/* ACTION BUTTONS */}
@@ -92,7 +83,7 @@ export default function Resume({ isFade, setCursorColor }) {
         {/* VIEW BUTTON (Primary) */}
         <button
           onClick={() => setResumeModalOpen(true)}
-          className="flex flex-1 justify-center items-center gap-2 bg-black dark:bg-white hover:bg-neutral-800 dark:hover:bg-purple-50 px-1 py-2 rounded-xl font-bold text-white dark:text-black text-sm active:scale-95 transition-all duration-200"
+          className="flex flex-1 justify-center items-center gap-2 bg-black hover:bg-neutral-800 dark:bg-white dark:hover:bg-purple-50 px-1 py-2 rounded-xl font-bold text-white dark:text-black text-sm active:scale-95 transition-all duration-200"
         >
           <Eye size={18} weight="bold" />
           <span>Preview</span>
