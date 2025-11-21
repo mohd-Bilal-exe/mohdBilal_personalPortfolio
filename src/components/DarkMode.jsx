@@ -19,9 +19,10 @@ export default function DarkMode({ setDarkMode, darkMode, setCursorColor }) {
       {/* THE BACKGROUND TRACK */}
       <div className="relative flex bg-black/20 border border-white/5 rounded-2xl w-full h-full overflow-hidden">
         {/* THE SLIDING PILL (Active State Background) */}
-        <div className={`absolute inset-0 p-1 flex ${darkMode ? 'justify-end' : 'justify-start'}`}>
+        <div className={`absolute inset-0 p-1 flex justify-start`}>
           <m.div
             layout
+            animate={{ translateX: darkMode ? '100%' : '0%' }}
             transition={{ type: 'spring', stiffness: 400, damping: 30 }}
             className={`
                             h-full w-1/2 rounded-xl shadow-md

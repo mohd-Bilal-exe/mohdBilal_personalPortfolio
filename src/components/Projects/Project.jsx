@@ -168,7 +168,7 @@ export default function Project({ isFade, setCursorColor }) {
                     {/* ☝️ MODERNIZED PROJECT LINK BUTTON END */}
                   </div>
 
-                  <p className="font-light text-gray-600 smartphone:text-[10px] dark:text-white/70 text-xs leading-relaxed group-hover:translate-x-6 duration-[800ms] delay-75">
+                  <p className="font-light text-gray-700 smartphone:text-[10px] dark:text-white/70 text-xs leading-relaxed group-hover:translate-x-6 duration-[800ms] delay-75">
                     {Project.description}
                   </p>
 

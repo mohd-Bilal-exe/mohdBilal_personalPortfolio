@@ -97,7 +97,7 @@ export default function Location({ isFade, darkMode, setCursorColor }) {
             <span className="inline-flex absolute bg-emerald-400 opacity-75 rounded-full w-full h-full animate-ping"></span>
             <span className="inline-flex relative bg-emerald-500 rounded-full w-2.5 h-2.5"></span>
           </div>
-          <span className="font-medium text-black dark:text-white text-xs tracking-wide">Lucknow</span>
+          <span className="font-medium text-gray-900 dark:text-white text-xs tracking-wide">Lucknow</span>
         </div>
 
         {/* CENTER: Radar Animation (Visual Interest) */}
@@ -113,10 +113,10 @@ export default function Location({ isFade, darkMode, setCursorColor }) {
         {/* BOTTOM BAR: Time & Info */}
         <div className="right-4 bottom-4 left-4 absolute flex justify-between items-end">
           <div className="flex flex-col">
-            <span className="mb-0.5 font-bold text-[10px] text-neutral-400 uppercase tracking-wider">
+            <span className="mb-0.5 font-bold text-[10px] text-neutral-600 dark:text-neutral-400 uppercase tracking-wider">
               Local Time
             </span>
-            <div className="flex items-center gap-1.5 text-black dark:text-white">
+            <div className="flex items-center gap-1.5 text-gray-900 dark:text-white">
               <Clock weight="bold" className="text-emerald-400" />
               <span className="font-variant-numeric font-bold tabular-nums text-xl tracking-tight">
                 {time}
@@ -125,7 +125,7 @@ export default function Location({ isFade, darkMode, setCursorColor }) {
           </div>
 
           {/* Coordinates (Optional - adds 'tech' feel) */}
-          <div className="hidden smartphone:hidden md:block opacity-60 font-mono text-[9px] text-neutral-700 dark:text-neutral-500 text-right">
+          <div className="hidden smartphone:hidden md:block opacity-60 font-mono text-[9px] text-neutral-800 dark:text-neutral-500 text-right">
             26.8467° N<br />
             80.9462° E
           </div>

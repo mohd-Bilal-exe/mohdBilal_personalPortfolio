@@ -31,7 +31,7 @@ export default function Resume({ isFade, setCursorColor }) {
       onMouseMove={handleMouseMove}
       onMouseEnter={handleEnter}
       onMouseLeave={handleExit}
-      className={`relative w-full h-full flex flex-col justify-between overflow-hidden border border-neutral-200 dark:border-white/10 bg-white dark:bg-transparent p-4 group/resume ${
+      className={`relative w-full h-full flex flex-col justify-between overflow-hidden border border-neutral-200 dark:border-white/10 p-4 group/resume ${
         isFade && 'pointer-events-none grayscale opacity-10'
       } transition-all duration-300`}
     >
@@ -44,7 +44,7 @@ export default function Resume({ isFade, setCursorColor }) {
       />
 
       {/* BACKGROUND DECORATION (Abstract Text Lines) */}
-      <div className="top-4 right-4 absolute flex flex-col items-end gap-2 opacity-10 pointer-events-none">
+      <div className="top-4 right-4 absolute flex flex-col items-end gap-2 dark:opacity-10 pointer-events-none">
         <div className="bg-white rounded-full w-12 h-1"></div>
         <div className="bg-white rounded-full w-8 h-1"></div>
         <div className="bg-white rounded-full w-10 h-1"></div>
@@ -66,14 +66,14 @@ export default function Resume({ isFade, setCursorColor }) {
       {/* HEADER CONTENT */}
       <div className="z-20 relative flex flex-col">
         <div className="flex items-center gap-2">
-          <span className="flex justify-center items-center bg-purple-500/20 rounded-full w-7 h-7 text-purple-400">
+          <span className="flex justify-center items-center bg-purple-500/20 rounded-full w-7 h-7 text-purple-500 dark:text-purple-400">
             <FileText weight="fill" size={12} />
           </span>
-          <h5 className="font-medium text-purple-300 text-xs uppercase tracking-wider">
+          <h5 className="font-medium text-purple-700 dark:text-purple-300 text-xs uppercase tracking-wider">
             Updated 2025
           </h5>
         </div>
-        <h1 className="mt-2 font-bold text-black dark:text-white text-3xl tracking-tight">
+        <h1 className="mt-2 font-bold text-gray-900 dark:text-white text-3xl tracking-tight">
           Resume
         </h1>
       </div>
@@ -83,7 +83,7 @@ export default function Resume({ isFade, setCursorColor }) {
         {/* VIEW BUTTON (Primary) */}
         <button
           onClick={() => setResumeModalOpen(true)}
-          className="flex flex-1 justify-center items-center gap-2 bg-black hover:bg-neutral-800 dark:bg-white dark:hover:bg-purple-50 px-1 py-2 rounded-xl font-bold text-white dark:text-black text-sm active:scale-95 transition-all duration-200"
+          className="flex flex-1 justify-center items-center gap-2 bg-black/70 hover:bg-neutral-800 dark:bg-white dark:hover:bg-purple-50 px-1 py-2 rounded-xl font-bold text-white dark:text-black text-sm active:scale-95 transition-all duration-200"
         >
           <Eye size={18} weight="bold" />
           <span>Preview</span>

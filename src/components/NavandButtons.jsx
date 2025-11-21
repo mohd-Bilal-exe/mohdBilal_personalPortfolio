@@ -29,12 +29,12 @@ export default function NavandButtons({ handleLayoutUpdate }) {
         <div className={`w-full h-full absolute top-0 z-0 p-1 flex`}>
           <span
             className={`
-                            h-full w-1/3 transition-transform ease-in-out duration-300 rounded-lg backdrop-blur-sm
-                            border border-white/20 dark:border-white/10 shadow-lg
-                            bg-white/5 dark:bg-black/20
-                            ${navSelected === 'Everything' && 'translate-x-0'} 
-                            ${navSelected === 'Technologies' && 'translate-x-full'} 
-                            ${navSelected === 'Everything else' && 'translate-x-[200%]'}
+             h-full w-1/3 transition-transform ease-in-out duration-300 rounded-lg backdrop-blur-sm
+           border border-white/20 dark:border-white/10 shadow-lg
+     bg-white/5 dark:bg-black/20
+  ${navSelected === 'Everything' && 'translate-x-0'} 
+              ${navSelected === 'Technologies' && 'translate-x-full'} 
+     ${navSelected === 'Everything else' && 'translate-x-[200%]'}
                         `}
           />
         </div>
@@ -50,24 +50,20 @@ export default function NavandButtons({ handleLayoutUpdate }) {
                     handleLayoutUpdate(item.title);
                     setNavSelected(item.title);
                   }}
-                  className={`
-                                            w-full h-full text-center group overflow-hidden relative transition-colors duration-300 
-                                            ${
-                                              isSelected
-                                                ? 'text-white font-bold' // Active text color
-                                                : 'text-neutral-500 hover:text-neutral-300 font-medium' // Inactive text color
-                                            }
-                                        `}
-                  // Ensures the entire button area is clickable
+                  className={`w-full h-full text-center group overflow-hidden relative transition-colors duration-300 ${
+                    isSelected
+                      ? 'text-gray-900 dark:text-white font-bold'
+                      : 'text-neutral-600 dark:text-neutral-500 hover:text-gray-800 dark:hover:text-neutral-300 font-medium'
+                  } `}
                 >
                   <div className="flex flex-col justify-start items-center gap-4 py-2 h-full">
                     {/* Top Text (Default/Selected) */}
-                    <span className="md:text-md text-sm transition-transform lg:group-hover:-translate-y-8 duration-300 ease-out">
+                    <span className="text-gray-900 md:text-md dark:text-white/60 text-sm transition-transform lg:group-hover:-translate-y-8 duration-300 ease-out">
                       {item.title}
                     </span>
 
                     {/* Bottom Text (Hover/Rearrange) */}
-                    <span className="flex justify-center items-center gap-1 text-purple-400 text-xs md:text-sm transition-transform lg:group-hover:-translate-y-9 duration-300 ease-out">
+                    <span className="flex justify-center items-center gap-1 text-purple-600 dark:text-purple-400 text-xs md:text-sm transition-transform lg:group-hover:-translate-y-9 duration-300 ease-out">
                       Rearrange
                       <DiceFive size={16} weight="regular" />
                     </span>

@@ -12,15 +12,15 @@ const textClasses = {
   highlight:
     'font-bold text-sm uppercase tracking-widest whitespace-nowrap bg-clip-text text-transparent bg-gradient-to-r mx-5 from-purple-400 to-pink-400',
   solid:
-    'font-bold text-sm uppercase tracking-widest whitespace-nowrap text-neutral-600 dark:text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors duration-300',
+    'font-bold text-sm uppercase tracking-widest whitespace-nowrap text-neutral-700 dark:text-neutral-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300',
   outline: 'font-bold text-sm uppercase tracking-widest whitespace-nowrap text-transparent',
 };
 
 export default function Banner() {
   return (
     <div className="relative flex items-center border border-neutral-200 border-white/5 dark:border-white/10 border-b h-full overflow-hidden select-none">
-      <div className="left-0 z-20 absolute bg-gradient-to-r from-white dark:from-neutral-900 via-white/80 dark:via-neutral-900/80 to-transparent w-20 h-full" />
-      <div className="right-0 z-20 absolute bg-gradient-to-l from-white dark:from-neutral-900 via-white/80 dark:via-neutral-900/80 to-transparent w-20 h-full" />
+      <div className="left-0 z-20 absolute bg-gradient-to-r from-white/30 dark:from-neutral-900 via-white/10 dark:via-neutral-900/80 to-transparent w-20 h-full" />
+      <div className="right-0 z-20 absolute bg-gradient-to-l from-white/30 dark:from-neutral-900 via-white/10 dark:via-neutral-900/80 to-transparent w-20 h-full" />
 
       <div className="group flex items-center gap-2 py-3">
         <div className="flex animate-marquee group-hover:[animation-play-state:paused]">

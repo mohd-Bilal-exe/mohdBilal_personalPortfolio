@@ -68,8 +68,9 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
         <div className="flex justify-between items-start">
           <div className="flex flex-col gap-3">
             {/* UPDATED: Increased text size to 5xl (desktop) and 4xl (mobile) */}
-            <h2 className="font-bold text-gray-800 dark:text-white smartphone:text-4xl text-5xl leading-none tracking-tighter">
-              Mohd <br /> <span className="text-neutral-400">Bilal</span>
+            <h2 className="font-bold text-gray-900 dark:text-white smartphone:text-4xl text-5xl leading-none tracking-tighter">
+              Mohd
+              <span className="ml-1 text-neutral-500 dark:text-neutral-400">Bilal</span>
             </h2>
 
             {/* UPDATED: Increased text size to text-sm */}
@@ -78,7 +79,7 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
                 <span className="inline-flex absolute bg-green-400 opacity-75 rounded-full w-full h-full animate-ping"></span>
                 <span className="inline-flex relative bg-green-500 rounded-full w-2.5 h-2.5"></span>
               </div>
-              <span className="flex items-center gap-1 font-medium text-neutral-400 text-sm">
+              <span className="flex items-center gap-1 font-medium text-neutral-600 dark:text-neutral-400 text-sm">
                 Lucknow, India
               </span>
             </div>
@@ -100,11 +101,11 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
         {/* DESCRIPTION */}
         {/* UPDATED: Increased text size to text-base (16px) and text-sm */}
         <div className="space-y-2 mt-4">
-          <p className="text-neutral-300 smartphone:text-sm text-base text-pretty leading-relaxed">
-            <span className="font-semibold text-white">Full Stack Wizard</span> ⚡ Frontend Fanatic
-            & Web Dev Junkie.
+          <p className="text-neutral-700 dark:text-neutral-300 smartphone:text-sm text-base text-pretty leading-relaxed">
+            <span className="font-semibold text-gray-900 dark:text-white">Full Stack Wizard</span>{' '}
+            ⚡ Frontend Fanatic & Web Dev Junkie.
           </p>
-          <p className="text-neutral-500 smartphone:text-xs text-sm">
+          <p className="text-neutral-600 dark:text-neutral-500 smartphone:text-xs text-sm">
             Building sites for fun (and occasionally to impress my cat).
           </p>
         </div>
@@ -119,10 +120,10 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
           className="group/btn flex justify-between items-center bg-white/5 hover:bg-white/10 mt-auto p-2 border border-white/5 hover:border-white/20 rounded-xl w-full transition-all duration-300"
         >
           <div className="flex flex-col justify-start h-5 overflow-hidden text-left">
-            <span className="font-medium text-white text-sm tracking-wide transition-transform group-hover/btn:-translate-y-5 duration-300">
+            <span className="font-medium text-gray-900 dark:text-white text-sm tracking-wide transition-transform group-hover/btn:-translate-y-5 duration-300">
               Unveil More
             </span>
-            <span className="font-medium text-red-400 text-sm tracking-wide transition-transform group-hover/btn:-translate-y-5 duration-300">
+            <span className="font-medium text-red-500 dark:text-red-400 text-sm tracking-wide transition-transform group-hover/btn:-translate-y-5 duration-300">
               Let's get personal
             </span>
           </div>

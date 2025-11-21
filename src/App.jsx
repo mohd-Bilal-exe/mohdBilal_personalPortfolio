@@ -300,14 +300,12 @@ function App() {
         )}
         {showExtras && <ExpandedExtras handleClickAfter={handleClickAfter} darkMode={darkMode} />}
         {resumeModalOpen && <SpringModal />}
-        {showWelcomeScreen && <WelcomeScreen />}
+        {showWelcomeScreen && <WelcomeScreen darkMode={darkMode} />}
       </AnimatePresence>
       {showGrid && !showWelcomeScreen && (
         <CursorGradient cursorPos={cursorPos} darkMode={darkMode} Properties={cursorColor} />
       )}
-      <div className="hidden top-0 left-0 z-[500] smartphone:fixed backdrop-blur-2xl grayscale w-screen h-screen">
-        {' '}
-      </div>
+      <div className="hidden top-0 left-0 z-[500] smartphone:fixed backdrop-blur-2xl grayscale w-screen h-screen"></div>
       {showGrid && (
         <div
           id="MainCunt"
@@ -374,7 +372,6 @@ function App() {
         onClick={handleToTop}
         className="right-1 bottom-3 z-[500] fixed text-white/10 hover:text-white/40 transition-all"
       >
-        {' '}
         <ArrowUp size={32} />
       </button>
     </>

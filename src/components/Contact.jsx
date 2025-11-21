@@ -22,7 +22,7 @@ export const LinkedIn = ({ isFade, setCursorColor }) => {
       onMouseLeave={!isFade ? handleExit : undefined}
       className={`border border-neutral-200 dark:border-white/10 
    w-full h-full p-2 grid place-content-center relative group overflow-hidden 
-   transition-all duration-300 active:scale-95
+   transition-all duration-[400ms] ease-out active:scale-95
    ${isFade && 'pointer-events-none grayscale opacity-10'}
  `}
     >
@@ -41,10 +41,10 @@ export const LinkedIn = ({ isFade, setCursorColor }) => {
       <LinkedinLogo
         size={'85%'}
         weight="regular"
-        className="mx-auto text-neutral-400 group-hover:text-lnkin group-hover:scale-[0.85] transition-all duration-300 ease-out"
+        className="mx-auto text-neutral-400 group-hover:text-lnkin group-hover:scale-[0.85] transition-all duration-[400ms] ease-out"
       />
       {/* Hover Label (Tooltip style) - MODIFIED for Tailwind-only hover transition */}
-      <span className="bottom-2 left-[25%] absolute bg-black/50 opacity-0 group-hover:opacity-100 backdrop-blur-sm px-2 py-1 rounded font-medium text-white/90 text-xs transition-all translate-y-2 group-hover:translate-y-0 duration-200 transform">
+      <span className="bottom-2 left-[25%] absolute bg-black/50 opacity-0 group-hover:opacity-100 backdrop-blur-sm px-2 py-1 rounded font-medium text-white/90 text-xs transition-all translate-y-2 group-hover:translate-y-0 duration-[400ms] ease-out transform">
         LinkedIn
       </span>
     </a>
@@ -72,7 +72,7 @@ export const GitHub = ({ isFade, setCursorColor }) => {
       rel="noreferrer"
       onMouseEnter={!isFade ? handleEnter : undefined}
       onMouseLeave={!isFade ? handleExit : undefined}
-      className={`border border-neutral-200 dark:border-white/10 w-full h-full p-2 grid place-content-center relative group overflow-hidden transition-all duration-300 active:scale-95 ${
+      className={`border border-neutral-200 dark:border-white/10 w-full h-full p-2 grid place-content-center relative group overflow-hidden transition-all duration-[400ms] ease-out active:scale-95 ${
         isFade && 'pointer-events-none grayscale opacity-10'
       }`}
     >
@@ -80,7 +80,7 @@ export const GitHub = ({ isFade, setCursorColor }) => {
       <GithubLogo
         size={'85%'}
         weight="regular"
-        className="mx-auto text-neutral-400 group-hover:text-white group-hover:scale-[0.85] transition-all duration-300 ease-out"
+        className="mx-auto text-neutral-400 group-hover:text-white group-hover:scale-[0.85] transition-all duration-[400ms] ease-out"
       />
       {/* Hover Label - MODIFIED for Tailwind-only hover transition */}
       <span className="bottom-2 left-[27%] absolute bg-black/50 opacity-0 group-hover:opacity-100 backdrop-blur-sm px-2 py-1 rounded font-medium text-white/90 text-xs transition-all translate-y-2 group-hover:translate-y-0 duration-200 transform">
@@ -109,7 +109,7 @@ export const Instagram = ({ isFade, setCursorColor }) => {
       rel="noreferrer"
       onMouseEnter={!isFade ? handleEnter : undefined}
       onMouseLeave={!isFade ? handleExit : undefined}
-      className={`border border-neutral-200 dark:border-white/10 w-full h-full p-2 grid place-content-center relative group overflow-hidden transition-all duration-300 active:scale-95 ${
+      className={`border border-neutral-200 dark:border-white/10 w-full h-full p-2 grid place-content-center relative group overflow-hidden transition-all duration-[400ms] ease-out active:scale-95 ${
         isFade && 'pointer-events-none grayscale opacity-10'
       }`}
     >
@@ -117,7 +117,7 @@ export const Instagram = ({ isFade, setCursorColor }) => {
       <InstagramLogo
         size={'85%'}
         weight="regular"
-        className="mx-auto text-neutral-400 group-hover:text-insta group-hover:scale-[0.85] transition-all duration-300 ease-in-out"
+        className="mx-auto text-neutral-400 group-hover:text-insta group-hover:scale-[0.85] transition-all duration-[400ms] ease-out"
       />
       {/* Hover Label - MODIFIED for Tailwind-only hover transition */}
       <span className="bottom-2 left-[20%] absolute bg-black/50 opacity-0 group-hover:opacity-100 backdrop-blur-sm px-2 py-1 rounded font-medium text-white/90 text-xs transition-all translate-y-2 group-hover:translate-y-0 duration-200 transform">
@@ -155,22 +155,22 @@ export const Email = ({ isFade, setCursorColor }) => {
       onMouseLeave={!isFade ? handleExit : undefined}
       className={` border border-neutral-200 dark:border-white/10
    w-full h-full p-4 relative flex justify-between items-center group active:scale-[0.98]
-   transition-all duration-300
+   transition-all duration-[400ms] ease-out
    ${isFade && 'pointer-events-none grayscale opacity-10'}
  `}
     >
       <AnimatePresence>{/* Fade Overlay omitted */}</AnimatePresence>
       {/* Left Side: Text and Hover CTA */}
       <div className="flex flex-col justify-center overflow-hidden">
-        <h1 className="font-semibold text-white group-hover:text-yellow-400 text-xl md:text-2xl transition-colors duration-300">
+        <h1 className="font-semibold text-gray-900 dark:text-white group-hover:text-yellow-500 dark:group-hover:text-yellow-400 text-xl md:text-2xl transition-colors duration-[400ms] ease-out">
           E-Mail
         </h1>
         {/* CTA - Slides up on hover (This logic is already correct for the flip) */}
         <div className="mt-1 h-4 overflow-hidden">
-          <span className="block text-neutral-400 text-xs transition-transform md:group-hover:-translate-y-4 group-hover:-translate-y-full duration-300 ease-out">
+          <span className="block text-neutral-600 dark:text-neutral-400 text-xs transition-transform md:group-hover:-translate-y-4 group-hover:-translate-y-full duration-[400ms] ease-out">
             Have a cool project on mind?
           </span>
-          <span className="block font-medium text-yellow-500 text-xs transition-transform translate-y-0 group-hover:-translate-y-4 duration-300 ease-out">
+          <span className="block font-medium text-yellow-600 dark:text-yellow-500 text-xs transition-transform translate-y-0 group-hover:-translate-y-4 duration-[400ms] ease-out">
             Drop a 'hello'!
           </span>
         </div>
@@ -180,7 +180,7 @@ export const Email = ({ isFade, setCursorColor }) => {
         <Envelope
           size={'93%'}
           weight="regular"
-          className="text-neutral-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300 ease-in-out"
+          className="text-neutral-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-[400ms] ease-out"
         />
       </div>
     </a>
