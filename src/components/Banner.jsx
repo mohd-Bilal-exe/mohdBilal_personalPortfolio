@@ -4,11 +4,10 @@ import { StarFour } from '@phosphor-icons/react'; // Assuming you use Phosphor
 
 export default function Banner() {
   return (
-    <div className="relative flex items-center bg-neutral-900 border-white/5 border-b h-full overflow-hidden select-none">
+    <div className="relative flex items-center border-white/5 border-b h-full overflow-hidden select-none">
       {/* Improved Gradient Masks with Blur */}
-      <div className="left-0 z-20 absolute bg-gradient-to-r from-neutral-900 via-neutral-900/80 to-transparent backdrop-blur-[1px] w-20 h-full"></div>
-      <div className="right-0 z-20 absolute bg-gradient-to-l from-neutral-900 via-neutral-900/80 to-transparent backdrop-blur-[1px] w-20 h-full"></div>
-
+      <div className="left-0 z-20 absolute bg-gradient-to-r dark:from-neutral-900 dark:via-neutral-900/70 to-transparent dark:backdrop-blur-[1px] w-20 h-full"></div>
+      <div className="right-0 z-20 absolute bg-gradient-to-l dark:from-neutral-900 dark:via-neutral-900/70 to-transparent dark:backdrop-blur-[1px] w-20 h-full"></div>
       <MarqueeItem />
     </div>
   );
@@ -55,7 +54,8 @@ const LoopingText = ({ items }) => {
               item.type === 'highlight' &&
                 'bg-clip-text text-transparent bg-gradient-to-r mx-5 from-purple-400 to-pink-400',
               // CASE 2: Solid Text (Standard)
-              item.type === 'solid' && 'text-neutral-400 group-hover:text-white',
+              item.type === 'solid' &&
+                'text-neutral-600 dark:text-neutral-400 group-hover:text-black dark:group-hover:text-white',
               // CASE 3: Outline Text (Modern Touch)
               item.type === 'outline' && 'text-transparent stroke-text hover:text-neutral-500'
             )}

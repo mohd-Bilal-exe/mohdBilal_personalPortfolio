@@ -74,12 +74,12 @@ const TechDisplay = ({ items, isFade, setCursorColor }) => {
 
   return (
     <div
-      className="flex smartphone:flex-col justify-between items-center gap-8 smartphone:gap-6 w-full"
+      className="flex smartphone:flex-col justify-between items-center gap-3 smartphone:gap-6 w-full"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
       {/* 1. FEATURED CARD (Left) */}
-      <div className="relative flex flex-col flex-shrink-0 justify-center items-center shadow-2xl rounded-2xl w-40 smartphone:w-full h-40 smartphone:h-32 overflow-hidden">
+      <div className="relative flex flex-col flex-shrink-0 justify-center items-center rounded-2xl w-40 smartphone:w-full h-40 smartphone:h-32 overflow-hidden">
         {/* Subtle pulsing background matching the tech color */}
         <div
           className="absolute inset-0 opacity-20 transition-colors duration-500"
@@ -103,10 +103,10 @@ const TechDisplay = ({ items, isFade, setCursorColor }) => {
             />
 
             <div className="text-center">
-              <h3 className="font-bold text-white text-lg leading-none tracking-tight">
+              <h3 className="font-bold text-black dark:text-white text-lg leading-none tracking-tight">
                 {activeItem.name}
               </h3>
-              <span className="block mt-1 font-medium text-[10px] text-neutral-400 uppercase tracking-widest">
+              <span className="block mt-1 font-medium text-[10px] text-neutral-600 dark:text-neutral-400 uppercase tracking-widest">
                 {activeItem.category}
               </span>
             </div>
@@ -115,7 +115,7 @@ const TechDisplay = ({ items, isFade, setCursorColor }) => {
       </div>
 
       {/* 2. THE GRID (Right) */}
-      <div className="flex-1 place-content-center gap-2 grid grid-cols-7 smartphone:grid-cols-5">
+      <div className="flex-1 place-content-center gap-1 grid grid-cols-7 smartphone:grid-cols-5">
         {items.map((item, index) => {
           const isActive = index === activeIndex;
           return (
@@ -131,10 +131,10 @@ const TechDisplay = ({ items, isFade, setCursorColor }) => {
                   setCursorColor({ color: 'bg-white shadow-white', size: 'w-2 h-2' });
               }}
               className={twMerge(
-                'group relative flex justify-center items-center p-2 rounded-lg aspect-square transition-all duration-300',
+                'group relative flex justify-center items-center p-1 rounded-lg size-10 aspect-square transition-all duration-300',
                 isActive
-                  ? 'bg-white/10 ring-1 ring-white/20 scale-110 z-10'
-                  : 'bg-transparent hover:bg-white/5'
+                  ? 'bg-black/10 dark:bg-white/10 ring-1 ring-black/20 dark:ring-white/20 scale-110 z-10'
+                  : 'bg-transparent hover:bg-black/5 dark:hover:bg-white/5'
               )}
             >
               <item.icon

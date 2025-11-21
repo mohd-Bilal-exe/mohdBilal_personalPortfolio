@@ -31,7 +31,7 @@ export default function Resume({ isFade, setCursorColor }) {
       onMouseMove={handleMouseMove}
       onMouseEnter={handleEnter}
       onMouseLeave={handleExit}
-      className={`relative w-full h-full flex flex-col justify-between overflow-hidden  border border-white/10 p-4 group/resume ${
+      className={`relative w-full h-full flex flex-col justify-between overflow-hidden border border-neutral-200 dark:border-white/10 bg-white dark:bg-transparent p-4 group/resume ${
         isFade && 'pointer-events-none grayscale opacity-10'
       } transition-all duration-300`}
     >
@@ -84,7 +84,7 @@ export default function Resume({ isFade, setCursorColor }) {
             Updated 2025
           </h5>
         </div>
-        <h1 className="mt-2 font-bold text-white text-3xl tracking-tight">Resume</h1>
+        <h1 className="mt-2 font-bold text-black dark:text-white text-3xl tracking-tight">Resume</h1>
       </div>
 
       {/* ACTION BUTTONS */}
@@ -92,7 +92,7 @@ export default function Resume({ isFade, setCursorColor }) {
         {/* VIEW BUTTON (Primary) */}
         <button
           onClick={() => setResumeModalOpen(true)}
-          className="flex flex-1 justify-center items-center gap-2 bg-white hover:bg-purple-50 px-1 py-2 rounded-xl font-bold text-black text-sm active:scale-95 transition-all duration-200"
+          className="flex flex-1 justify-center items-center gap-2 bg-black dark:bg-white hover:bg-neutral-800 dark:hover:bg-purple-50 px-1 py-2 rounded-xl font-bold text-white dark:text-black text-sm active:scale-95 transition-all duration-200"
         >
           <Eye size={18} weight="bold" />
           <span>Preview</span>

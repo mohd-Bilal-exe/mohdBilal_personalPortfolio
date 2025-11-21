@@ -52,7 +52,7 @@ export default function Location({ isFade, darkMode, setCursorColor }) {
       onMouseEnter={handleEnter}
       onMouseLeave={handleExit}
       className={`
-                relative w-full h-full overflow-hidden border border-white/10 bg-neutral-900
+                relative w-full h-full overflow-hidden border border-neutral-200 dark:border-white/10 bg-neutral-100 dark:bg-neutral-900
                 ${isFade && 'pointer-events-none grayscale opacity-10'} 
                 transition-all duration-300 group/map
             `}
@@ -92,12 +92,12 @@ export default function Location({ isFade, darkMode, setCursorColor }) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 pointer-events-none" />
 
         {/* TOP LEFT: Location Badge */}
-        <div className="top-4 left-4 z-10 absolute flex items-center gap-2 bg-neutral-900/60 backdrop-blur-md px-3 py-1.5 border border-white/10 rounded-full">
+        <div className="top-4 left-4 z-10 absolute flex items-center gap-2 bg-white/60 dark:bg-neutral-900/60 backdrop-blur-md px-3 py-1.5 border border-black/10 dark:border-white/10 rounded-full">
           <div className="relative flex w-2.5 h-2.5">
             <span className="inline-flex absolute bg-emerald-400 opacity-75 rounded-full w-full h-full animate-ping"></span>
             <span className="inline-flex relative bg-emerald-500 rounded-full w-2.5 h-2.5"></span>
           </div>
-          <span className="font-medium text-white text-xs tracking-wide">Lucknow</span>
+          <span className="font-medium text-black dark:text-white text-xs tracking-wide">Lucknow</span>
         </div>
 
         {/* CENTER: Radar Animation (Visual Interest) */}
@@ -116,7 +116,7 @@ export default function Location({ isFade, darkMode, setCursorColor }) {
             <span className="mb-0.5 font-bold text-[10px] text-neutral-400 uppercase tracking-wider">
               Local Time
             </span>
-            <div className="flex items-center gap-1.5 text-white">
+            <div className="flex items-center gap-1.5 text-black dark:text-white">
               <Clock weight="bold" className="text-emerald-400" />
               <span className="font-variant-numeric font-bold tabular-nums text-xl tracking-tight">
                 {time}
@@ -125,7 +125,7 @@ export default function Location({ isFade, darkMode, setCursorColor }) {
           </div>
 
           {/* Coordinates (Optional - adds 'tech' feel) */}
-          <div className="hidden smartphone:hidden md:block opacity-60 font-mono text-[9px] text-neutral-500 text-right">
+          <div className="hidden smartphone:hidden md:block opacity-60 font-mono text-[9px] text-neutral-700 dark:text-neutral-500 text-right">
             26.8467° N<br />
             80.9462° E
           </div>

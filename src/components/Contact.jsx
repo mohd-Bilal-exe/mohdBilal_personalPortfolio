@@ -39,12 +39,12 @@ export const LinkedIn = ({ isFade, setCursorColor }) => {
       </AnimatePresence>
       {/* Icon */}
       <LinkedinLogo
-        size={'80%'}
+        size={'85%'}
         weight="regular"
         className="mx-auto text-neutral-400 group-hover:text-lnkin group-hover:scale-[0.85] transition-all duration-300 ease-out"
       />
       {/* Hover Label (Tooltip style) - MODIFIED for Tailwind-only hover transition */}
-      <span className="bottom-2 absolute bg-black/50 opacity-0 group-hover:opacity-100 backdrop-blur-sm px-2 py-1 rounded font-medium text-white/90 text-xs transition-all translate-y-2 group-hover:translate-y-0 duration-200 transform">
+      <span className="bottom-2 left-[25%] absolute bg-black/50 opacity-0 group-hover:opacity-100 backdrop-blur-sm px-2 py-1 rounded font-medium text-white/90 text-xs transition-all translate-y-2 group-hover:translate-y-0 duration-200 transform">
         LinkedIn
       </span>
     </a>
@@ -78,12 +78,12 @@ export const GitHub = ({ isFade, setCursorColor }) => {
     >
       {/* Fade Overlay omitted for brevity, similar to LinkedIn */} {/* Icon */}
       <GithubLogo
-        size={'80%'}
+        size={'85%'}
         weight="regular"
         className="mx-auto text-neutral-400 group-hover:text-white group-hover:scale-[0.85] transition-all duration-300 ease-out"
       />
       {/* Hover Label - MODIFIED for Tailwind-only hover transition */}
-      <span className="bottom-2 absolute bg-black/50 opacity-0 group-hover:opacity-100 backdrop-blur-sm px-2 py-1 rounded font-medium text-white/90 text-xs transition-all translate-y-2 group-hover:translate-y-0 duration-200 transform">
+      <span className="bottom-2 left-[27%] absolute bg-black/50 opacity-0 group-hover:opacity-100 backdrop-blur-sm px-2 py-1 rounded font-medium text-white/90 text-xs transition-all translate-y-2 group-hover:translate-y-0 duration-200 transform">
         GitHub
       </span>
     </a>
@@ -115,12 +115,12 @@ export const Instagram = ({ isFade, setCursorColor }) => {
     >
       {/* Fade Overlay omitted for brevity */} {/* Icon */}
       <InstagramLogo
-        size={'80%'}
+        size={'85%'}
         weight="regular"
         className="mx-auto text-neutral-400 group-hover:text-insta group-hover:scale-[0.85] transition-all duration-300 ease-in-out"
       />
       {/* Hover Label - MODIFIED for Tailwind-only hover transition */}
-      <span className="bottom-2 absolute bg-black/50 opacity-0 group-hover:opacity-100 backdrop-blur-sm px-2 py-1 rounded font-medium text-white/90 text-xs transition-all translate-y-2 group-hover:translate-y-0 duration-200 transform">
+      <span className="bottom-2 left-[20%] absolute bg-black/50 opacity-0 group-hover:opacity-100 backdrop-blur-sm px-2 py-1 rounded font-medium text-white/90 text-xs transition-all translate-y-2 group-hover:translate-y-0 duration-200 transform">
         Instagram
       </span>
     </a>
@@ -178,7 +178,7 @@ export const Email = ({ isFade, setCursorColor }) => {
       {/* Right Side: Icon */}
       <div className="flex-shrink-0 place-content-center grid w-1/4 md:w-1/5 h-full">
         <Envelope
-          size={'80%'}
+          size={'93%'}
           weight="regular"
           className="text-neutral-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300 ease-in-out"
         />
