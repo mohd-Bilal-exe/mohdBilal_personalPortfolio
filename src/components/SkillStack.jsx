@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 export default function SkillStack({ isFade, setCursorColor }) {
   return (
     <section
-      className={`border border-neutral-200  dark:border-white/10 relative w-full h-full flex justify-between items-center p-6 md:p-4 smartphone:p-2 overflow-hidden ${
+      className={`border border-neutral-200  dark:border-white/10 relative w-full h-full flex  justify-between items-center p-6 md:p-4 smartphone:p-2 overflow-hidden ${
         isFade && 'pointer-events-none grayscale opacity-10'
       } transition-all duration-300`}
     >
@@ -24,7 +24,7 @@ export default function SkillStack({ isFade, setCursorColor }) {
       </AnimatePresence>
 
       {/* MAIN CONTENT CONTAINER */}
-      <div className="flex md:flex-col smartphone:justify-start items-center gap-4 md:gap-2 w-full h-full">
+      <div className="flex flex-row smartphone:justify-start items-center gap-4 md:gap-2 px-2 w-full h-full">
         {/* LEFT SIDE: TEXT & ARROW */}
         <div
           id="StackText"
@@ -49,8 +49,6 @@ export default function SkillStack({ isFade, setCursorColor }) {
               </p>
             </div>
           </div>
-
-          {/* Arrow: Positioned to point from Text -> The Featured Card in DivOrigami */}
           <div className="smartphone:hidden md:hidden lg:block top-1/2 -right-8 absolute opacity-80 -translate-y-1/2">
             <Arrow className="w-24 h-24 text-neutral-400 dark:text-white/20 rotate-[15deg]" />
           </div>
