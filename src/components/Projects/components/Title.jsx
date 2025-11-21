@@ -1,5 +1,5 @@
 import { Code, ListChecks } from '@phosphor-icons/react';
-import { Poetica, ResumeIQ, VerbiAi } from '../../Svgs'; // Assuming these are external SVG components
+import { Debatrix, Poetica, ResumeIQ, VerbiAi } from '../../Svgs'; // Assuming these are external SVG components
 import PropTypes from 'prop-types';
 
 export default function Title({ isFade }) {
@@ -11,10 +11,10 @@ export default function Title({ isFade }) {
       } transition-all duration-300`}
     >
       <h1>Projects</h1>
-      <span className="flex items-center gap-2 p-1 h-full">
+      <span className="flex items-center gap-2 p-1 h-full text-neutral-600 dark:text-neutral-400">
         {/* These components are assumed to be defined elsewhere */}
         <ResumeIQ />
-        <VerbiAi />
+        <Debatrix />
         <ListChecks size={'80%'} weight={'duotone'} />
         <Code size={'80%'} />
       </span>

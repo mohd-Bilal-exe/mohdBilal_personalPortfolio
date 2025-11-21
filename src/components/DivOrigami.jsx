@@ -42,13 +42,11 @@ const techItems = [
   { id: 20, icon: MdDesignServices, name: 'UI/UX', color: '#ec4899', category: 'Design' },
   { id: 21, icon: MdPsychology, name: 'AI/ML', color: '#4f46e5', category: 'Future' },
 ];
-
 export const DivOrigami = ({ isFade, setCursorColor }) => (
   <div className="flex justify-center items-center w-full h-full">
     <TechDisplay items={techItems} isFade={isFade} setCursorColor={setCursorColor} />
   </div>
 );
-
 DivOrigami.propTypes = {
   isFade: PropTypes.bool.isRequired,
   setCursorColor: PropTypes.func,
@@ -57,27 +55,24 @@ DivOrigami.propTypes = {
 const TechDisplay = ({ items, isFade, setCursorColor }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
-
   useEffect(() => {
     if (isHovering || isFade) return;
     const interval = setInterval(() => {
       setActiveIndex(prev => (prev + 1) % items.length);
-    }, 2000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [isHovering, isFade, items.length]);
-
   const activeItem = useMemo(() => items[activeIndex], [items, activeIndex]);
-  
   const handleMouseEnter = useCallback(() => setIsHovering(true), []);
   const handleMouseLeave = useCallback(() => setIsHovering(false), []);
-  
-  const handleItemClick = useCallback((index) => setActiveIndex(index), []);
-  
-  const handleItemMouseEnter = useCallback((index, color) => {
-    setActiveIndex(index);
-    setCursorColor?.({ color, size: 'w-4 h-4' });
-  }, [setCursorColor]);
-  
+  const handleItemClick = useCallback(index => setActiveIndex(index), []);
+  const handleItemMouseEnter = useCallback(
+    (index, color) => {
+      setActiveIndex(index);
+      setCursorColor?.({ color, size: 'w-4 h-4' });
+    },
+    [setCursorColor]
+  );
   const handleItemMouseLeave = useCallback(() => {
     setCursorColor?.({ color: 'bg-white shadow-white', size: 'w-2 h-2' });
   }, [setCursorColor]);
@@ -95,8 +90,7 @@ const TechDisplay = ({ items, isFade, setCursorColor }) => {
             background: `radial-gradient(circle at center, ${activeItem.color}, transparent 70%)`,
           }}
         />
-        
-        <div 
+        <div
           key={activeItem.id}
           className="z-10 relative flex flex-col items-center gap-2 animate-fade-in"
         >
@@ -114,7 +108,6 @@ const TechDisplay = ({ items, isFade, setCursorColor }) => {
           </div>
         </div>
       </div>
-
       <div className="flex-1 place-content-center gap-1 grid grid-cols-7 smartphone:grid-cols-5">
         {items.map((item, index) => {
           const isActive = index === activeIndex;
@@ -142,11 +135,16 @@ const TechDisplay = ({ items, isFade, setCursorColor }) => {
           );
         })}
       </div>
-      
       <style jsx>{`
         @keyframes fade-in {
-          from { opacity: 0; transform: translateY(10px) scale(0.9); }
-          to { opacity: 1; transform: translateY(0) scale(1); }
+          from {
+            opacity: 0;
+            transform: translateY(10px) scale(0.9);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
         }
         .animate-fade-in {
           animation: fade-in 0.2s ease-out;

@@ -48,7 +48,7 @@ const Projects = [
   {
     key: 'debatrix',
     title: 'deBatrix',
-    imgScr: '/Verbi.webp',
+    imgScr: '/debatrix.png',
     link: 'https://de-batrix.vercel.app/',
     description:
       'AI-powered app for grammar correction and language translation with custom instructions.',
