@@ -21,9 +21,8 @@ export default function NavandButtons({ handleLayoutUpdate }) {
   ];
 
   return (
-    // Wrapper: No background, no rounded corners, responsive width/height
     <section
-      className={`w-full h-full flex flex-col items-center justify-center relative border border-white/10`}
+      className={`border border-neutral-200 dark:border-white/10 w-full h-full flex flex-col items-center justify-center relative `}
     >
       <div id="navigation" className={`w-full h-full p-1 relative`}>
         {/* 1. SLIDING ACTIVE INDICATOR (Background Layer) */}

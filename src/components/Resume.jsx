@@ -93,9 +93,9 @@ export default function Resume({ isFade, setCursorColor }) {
         <a
           href="/MohdBilalresume.pdf"
           download="MohdBilalresume"
-          className="group/download flex justify-center items-center bg-white/5 hover:bg-purple-500 border border-white/10 hover:border-purple-500 rounded-xl w-12 h-12 text-white hover:text-white transition-all duration-200"
+          className="group/download flex justify-center items-center bg-white/5 hover:bg-purple-500 border border-white/10 hover:border-purple-500 rounded-xl w-10 h-10 text-white hover:text-white transition-all duration-200"
         >
-          <DownloadSimple size={20} weight="bold" className="group-hover/download:animate-bounce" />
+          <DownloadSimple size={18} weight="bold" className="group-hover/download:animate-bounce" />
         </a>
       </div>
     </div>

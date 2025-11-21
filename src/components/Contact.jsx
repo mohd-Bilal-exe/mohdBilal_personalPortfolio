@@ -20,7 +20,7 @@ export const LinkedIn = ({ isFade, setCursorColor }) => {
       rel="noreferrer"
       onMouseEnter={!isFade ? handleEnter : undefined}
       onMouseLeave={!isFade ? handleExit : undefined}
-      className={`
+      className={`border border-neutral-200 dark:border-white/10 
    w-full h-full p-2 grid place-content-center relative group overflow-hidden 
    transition-all duration-300 active:scale-95
    ${isFade && 'pointer-events-none grayscale opacity-10'}
@@ -72,7 +72,7 @@ export const GitHub = ({ isFade, setCursorColor }) => {
       rel="noreferrer"
       onMouseEnter={!isFade ? handleEnter : undefined}
       onMouseLeave={!isFade ? handleExit : undefined}
-      className={`w-full h-full p-2 grid place-content-center relative group overflow-hidden transition-all duration-300 active:scale-95 ${
+      className={`border border-neutral-200 dark:border-white/10 w-full h-full p-2 grid place-content-center relative group overflow-hidden transition-all duration-300 active:scale-95 ${
         isFade && 'pointer-events-none grayscale opacity-10'
       }`}
     >
@@ -109,7 +109,7 @@ export const Instagram = ({ isFade, setCursorColor }) => {
       rel="noreferrer"
       onMouseEnter={!isFade ? handleEnter : undefined}
       onMouseLeave={!isFade ? handleExit : undefined}
-      className={`w-full h-full p-2 grid place-content-center relative group overflow-hidden transition-all duration-300 active:scale-95 ${
+      className={`border border-neutral-200 dark:border-white/10 w-full h-full p-2 grid place-content-center relative group overflow-hidden transition-all duration-300 active:scale-95 ${
         isFade && 'pointer-events-none grayscale opacity-10'
       }`}
     >
@@ -153,7 +153,7 @@ export const Email = ({ isFade, setCursorColor }) => {
       rel="noreferrer"
       onMouseEnter={!isFade ? handleEnter : undefined}
       onMouseLeave={!isFade ? handleExit : undefined}
-      className={`
+      className={` border border-neutral-200 dark:border-white/10
    w-full h-full p-4 relative flex justify-between items-center group active:scale-[0.98]
    transition-all duration-300
    ${isFade && 'pointer-events-none grayscale opacity-10'}

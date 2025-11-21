@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 export default function SkillStack({ isFade, setCursorColor }) {
   return (
     <section
-      className={`relative w-full h-full flex justify-between items-center p-6 smartphone:p-2 overflow-hidden ${
+      className={`border border-neutral-200 dark:border-white/10 relative w-full h-full flex justify-between items-center p-6 smartphone:p-2 overflow-hidden ${
         isFade && 'pointer-events-none grayscale opacity-10'
       } transition-all duration-300`}
     >
