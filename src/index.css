@@ -4,6 +4,7 @@
 
 ::-webkit-scrollbar {
   width: 5px;
+  border-radius: 10px;
 }
 ::-webkit-scrollbar:horizontal {
   display: none;
@@ -13,6 +14,7 @@
 }
 ::-webkit-scrollbar-thumb {
   background: #ffffffa0;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -29,62 +31,62 @@ body {
   background-color: #000000;
 }
 @font-face {
-  font-family: "Pally";
-  src: url("./fonts/pally/fonts/Pally-Variable.eot") format("embedded-opentype"),
-    url("./fonts/pally/fonts/Pally-Variable.ttf") format("truetype");
+  font-family: 'Pally';
+  src: url('./fonts/pally/fonts/Pally-Variable.eot') format('embedded-opentype'),
+    url('./fonts/pally/fonts/Pally-Variable.ttf') format('truetype');
 }
 .Pally {
-  font-family: "Pally", sans-serif; /* Or any fallback font */
+  font-family: 'Pally', sans-serif; /* Or any fallback font */
 }
 @font-face {
-  font-family: "Kola";
-  src: url("./fonts/kola/fonts/Kola-Regular.eot") format("embedded-opentype"),
-    url("./fonts/kola/fonts/Kola-Regular.ttf") format("truetype");
+  font-family: 'Kola';
+  src: url('./fonts/kola/fonts/Kola-Regular.eot') format('embedded-opentype'),
+    url('./fonts/kola/fonts/Kola-Regular.ttf') format('truetype');
 }
 .Kola {
-  font-family: "kola", sans-serif; /* Or any fallback font */
+  font-family: 'kola', sans-serif; /* Or any fallback font */
 }
 @font-face {
-  font-family: "Azert";
-  src: url("./fonts/azert/AzeretMono[100].ttf") format("truetype");
+  font-family: 'Azert';
+  src: url('./fonts/azert/AzeretMono[100].ttf') format('truetype');
 }
 .Azert {
-  font-family: "Azert", sans-serif; /* Or any fallback font */
+  font-family: 'Azert', sans-serif; /* Or any fallback font */
 }
 @font-face {
-  font-family: "redhawk";
-  src: url("./fonts/redhawk/Redhawk.otf") format("truetype");
+  font-family: 'redhawk';
+  src: url('./fonts/redhawk/Redhawk.otf') format('truetype');
 }
 .redhawk {
-  font-family: "redhawk", sans-serif; /* Or any fallback font */
+  font-family: 'redhawk', sans-serif; /* Or any fallback font */
 }
 @font-face {
-  font-family: "gantians";
-  src: url("./fonts/gantians/Gantians-BLL2B.otf") format("truetype");
+  font-family: 'gantians';
+  src: url('./fonts/gantians/Gantians-BLL2B.otf') format('truetype');
 }
 .gantians {
-  font-family: "gantians", sans-serif; /* Or any fallback font */
+  font-family: 'gantians', sans-serif; /* Or any fallback font */
 }
 .coolfont {
-  font-family: "Homemade Apple", cursive;
+  font-family: 'Homemade Apple', cursive;
   font-weight: 400;
   font-style: normal;
 }
 .titan-one-regular {
-  font-family: "Titan One", sans-serif;
+  font-family: 'Titan One', sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 .ibm-plex {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
 }
 .ubuntu {
-  font-family: "Ubuntu Condensed", sans-serif;
+  font-family: 'Ubuntu Condensed', sans-serif;
   font-weight: 300;
   font-style: normal;
 }
 .raleway {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -95,10 +97,10 @@ body {
 
 /* Grid item base styles */
 .react-grid-item {
-  @apply transition-all duration-[300ms] ease-in-out z-10;
+  @apply z-10 transition-all duration-[300ms] ease-in-out;
 }
 .react-grid-item.cssTransforms {
-  @apply transition-transform  duration-700 ease-in-out;
+  @apply transition-transform duration-700 ease-in-out;
 }
 
 .react-grid-item.resizing {
