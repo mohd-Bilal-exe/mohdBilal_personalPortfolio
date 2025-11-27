@@ -1,59 +1,83 @@
 import { DiceFive } from '@phosphor-icons/react';
 import PropTypes from 'prop-types';
 import useStore from '../stores/useStores';
+
 export default function NavandButtons({ handleLayoutUpdate }) {
+  const { navSelected, setNavSelected } = useStore(); // Access zustand state
 
-    const { navSelected, setNavSelected } = useStore();  // Access zustand state
+  const list = [
+    {
+      id: 1,
+      title: 'Everything',
+    },
+    {
+      id: 2,
+      title: 'Technologies',
+    },
+    {
+      id: 3,
+      title: 'Everything else',
+    },
+  ];
 
-    const list = [
-        {
-            id: 1,
-            title: "Everything"
-        },
-        {
-            id: 2,
-            title: "Technologies"
-        },
-        {
-            id: 3,
-            title: "Everything else"
-        },
-    ];
+  return (
+    <section
+      className={`border border-neutral-200 dark:border-white/10 w-full h-full flex flex-col items-center justify-center relative `}
+    >
+      <div id="navigation" className={`w-full h-full p-1 relative`}>
+        {/* 1. SLIDING ACTIVE INDICATOR (Background Layer) */}
+        <div className={`w-full h-full absolute top-0 z-0 p-1 flex`}>
+          <span
+            className={`
+             h-full w-1/3 transition-transform ease-in-out duration-300 rounded-lg backdrop-blur-sm
+           border border-white/20 dark:border-white/10 shadow-lg
+     bg-white/5 dark:bg-black/20
+  ${navSelected === 'Everything' && 'translate-x-0'} 
+              ${navSelected === 'Technologies' && 'translate-x-full'} 
+     ${navSelected === 'Everything else' && 'translate-x-[200%]'}
+                        `}
+          />
+        </div>
 
-    return (
-        <section className={`w-full h-full flex flex-col items-center justify-center absolute right-0 top-0 text-bg1`}>
-            <div id="navigation" className={`w-full h-full p-1 relative`}>
-                <ul className={`w-full h-full flex gap-[2px] z-20`}>
-                    {
-                        list.map((item) => {
-                            return (
-                                <li key={item.id} className={`z-20 w-1/3 text-md smartphone:text-sm  flex justify-center items-center px-2 py-1`}>
-                                    <div href="#" onClick={() => { handleLayoutUpdate(item.title); setNavSelected(item.title); }} className='w-full text-center group h-6 overflow-hidden'>
-                                        <div className='lg:group-hover:-translate-y-6 flex flex-col transition-transform duration-300 delay-100'>
-                                            <span className='smartphone:mb-[2px]'>{item.title}</span>
-                                            <span className='flex items-center justify-center'>Rearrange<DiceFive size={25} weight="thin" /></span>
-                                        </div>
-                                    </div>
-                                </li>
-                            )
-                        })
-                    }
-                </ul>
-                <div className={`w-full h-full absolute top-0 z-0 py-1 pr-2 flex`}>
-                    <span
-                        className={`h-full w-1/3 transition-transform ease-in-out duration-300 rounded-sm bg-gradient-to-br dark:from-white/20 from-black/20 to-black/30 dark:to-white/30 
-                        ${navSelected === "Everything" && "translate-x-0"} 
-                        ${navSelected === "Technologies" && "translate-x-full"} 
-                        ${navSelected === "Everything else" && "translate-x-[200%]"}`}
-                    />
-                </div>
-            </div>
-        </section>
-    );
+        {/* 2. NAVIGATION BUTTONS (Foreground Layer) */}
+        <ul className={`w-full h-full flex gap-[2px] z-20`}>
+          {list.map(item => {
+            const isSelected = navSelected === item.title;
+            return (
+              <li key={item.id} className={`z-20 w-1/3 flex justify-center items-center`}>
+                <button
+                  onClick={() => {
+                    handleLayoutUpdate(item.title);
+                    setNavSelected(item.title);
+                  }}
+                  className={`w-full h-full text-center group overflow-hidden relative transition-colors duration-300 ${
+                    isSelected
+                      ? 'text-gray-900 dark:text-white font-bold'
+                      : 'text-neutral-600 dark:text-neutral-500 hover:text-gray-800 dark:hover:text-neutral-300 font-medium'
+                  } `}
+                >
+                  <div className="flex flex-col justify-start items-center gap-4 py-2 h-full">
+                    {/* Top Text (Default/Selected) */}
+                    <span className="text-gray-900 md:text-md dark:text-white/60 text-sm transition-transform lg:group-hover:-translate-y-8 duration-300 ease-out">
+                      {item.title}
+                    </span>
+
+                    {/* Bottom Text (Hover/Rearrange) */}
+                    <span className="flex justify-center items-center gap-1 text-purple-600 dark:text-purple-400 text-xs md:text-sm transition-transform lg:group-hover:-translate-y-9 duration-300 ease-out">
+                      Rearrange
+                      <DiceFive size={16} weight="regular" />
+                    </span>
+                  </div>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </section>
+  );
 }
 
-
 NavandButtons.propTypes = {
-    handleLayoutUpdate: PropTypes.func.isRequired,
-    whatsClicked: PropTypes.string,
+  handleLayoutUpdate: PropTypes.func.isRequired,
 };

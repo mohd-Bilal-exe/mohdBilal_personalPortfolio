@@ -1,160 +1,166 @@
-import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
-import { m } from "framer-motion";
-import { FaGithub, FaJs, FaJava, FaDocker } from "react-icons/fa";
-import { SiCss3, SiHtml5, SiNextdotjs, SiReact, SiTailwindcss, SiTypescript, SiExpress, SiFirebase, SiMongodb, SiGit, SiVisualstudiocode, SiPostman, SiMysql } from "react-icons/si";
-import { twMerge } from "tailwind-merge";
-import { LiaNode } from "react-icons/lia";
-import { MdDesignServices, MdPsychology, MdArchitecture, MdStorage } from "react-icons/md";
+import PropTypes from 'prop-types';
+import { useEffect, useState, useMemo, useCallback } from 'react';
+import { FaJs, FaJava, FaDocker } from 'react-icons/fa';
+import {
+  SiCss3,
+  SiHtml5,
+  SiNextdotjs,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+  SiExpress,
+  SiFirebase,
+  SiMongodb,
+  SiGit,
+  SiVisualstudiocode,
+  SiPostman,
+  SiMysql,
+} from 'react-icons/si';
+import { LiaNode } from 'react-icons/lia';
+import { MdDesignServices, MdPsychology, MdArchitecture, MdStorage } from 'react-icons/md';
 
-export const DivOrigami = ({ isFade, setCursorColor }) => {
-    const techItems = [
-        // Core Languages
-        { id: 1, icon: FaJs, name: "JavaScript", className: "bg-[#F7DF1E] text-black ", cursorColor: "bg-[#F7DF1E] shadow-[#F7DF1E]" },
-        { id: 2, icon: SiTypescript, name: "TypeScript", className: "bg-[#3178C6] text-white", cursorColor: "bg-[#3178C6] shadow-[#3178C6]" },
-        { id: 3, icon: FaJava, name: "Java", className: "bg-[#ED8B00] text-black", cursorColor: "bg-[#ED8B00] shadow-[#ED8B00]" },
-        { id: 4, icon: SiHtml5, name: "HTML", className: "bg-[#E34F26] text-white", cursorColor: "bg-[#E34F26] shadow-[#E34F26]" },
-        { id: 5, icon: SiCss3, name: "CSS", className: "bg-[#1572B6] text-white", cursorColor: "bg-[#1572B6] shadow-[#1572B6]" },
-        // Frontend Frameworks
-        { id: 6, icon: SiReact, name: "React.js", className: "bg-[#61DAFB] text-black", cursorColor: "bg-[#61DAFB] shadow-[#61DAFB]" },
-        { id: 7, icon: SiNextdotjs, name: "Next.js", className: "bg-black text-white", cursorColor: "bg-black shadow-black" },
-        { id: 8, icon: SiTailwindcss, name: "Tailwind", className: "bg-[#06B6D4] text-white", cursorColor: "bg-[#06B6D4] shadow-[#06B6D4]" },
-        // Backend
-        { id: 9, icon: LiaNode, name: "Node.js", className: "bg-[#339933] text-white", cursorColor: "bg-[#339933] shadow-[#339933]" },
-        { id: 10, icon: SiExpress, name: "Express.js", className: "bg-gray-800 text-white", cursorColor: "bg-[#374151] shadow-[#374151]" },
-        // Databases
-        { id: 11, icon: SiMongodb, name: "MongoDB", className: "bg-[#47A248] text-white", cursorColor: "bg-[#47A248] shadow-[#47A248]" },
-        { id: 12, icon: SiMysql, name: "SQL", className: "bg-[#4479A1] text-white", cursorColor: "bg-[#4479A1] shadow-[#4479A1]" },
-        { id: 13, icon: SiFirebase, name: "Firebase", className: "bg-[#FFCA28] text-black", cursorColor: "bg-[#FFCA28] shadow-[#FFCA28]" },
-        // Development Tools
-        { id: 14, icon: SiGit, name: "Git", className: "bg-[#F05032] text-white", cursorColor: "bg-[#F05032] shadow-[#F05032]" },
-        { id: 15, icon: SiVisualstudiocode, name: "VSCode", className: "bg-[#007ACC] text-white", cursorColor: "bg-[#007ACC] shadow-[#007ACC]" },
-        { id: 16, icon: FaDocker, name: "Docker", className: "bg-[#2496ED] text-white", cursorColor: "bg-[#2496ED] shadow-[#2496ED]" },
-        { id: 17, icon: SiPostman, name: "Postman", className: "bg-[#FF6C37] text-white", cursorColor: "bg-[#FF6C37] shadow-[#FF6C37]" },
-        // CS Concepts & Interests
-        { id: 18, icon: MdStorage, name: "Data Structures", className: "bg-purple-600 text-white", cursorColor: "bg-[#9333ea] shadow-[#9333ea]" },
-        { id: 19, icon: MdArchitecture, name: "System Design", className: "bg-teal-600 text-white", cursorColor: "bg-[#0d9488] shadow-[#0d9488]" },
-        { id: 20, icon: MdDesignServices, name: "UI/UX Design", className: "bg-pink-500 text-white", cursorColor: "bg-[#ec4899] shadow-[#ec4899]" },
-        { id: 21, icon: MdPsychology, name: "AI/ML", className: "bg-indigo-600 text-white", cursorColor: "bg-[#4f46e5] shadow-[#4f46e5]" },
-    ];
+const techItems = [
+  { id: 1, icon: FaJs, name: 'JavaScript', color: '#F7DF1E', category: 'Language' },
+  { id: 2, icon: SiTypescript, name: 'TypeScript', color: '#3178C6', category: 'Language' },
+  { id: 3, icon: FaJava, name: 'Java', color: '#ED8B00', category: 'Language' },
+  { id: 4, icon: SiHtml5, name: 'HTML5', color: '#E34F26', category: 'Frontend' },
+  { id: 5, icon: SiCss3, name: 'CSS3', color: '#1572B6', category: 'Frontend' },
+  { id: 6, icon: SiReact, name: 'React', color: '#61DAFB', category: 'Library' },
+  { id: 7, icon: SiNextdotjs, name: 'Next.js', color: '#ffffff', category: 'Framework' },
+  { id: 8, icon: SiTailwindcss, name: 'Tailwind', color: '#06B6D4', category: 'Styling' },
+  { id: 9, icon: LiaNode, name: 'Node.js', color: '#339933', category: 'Backend' },
+  { id: 10, icon: SiExpress, name: 'Express', color: '#ffffff', category: 'Backend' },
+  { id: 11, icon: SiMongodb, name: 'MongoDB', color: '#47A248', category: 'Database' },
+  { id: 12, icon: SiMysql, name: 'MySQL', color: '#4479A1', category: 'Database' },
+  { id: 13, icon: SiFirebase, name: 'Firebase', color: '#FFCA28', category: 'BaaS' },
+  { id: 14, icon: SiGit, name: 'Git', color: '#F05032', category: 'Tool' },
+  { id: 15, icon: SiVisualstudiocode, name: 'VS Code', color: '#007ACC', category: 'Tool' },
+  { id: 16, icon: FaDocker, name: 'Docker', color: '#2496ED', category: 'DevOps' },
+  { id: 17, icon: SiPostman, name: 'Postman', color: '#FF6C37', category: 'Tool' },
+  { id: 18, icon: MdStorage, name: 'Data Structs', color: '#9333ea', category: 'Concept' },
+  { id: 19, icon: MdArchitecture, name: 'Sys Design', color: '#0d9488', category: 'Concept' },
+  { id: 20, icon: MdDesignServices, name: 'UI/UX', color: '#ec4899', category: 'Design' },
+  { id: 21, icon: MdPsychology, name: 'AI/ML', color: '#4f46e5', category: 'Future' },
+];
 
-    return (
-        <div className="flex justify-center items-center w-2/3 h-full">
-            <TechGrid items={techItems} isFade={isFade}  setCursorColor={setCursorColor} />
-        </div>
-    );
-};
+export const DivOrigami = ({ isFade, setCursorColor }) => (
+  <div className="flex justify-center items-center w-full h-full">
+    <TechDisplay items={techItems} isFade={isFade} setCursorColor={setCursorColor} />
+  </div>
+);
 
-// PropTypes for DivOrigami
 DivOrigami.propTypes = {
-    isFade: PropTypes.bool.isRequired,
+  isFade: PropTypes.bool.isRequired,
+  setCursorColor: PropTypes.func,
 };
 
-const TechGrid = ({ items, isFade, setCursorColor }) => {
-    const [mainIndex, setMainIndex] = useState(0);
-    const [hoveredIndex, setHoveredIndex] = useState(null);
-    const [hoverTimeout, setHoverTimeout] = useState(null);
-    const [isHovering, setIsHovering] = useState(false);
-    const [isSwapped, setIsSwapped] = useState(false);
+const TechDisplay = ({ items, isFade, setCursorColor }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
 
-    useEffect(() => {
-        if (isFade || isHovering) return;
-        const interval = setInterval(() => {
-            setMainIndex(prev => (prev + 1) % items.length);
-        }, 3000);
-        return () => clearInterval(interval);
-    }, [items.length, isFade, isHovering]);
+  useEffect(() => {
+    if (isHovering || isFade) return;
+    const interval = setInterval(() => {
+      setActiveIndex(prev => (prev + 1) % items.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [isHovering, isFade, items.length]);
 
-    // Only swap to hoveredIndex if isSwapped is true
-    const currentMain = (hoveredIndex !== null && isSwapped) ? hoveredIndex : mainIndex;
-    const sideItems = items.filter((_, index) => index !== currentMain);
+  const activeItem = useMemo(() => items[activeIndex], [items, activeIndex]);
 
-    return (
-        <div 
-            className="flex items-center gap-4 smartphone:gap-0"
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => {
-                setIsHovering(false);
-                if (hoverTimeout) {
-                    clearTimeout(hoverTimeout);
-                    setHoverTimeout(null);
-                }
-                setHoveredIndex(null);
-                setIsSwapped(false);
-            }}
+  const handleMouseEnter = useCallback(() => setIsHovering(true), []);
+  const handleMouseLeave = useCallback(() => setIsHovering(false), []);
+
+  const handleItemClick = useCallback(index => setActiveIndex(index), []);
+
+  const handleItemMouseEnter = useCallback(
+    (index, color) => {
+      setActiveIndex(index);
+      setCursorColor?.({ color, size: 'w-4 h-4' });
+    },
+    [setCursorColor]
+  );
+
+  const handleItemMouseLeave = useCallback(() => {
+    setCursorColor?.({ color: 'bg-white shadow-white', size: 'w-2 h-2' });
+  }, [setCursorColor]);
+
+  return (
+    <div
+      className="flex smartphone:flex-col justify-between items-center gap-3 smartphone:gap-6 w-full"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div className="smartphone:hidden relative flex flex-col flex-shrink-0 justify-center items-center rounded-2xl w-40 smartphone:w-full h-40 smartphone:h-32 overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-20 transition-colors duration-500 will-change-auto"
+          style={{
+            background: `radial-gradient(circle at center, ${activeItem.color}, transparent 70%)`,
+          }}
+        />
+
+        <div
+          key={activeItem.id}
+          className="z-10 relative flex flex-col items-center gap-2 animate-fade-in"
         >
-            {/* Main large icon */}
-            <m.div
-                key={currentMain}
-                initial={{ x:12,opacity: 0 }}
-                animate={{ x:0,opacity: 1 }}
-                exit={{ x:12,opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                className={twMerge(
-                    "smartphone:hidden flex flex-col justify-center items-center shadow-lg rounded-lg w-24 smartphone:w-20 h-24",
-                    items[currentMain].className
-                )}
-            >
-                {(() => {
-                    const IconComponent = items[currentMain].icon;
-                    return <IconComponent className="mb-1 smartphone:text-3xl text-4xl" />;
-                })()}
-                <span className="font-medium text-md">{items[currentMain].name}</span>
-            </m.div>
-
-            {/* Grid of smaller icons */}
-            <div className="gap-2 smartphone:gap-0 grid grid-cols-5 smartphone:max-w-40">
-                {sideItems.map((item, index) => {
-                    const originalIndex = items.findIndex(i => i.id === item.id);
-                    return (
-                        <m.div
-                            key={item.id}
-                            initial={{  opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.5 }}
-                            onMouseEnter={() => {
-                                if (isSwapped) return; // Prevent further swaps until mouse leaves
-                                if (hoverTimeout) clearTimeout(hoverTimeout);
-                                setHoveredIndex(originalIndex);
-                                setCursorColor({ color: item.cursorColor, size: "w-4 h-4" });
-                                // Only swap if hovered for 1.5s
-                                const timeout = setTimeout(() => {
-                                    setIsSwapped(true);
-                                }, 1500);
-                                setHoverTimeout(timeout);
-                            }}
-                            onMouseLeave={() => {
-                                if (hoverTimeout) {
-                                    clearTimeout(hoverTimeout);
-                                    setHoverTimeout(null);
-                                }
-                                setCursorColor({ color: "bg-white shadow-white", size: "w-2 h-2" });
-                                setIsSwapped(false);
-                            }}
-                            className={twMerge(
-                                "flex justify-center items-center hover:rounded-lg w-12 smartphone:w-8 h-12 smartphone:h-10 hover:scale-105 transition-transform duration-150 cursor-pointer",
-                                item.className
-                            )}
-                        >
-                            {(() => {
-                                const IconComponent = item.icon;
-                                return <IconComponent className="smartphone:text-lg text-xl" />;
-                            })()}
-                        </m.div>
-                    );
-                })}
-            </div>
+          <activeItem.icon
+            className="drop-shadow-md text-5xl transition-colors duration-300 will-change-auto"
+            style={{ color: activeItem.color }}
+          />
+          <div className="text-center">
+            <h3 className="font-bold text-black dark:text-white text-lg leading-none tracking-tight">
+              {activeItem.name}
+            </h3>
+            <span className="block mt-1 font-medium text-[10px] text-neutral-600 dark:text-neutral-400 uppercase tracking-widest">
+              {activeItem.category}
+            </span>
+          </div>
         </div>
-    );
-};
+      </div>
 
-TechGrid.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        icon: PropTypes.elementType.isRequired,
-        name: PropTypes.string.isRequired,
-        className: PropTypes.string.isRequired,
-    })).isRequired,
-    isFade: PropTypes.bool.isRequired,
+      <div className="flex-1 place-content-center gap-1 grid grid-cols-7 smartphone:grid-cols-5">
+        {items.map((item, index) => {
+          const isActive = index === activeIndex;
+          return (
+            <button
+              key={item.id}
+              onClick={() => handleItemClick(index)}
+              onMouseEnter={() => handleItemMouseEnter(index, item.color)}
+              onMouseLeave={handleItemMouseLeave}
+              className={`group relative flex justify-center items-center p-1 rounded-lg size-10 aspect-square transition-all duration-300 will-change-transform ${
+                isActive
+                  ? 'bg-black/10 dark:bg-white/10 ring-1 ring-black/20 dark:ring-white/20 scale-110 z-10'
+                  : 'bg-transparent hover:bg-black/5 dark:hover:bg-white/5'
+              }`}
+            >
+              <item.icon
+                className={`text-xl transition-all duration-300 will-change-auto ${
+                  isActive
+                    ? 'opacity-100'
+                    : 'opacity-30 grayscale group-hover:grayscale-0 group-hover:opacity-100'
+                }`}
+                style={{ color: isActive || isHovering ? item.color : 'currentColor' }}
+              />
+            </button>
+          );
+        })}
+      </div>
+
+      <style jsx>{`
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(10px) scale(0.9);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+        .animate-fade-in {
+          animation: fade-in 0.2s ease-out;
+        }
+      `}</style>
+    </div>
+  );
 };
