@@ -18,7 +18,7 @@ export default function ExtrasCollapsed({ isFade, setWhatsClicked, handleClick, 
     <div
       onMouseEnter={!isFade ? handleEnter : undefined}
       onMouseLeave={!isFade ? handleExit : undefined}
-      className={` border border-neutral-200 dark:border-white/10 
+      className={`  
                 w-full h-full flex items-center p-2 relative active:scale-[0.98] transition-all duration-300
                 ${isFade && 'pointer-events-none grayscale opacity-10'} 
             `}

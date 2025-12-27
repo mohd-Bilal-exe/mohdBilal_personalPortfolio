@@ -31,7 +31,7 @@ export default function Resume({ isFade, setCursorColor }) {
       onMouseMove={handleMouseMove}
       onMouseEnter={handleEnter}
       onMouseLeave={handleExit}
-      className={`relative w-full h-full flex flex-col justify-between overflow-hidden border border-neutral-200 dark:border-white/10 p-4 group/resume ${
+      className={`relative w-full h-full flex flex-col justify-between overflow-hidden  p-4 group/resume ${
         isFade && 'pointer-events-none grayscale opacity-10'
       } transition-all duration-300`}
     >

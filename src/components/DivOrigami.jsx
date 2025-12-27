@@ -127,11 +127,7 @@ const TechDisplay = ({ items, isFade, setCursorColor }) => {
               onClick={() => handleItemClick(index)}
               onMouseEnter={() => handleItemMouseEnter(index, item.color)}
               onMouseLeave={handleItemMouseLeave}
-              className={`group relative flex justify-center items-center p-1 rounded-lg size-10 aspect-square transition-all duration-300 will-change-transform ${
-                isActive
-                  ? 'bg-black/10 dark:bg-white/10 ring-1 ring-black/20 dark:ring-white/20 scale-110 z-10'
-                  : 'bg-transparent hover:bg-black/5 dark:hover:bg-white/5'
-              }`}
+              className={`group relative flex justify-center items-center p-1 rounded-lg size-10 aspect-square transition-all duration-300 will-change-transform `}
             >
               <item.icon
                 className={`text-xl transition-all duration-300 will-change-auto ${
