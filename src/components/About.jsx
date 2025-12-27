@@ -66,7 +66,7 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
       <div className="z-10 relative flex flex-col justify-between p-6 h-full">
         {/* HEADER SECTION */}
         <div className="flex justify-between items-start">
-          <div className="flex flex-col gap-3">
+          <div className="flex smartphone:flex-row flex-col gap-3">
             {/* UPDATED: Increased text size to 5xl (desktop) and 4xl (mobile) */}
             <h2 className="font-bold text-gray-900 dark:text-white smartphone:text-4xl text-5xl leading-none tracking-tighter">
               Mohd
@@ -88,10 +88,10 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
           {/* AVATAR */}
           <div className="group/avatar relative">
             <div className="absolute inset-0 bg-red-500/20 blur-xl rounded-full scale-0 group-hover/avatar:scale-125 transition-all duration-500" />
-            <div className="relative flex justify-center items-center bg-gradient-to-b from-neutral-800 to-neutral-900 shadow-xl border border-white/10 rounded-2xl size-[100px] smartphone:size-[80px] overflow-hidden">
+            <div className="relative flex justify-center items-center shadow-xl rounded-2xl size-[100px] smartphone:size-[80px] overflow-hidden">
               <img
                 src="/2821.webp"
-                className="drop-shadow-lg h-[85%] object-cover group-hover/avatar:rotate-3 group-hover/avatar:scale-110 transition-transform duration-500 transform"
+                className="drop-shadow-lg h-[85%] object-cover group-hover/avatar:-rotate-3 group-hover/avatar:scale-110 transition-transform duration-500 transform"
                 alt="Mohd Bilal"
               />
             </div>
@@ -100,12 +100,12 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
 
         {/* DESCRIPTION */}
         {/* UPDATED: Increased text size to text-base (16px) and text-sm */}
-        <div className="space-y-2 mt-4">
+        <div className="space-y-2 md:space-y-0 mt-4 md:mt-0">
           <p className="text-neutral-700 dark:text-neutral-300 smartphone:text-sm text-base text-pretty leading-relaxed">
             <span className="font-semibold text-gray-900 dark:text-white">Full Stack Wizard</span>{' '}
             ⚡ Frontend Fanatic & Web Dev Junkie.
           </p>
-          <p className="text-neutral-600 dark:text-neutral-500 smartphone:text-xs text-sm">
+          <p className="md:mb-3 text-neutral-600 dark:text-neutral-500 smartphone:text-xs text-sm">
             Building sites for fun (and occasionally to impress my cat).
           </p>
         </div>
@@ -117,7 +117,7 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
             setWhatsClicked('About');
             handleClick();
           }}
-          className="group/btn flex justify-between items-center bg-white/5 hover:bg-white/10 mt-auto p-2 border border-white/5 hover:border-white/20 rounded-xl w-full transition-all duration-300"
+          className="group/btn flex justify-between items-center bg-white/5 hover:bg-white/10 mt-auto smartphone:mt-2.5 p-2 border border-white/5 hover:border-white/20 rounded-xl w-full transition-all duration-300"
         >
           <div className="flex flex-col justify-start h-5 overflow-hidden text-left">
             <span className="font-medium text-gray-900 dark:text-white text-sm tracking-wide transition-transform group-hover/btn:-translate-y-5 duration-300">
