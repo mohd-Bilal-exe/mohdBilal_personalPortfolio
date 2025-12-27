@@ -39,7 +39,7 @@ function App() {
   const [showWelcomeScreen, setShowWelcomeScreen] = useState(true);
   const [showExpandedAbout, setShowExpandedAbout] = useState(false);
   const [layouts, updateLayout] = useResponsiveLayouts();
-
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   useEffect(() => {
     const Welcome = setTimeout(() => {
       setShowWelcomeScreen(false);
@@ -271,6 +271,8 @@ function App() {
       component: <Project isFade={componentFaded.Projects} setCursorColor={setCursorColor} />,
     },
   ];
+
+  console.log('Device type:', window.navigator.userAgent);
   return (
     <>
       <SEO

@@ -52,7 +52,7 @@ export default function Location({ isFade, darkMode, setCursorColor }) {
       onMouseEnter={handleEnter}
       onMouseLeave={handleExit}
       className={`
-                relative w-full h-full overflow-hidden border border-neutral-200 dark:border-white/10 bg-neutral-100 dark:bg-neutral-900
+                relative w-full h-full overflow-hidden  bg-neutral-100 dark:bg-neutral-900
                 ${isFade && 'pointer-events-none grayscale opacity-10'} 
                 transition-all duration-300 group/map
             `}
@@ -97,7 +97,9 @@ export default function Location({ isFade, darkMode, setCursorColor }) {
             <span className="inline-flex absolute bg-emerald-400 opacity-75 rounded-full w-full h-full animate-ping"></span>
             <span className="inline-flex relative bg-emerald-500 rounded-full w-2.5 h-2.5"></span>
           </div>
-          <span className="font-medium text-gray-900 dark:text-white text-xs tracking-wide">Lucknow</span>
+          <span className="font-medium text-gray-900 dark:text-white text-xs tracking-wide">
+            Lucknow
+          </span>
         </div>
 
         {/* CENTER: Radar Animation (Visual Interest) */}

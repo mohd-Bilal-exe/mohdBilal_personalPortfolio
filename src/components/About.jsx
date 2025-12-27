@@ -66,7 +66,7 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
       <div className="z-10 relative flex flex-col justify-between p-6 h-full">
         {/* HEADER SECTION */}
         <div className="flex justify-between items-start">
-          <div className="flex smartphone:flex-row flex-col gap-3">
+          <div className="flex flex-col gap-3">
             {/* UPDATED: Increased text size to 5xl (desktop) and 4xl (mobile) */}
             <h2 className="font-bold text-gray-900 dark:text-white smartphone:text-4xl text-5xl leading-none tracking-tighter">
               Mohd
@@ -105,7 +105,7 @@ export default function About({ isFade, handleClick, setWhatsClicked, setCursorC
             <span className="font-semibold text-gray-900 dark:text-white">Full Stack Wizard</span>{' '}
             ⚡ Frontend Fanatic & Web Dev Junkie.
           </p>
-          <p className="md:mb-3 text-neutral-600 dark:text-neutral-500 smartphone:text-xs text-sm">
+          <p className="smartphone:hidden md:mb-3 text-neutral-600 dark:text-neutral-500 smartphone:text-xs text-sm">
             Building sites for fun (and occasionally to impress my cat).
           </p>
         </div>

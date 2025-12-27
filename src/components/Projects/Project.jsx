@@ -83,11 +83,7 @@ export default function Project({ isFade, setCursorColor }) {
     setCursorColor({ color: 'bg-white shadow-white', size: 'w-2 h-2' });
   };
   return (
-    <div
-      className={`layout border border-neutral-200 dark:border-white/10 w-full h-full mr-[1px] ${
-        isFade && 'pointer-events-none'
-      }`}
-    >
+    <div className={`layout  w-full h-full mr-[1px] ${isFade && 'pointer-events-none'}`}>
       <AnimatePresence>
         {isFade && (
           <m.div
@@ -126,7 +122,7 @@ export default function Project({ isFade, setCursorColor }) {
           return (
             <m.div
               key={Project.key}
-              className={`border border-neutral-200 dark:border-white/10 dark:bg-darkGray/90 backdrop-blur-xl dark:text-white bg-white/90 `}
+              className={` dark:bg-darkGray/90 backdrop-blur-xl dark:text-white bg-white/90 `}
             >
               <div
                 className={`group w-full h-full flex flex-col z-50 ${
